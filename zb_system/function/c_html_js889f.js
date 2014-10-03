@@ -1,1 +1,0 @@
-try{sidebarloaded.execute()}catch(e){}
