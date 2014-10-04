@@ -532,7 +532,7 @@ h1 {
 
 h2 {
 	font-size: 1.8em; /* = 36px */
-	margin-bottom: .75em;
+	margin-bottom: .5em;
 	margin-top: .75em;
 }
 
@@ -659,8 +659,8 @@ form div {
 	border: 1px solid #e5e5e5;
 	border-radius: 4px;
 	clear: both;
-	margin: 20px auto 20px auto;
-	padding: 0 20px 20px 20px;
+	margin: 10px auto 10px auto;
+	padding: 0 20px 10px 20px;
 	position: relative;
 }
 
@@ -740,8 +740,8 @@ form div {
 }
 
 #content-archive {
-	margin-top: 40px;
-	margin-bottom: 20px;
+	margin-top:20px;
+	margin-bottom: 10px;
 }
 
 #content-sitemap {
@@ -808,7 +808,7 @@ form div {
 	background-color: #ffffff;
 	border: 1px solid #e5e5e5;
 	border-radius: 4px;
-	padding-bottom: 40px;
+	padding-bottom: 10px;
 	width: 99.893617021277%;
 }
 
@@ -821,7 +821,7 @@ form div {
 }
 
 #featured-image {
-	margin: 40px 0 0 0;
+	margin: 10px 0 0 0;
 }
 
 #featured-image .fluid-width-video-wrapper {
@@ -841,12 +841,15 @@ form div {
 #cancel-comment-reply-link {
 	color: #990000;
 }
-
+.post
+{
+    border:1px;
+}
 .post-data {
 	clear: both;
 	font-size: 12px;
 	font-weight: 700;
-	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .post-data a {
@@ -860,15 +863,15 @@ form div {
 .post-meta {
 	clear: both;
 	color: #9f9f9f;
-	font-size: 12px;
-	margin-bottom: 10px;
+	font-size: 10px;
+	margin-bottom: 8px;
 }
 
 .post-edit {
 	clear: both;
 	display: block;
 	font-size: 12px;
-	margin: 1.5em 0;
+	margin: 0.1em 0;
 }
 
 .post-search-terms {
@@ -925,7 +928,7 @@ form div {
 }
 
 #widgets {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 #widgets a {
