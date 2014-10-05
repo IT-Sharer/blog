@@ -12,12 +12,79 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;author=1" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 04 Oct 2014 05:53:48 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 05 Oct 2014 07:06:55 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>Linux系统远程连接</title>
+		<link>http://wp.hhy/?p=39</link>
+		<comments>http://wp.hhy/?p=39#comments</comments>
+		<pubDate>Sun, 05 Oct 2014 06:55:07 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[linux]]></category>
+		<category><![CDATA[linux系统]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=39</guid>
+		<description><![CDATA[一般Linux系统支持三种远程登陆方式:Telnet/SSH和VNC or XD<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=39">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>一般Linux系统支持三种远程登陆方式:Telnet/SSH和VNC or XDM.</p>
+<p>Telnet是TCP/IP协议簇中最为广泛的协议之一,提供远程机器的通信功能.一般操作系统都会内置有客户端软件.可能需要安装或者手动开启Telnet命令功能.所有数据都是明文传输,所以存在安全隐患.</p>
+<p>SSH:类似Telnet,但是传输数据经过了加密处理,相对安全.一般Linux系统需要安装ssh server服务.</p>
+<p>XDM/VNC是一种图形界面的访问方式,图形界面较为直观便捷,但是会占用较大的带宽.一般需要安装Server和Client端.</p>
+<p>工具选择:</p>
+<p>WinSCP:可以图形化地查看远程的文件,支持同步等操作,类似于FTP客户端软件.另外也支持调用Putty客户端进入命令行界面.</p>
+<p>putty客户端:命令行的方式对远程界面进行操作,类似于运行了一个终端界面.</p>
+<p>VNCViewer:支持图形化的远程操作,支持鼠标等.需要在Linux机器上安全VNCSERVER服务.</p>
+<h4>重点:</h4>
+<p>SSH中的文件传输:</p>
+<p>1.将文件传输到SSH服务器</p>
+<p>scp localfile&nbsp; username@[主机名或者IP]:/newfilename</p>
+<p>2.从SSH服务器获取文件</p>
+<p>scp username@[主机名或者IP]:/filename&nbsp; localfilename</p>
+<p>3. 批量传输文件</p>
+<p>scp username@[主机名或者IP]:/filename/*[正则表达式]&nbsp; localfilename[本地文件的路径]</p>
+<h4>Putty中的文件传输:</h4>
+<p>pscp –P[模式] 22[端口] -C c:\a.txt[本地路径] username@server:/path/&nbsp; [远程路径]</p>
+<p>命令参考:</p>
+<p>-q安静模式</p>
+<p>-p 指定SSH端口 默认22</p>
+<p>-I 指定用户</p>
+<p>-pw 指定密码</p>
+<p>-C 允许压缩传输</p>
+<p>参考资料:</p>
+<p><a title="http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K" href="http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K">http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K</a></p>
+<p><a title="http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html" href="http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html">http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html</a></p>
+<p><a title="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/" href="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/">http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=39</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>A001.设计一个包含min函数的栈</title>
+		<link>http://wp.hhy/?p=37</link>
+		<comments>http://wp.hhy/?p=37#comments</comments>
+		<pubDate>Sun, 05 Oct 2014 02:47:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法题库]]></category>
+		<category><![CDATA[算法题]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=37</guid>
+		<description><![CDATA[题目要求:min函数的时间复杂度为O(1). 思路: 设置一个最小栈minSta<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=37">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>题目要求:min函数的时间复杂度为O(1).</p>
+<h4>思路:</h4>
+<p>设置一个最小栈minStack,保存当前最小的值.</p>
+<p>如果push进来的元素T.value&lt;=minStack.top().value,则minStack.push(T);</p>
+<p>如果Pop出去的元素T.value==minStack.top().value,则minStack.pop();</p>
+<p>min() return minStack.top();</p>
+<h4>代码:</h4>
+<p>import java.util.Stack;</p>
+<p>public class MinStack&lt;T&gt; {<br />&nbsp;&nbsp;&nbsp; Stack&lt;T&gt; stack;<br />&nbsp;&nbsp;&nbsp; Stack&lt;T&gt; minStack;<br />&nbsp;&nbsp;&nbsp; public MinStack() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // TODO Auto-generated constructor stub<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack=new Stack&lt;&gt;();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack=new Stack&lt;&gt;();<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public void push(T t){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (minStack.empty()) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack.push(t);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (t&lt;=minStack.peek()) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack.push(t);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack.push(t);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public T pop(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(stack.empty()) return null;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T tmpT=stack.pop();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(tmpT==minStack.peek())minStack.pop();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return tmpT;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public T min(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(minStack.empty())return null;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else return minStack.peek();<br />&nbsp;&nbsp;&nbsp; }<br />}</p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=37</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>代码阅读格言</title>
 		<link>http://wp.hhy/?p=21</link>
 		<comments>http://wp.hhy/?p=21#comments</comments>
@@ -542,21 +609,6 @@
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=5</wfw:commentRss>
 		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>世界，你好！</title>
-		<link>http://wp.hhy/?p=1</link>
-		<comments>http://wp.hhy/?p=1#comments</comments>
-		<pubDate>Fri, 03 Oct 2014 13:34:38 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[未分类]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=1</guid>
-		<description><![CDATA[欢迎使用WordPress。这是系统自动生成的演示文章。编辑或者删除它，然后开始<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=1">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p>欢迎使用WordPress。这是系统自动生成的演示文章。编辑或者删除它，然后开始您的博客！</p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=1</wfw:commentRss>
-		<slash:comments>1</slash:comments>
 		</item>
 	</channel>
 </rss>

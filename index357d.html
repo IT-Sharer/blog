@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>IT-Sharer &#187; 算法题库</title>
+	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=23" rel="self" type="application/rss+xml" />
+	<link>http://wp.hhy</link>
+	<description>温 润 醇 和    臻 于 至 善</description>
+	<lastBuildDate>Sun, 05 Oct 2014 07:06:55 +0000</lastBuildDate>
+	<language>zh-CN</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=4.0</generator>
+	<item>
+		<title>A001.设计一个包含min函数的栈</title>
+		<link>http://wp.hhy/?p=37</link>
+		<comments>http://wp.hhy/?p=37#comments</comments>
+		<pubDate>Sun, 05 Oct 2014 02:47:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法题库]]></category>
+		<category><![CDATA[算法题]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=37</guid>
+		<description><![CDATA[题目要求:min函数的时间复杂度为O(1). 思路: 设置一个最小栈minSta<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=37">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>题目要求:min函数的时间复杂度为O(1).</p>
+<h4>思路:</h4>
+<p>设置一个最小栈minStack,保存当前最小的值.</p>
+<p>如果push进来的元素T.value&lt;=minStack.top().value,则minStack.push(T);</p>
+<p>如果Pop出去的元素T.value==minStack.top().value,则minStack.pop();</p>
+<p>min() return minStack.top();</p>
+<h4>代码:</h4>
+<p>import java.util.Stack;</p>
+<p>public class MinStack&lt;T&gt; {<br />&nbsp;&nbsp;&nbsp; Stack&lt;T&gt; stack;<br />&nbsp;&nbsp;&nbsp; Stack&lt;T&gt; minStack;<br />&nbsp;&nbsp;&nbsp; public MinStack() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // TODO Auto-generated constructor stub<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack=new Stack&lt;&gt;();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack=new Stack&lt;&gt;();<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public void push(T t){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (minStack.empty()) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack.push(t);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (t&lt;=minStack.peek()) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack.push(t);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack.push(t);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public T pop(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(stack.empty()) return null;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T tmpT=stack.pop();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(tmpT==minStack.peek())minStack.pop();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return tmpT;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public T min(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(minStack.empty())return null;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else return minStack.peek();<br />&nbsp;&nbsp;&nbsp; }<br />}</p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=37</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
