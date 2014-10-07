@@ -8,8 +8,8 @@
 	>
 
 <channel>
-	<title>IT-Sharer &#187; linux</title>
-	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=24" rel="self" type="application/rss+xml" />
+	<title>IT-Sharer &#187; 编辑器</title>
+	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=%e7%bc%96%e8%be%91%e5%99%a8" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
 	<lastBuildDate>Tue, 07 Oct 2014 09:07:07 +0000</lastBuildDate>
@@ -73,49 +73,6 @@
 <p>注：在这之中，g表示全局查找；我们注意到，就是没有替换的地方，也会把SEARCH高亮显示；</p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=44</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>Linux系统远程连接</title>
-		<link>http://wp.hhy/?p=39</link>
-		<comments>http://wp.hhy/?p=39#comments</comments>
-		<pubDate>Sun, 05 Oct 2014 06:55:07 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[linux]]></category>
-		<category><![CDATA[linux系统]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=39</guid>
-		<description><![CDATA[一般Linux系统支持三种远程登陆方式:Telnet/SSH和VNC or XD<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=39">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p>一般Linux系统支持三种远程登陆方式:Telnet/SSH和VNC or XDM.</p>
-<p>Telnet是TCP/IP协议簇中最为广泛的协议之一,提供远程机器的通信功能.一般操作系统都会内置有客户端软件.可能需要安装或者手动开启Telnet命令功能.所有数据都是明文传输,所以存在安全隐患.</p>
-<p>SSH:类似Telnet,但是传输数据经过了加密处理,相对安全.一般Linux系统需要安装ssh server服务.</p>
-<p>XDM/VNC是一种图形界面的访问方式,图形界面较为直观便捷,但是会占用较大的带宽.一般需要安装Server和Client端.</p>
-<p>工具选择:</p>
-<p>WinSCP:可以图形化地查看远程的文件,支持同步等操作,类似于FTP客户端软件.另外也支持调用Putty客户端进入命令行界面.</p>
-<p>putty客户端:命令行的方式对远程界面进行操作,类似于运行了一个终端界面.</p>
-<p>VNCViewer:支持图形化的远程操作,支持鼠标等.需要在Linux机器上安全VNCSERVER服务.</p>
-<h4>重点:</h4>
-<p>SSH中的文件传输:</p>
-<p>1.将文件传输到SSH服务器</p>
-<p>scp localfile&nbsp; username@[主机名或者IP]:/newfilename</p>
-<p>2.从SSH服务器获取文件</p>
-<p>scp username@[主机名或者IP]:/filename&nbsp; localfilename</p>
-<p>3. 批量传输文件</p>
-<p>scp username@[主机名或者IP]:/filename/*[正则表达式]&nbsp; localfilename[本地文件的路径]</p>
-<h4>Putty中的文件传输:</h4>
-<p>pscp –P[模式] 22[端口] -C c:\a.txt[本地路径] username@server:/path/&nbsp; [远程路径]</p>
-<p>命令参考:</p>
-<p>-q安静模式</p>
-<p>-p 指定SSH端口 默认22</p>
-<p>-I 指定用户</p>
-<p>-pw 指定密码</p>
-<p>-C 允许压缩传输</p>
-<p>参考资料:</p>
-<p><a title="http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K" href="http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K">http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K</a></p>
-<p><a title="http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html" href="http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html">http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html</a></p>
-<p><a title="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/" href="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/">http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/</a></p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=39</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>
