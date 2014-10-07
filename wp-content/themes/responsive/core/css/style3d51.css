@@ -649,11 +649,8 @@ form div {
 #container {
 	margin: 0 auto;
 	max-width: 960px;
-<<<<<<< HEAD
 	padding: 0px 3px;
-=======
-	padding: 0px 2px;
->>>>>>> origin/gh-pages
+
 }
 
 #wrapper {
