@@ -12,12 +12,65 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;author=1" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Tue, 07 Oct 2014 09:07:07 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 08 Oct 2014 07:25:46 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>Hadoop 常用项目</title>
+		<link>http://wp.hhy/?p=48</link>
+		<comments>http://wp.hhy/?p=48#comments</comments>
+		<pubDate>Wed, 08 Oct 2014 07:24:17 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[Hadoop]]></category>
+		<category><![CDATA[HBase]]></category>
+		<category><![CDATA[Hive]]></category>
+		<category><![CDATA[Mahout]]></category>
+		<category><![CDATA[Pig]]></category>
+		<category><![CDATA[Sqoop]]></category>
+		<category><![CDATA[Zookeeper]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=48</guid>
+		<description><![CDATA[Hadoop从2007年开始发展到现在已经衍生出了20多个产品。更新换代非常之快<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=48">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hadoop从2007年开始发展到现在已经衍生出了20多个产品。更新换代非常之快，很多没发行多久的Hadoop系列指导书，看似崭新，却就已经跟不上版本了，而且新版本还发生了较大的改变，以前旧版本的操作可能就不行了。</p>
+<p>因此要学习Hadoop不能只是针对某一个特殊的版本进行学习。要学习其中的思想。</p>
+<p>而在实战部分则要学会阅读<a title="http://hadoop.apache.org/" href="http://hadoop.apache.org/">http://hadoop.apache.org/</a> 中的wiki文档。从技术文档中学习如何开发和部署。</p>
+<p>当然对Linux的了解是比不可少的。</p>
+<p><strong>1.Hadoop家族的学习路线图</strong></p>
+<p><img alt="hadoopFamilyRoadmap" src="http://blog.fens.me/wp-content/uploads/2013/09/hadoopFamilyRoadmap.png"></p>
+<p>上图描述了Hadoop的功能结构。基础的结构是HDFS，MR。其中常用的一些项目是HBase、HIVE、Pig、Sqoop、Zookeeper、Mahout、Spark。下面就对这些经典项目一句话描述：</p>
+<ul>
+<li><a href="http://hadoop.apache.org/">Apache Hadoop</a>: 是Apache开源组织的一个分布式计算开源框架，提供了一个分布式文件系统子项目(HDFS)和支持MapReduce分布式计算的软件架构。（<strong>存储和基本的MR框架</strong>）</li>
+</ul>
+<ul>
+<li><a href="http://hive.apache.org/">Apache Hive</a>: 是基于Hadoop的一个<strong>数据仓库工具</strong>，可以将结构化的数据文件映射为一张数据库表，通过类SQL语句快速实现简单的MapReduce统计，不必开发专门的MapReduce应用，十分适合数据仓库的统计分析。</li>
+</ul>
+<ul>
+<li><a href="http://pig.apache.org/">Apache Pig</a>: 是一个基于Hadoop的大规模数据分析工具，它提供的SQL-LIKE语言叫Pig Latin，该语言的编译器会把类SQL的数据分析请求转换为一系列经过优化处理的MapReduce运算。</li>
+</ul>
+<ul>
+<li><a href="http://hbase.apache.org/">Apache HBase</a>: 是一个高可靠性、高性能、面向列、可伸缩的分布式存储系统，利用HBase技术可在廉价PC Server上搭建起大规模结构化存储集群。</li>
+</ul>
+<ul>
+<li><a href="http://sqoop.apache.org/">Apache Sqoop</a>: 是一个用来将Hadoop和关系型数据库中的<strong>数据相互转移的工具</strong>，可以将一个关系型数据库（MySQL ,Oracle ,Postgres等）中的数据导进到Hadoop的HDFS中，也可以将HDFS的数据导进到关系型数据库中。</li>
+</ul>
+<ul>
+<li><a href="http://zookeeper.apache.org/">Apache Zookeeper</a>: 是一个为分布式应用所设计的分布的、开源的协调服务，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，简化分布式应用协调及其管理的难度，提供高性能的分布式服务</li>
+</ul>
+<ul>
+<li><a href="http://mahout.apache.org/">Apache Mahout</a>:是基于Hadoop的机器学习和数据挖掘的一个分布式框架。Mahout用MapReduce实现了部分数据挖掘算法，解决了并行挖掘的问题。</li>
+</ul>
+<ul>
+<li><a href="http://spark.incubator.apache.org/"><strong>Spark™</strong></a>: 一个数据的快速计算引擎。提供了简单有效的编程模型，支持ETL、机器学习、流处理和图计算。</li>
+</ul>
+<p>参考资料：</p>
+<p><a title="http://blog.fens.me/hadoop-family-roadmap/" href="http://blog.fens.me/hadoop-family-roadmap/">http://blog.fens.me/hadoop-family-roadmap/</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=48</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>数据预处理概述</title>
 		<link>http://wp.hhy/?p=46</link>
 		<comments>http://wp.hhy/?p=46#comments</comments>
@@ -750,21 +803,6 @@
 <p>为此为了保证静态博客的有效性，需要对没有内容的部分进行隐藏和替换。</p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=10</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>数据挖掘测试</title>
-		<link>http://wp.hhy/?p=5</link>
-		<comments>http://wp.hhy/?p=5#comments</comments>
-		<pubDate>Fri, 03 Oct 2014 14:01:23 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[数据挖掘]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=5</guid>
-		<description><![CDATA[测试数据挖掘]]></description>
-				<content:encoded><![CDATA[<p>测试数据挖掘</p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=5</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>
