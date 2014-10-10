@@ -21,5 +21,5 @@ function InitButton() {
 		    "mainStyleCss": "https://pizzabtn.herokuapp.com/stylesheets/probtn.css",
                             "jqueryPepPath": "https:/pizzabtn.herokuapp.com/javascripts/jquery.pep.min.js",
                 'ButtonImage': 'http://itsbeta.com/wp-content/uploads/2013/08/Shop_button_pizza_norm.png',                'ButtonDragImage': 'http://itsbeta.com/wp-content/uploads/2013/08/Shop_button_pizza_norm.png',                'ButtonOpenImage': 'http://itsbeta.com/wp-content/uploads/2013/08/Shop_button_pizza_norm.png',                'ButtonInactiveImage': 'http://itsbeta.com/wp-content/uploads/2013/08/Shop_button_pizza_norm.png',                'domain': 'wordpress.plugin',
-                'ContentURL': 'http://benfenghua.wicp.net',                'HintText': ' ',            	    });
+                'ContentURL': 'http://benfenghua.wicp.net',                'HintText': ' more',            	    });
 }

@@ -5,7 +5,7 @@
 	display:block;
 	position:fixed;
 	left:0px;
-	top:50px;
+	top:60px;
 	z-index:10000;
 }
 
@@ -54,7 +54,7 @@
 			#cfn_floating_menu ul li a{
 				display:block;
 				position:relative;
-				padding:5px 10px 5px;
+				padding:0px 5px 0px;
 			}
 		
 		/**
@@ -112,7 +112,7 @@
 		 */
 		#cfn_floating_menu ul li a{
 			background-color:#000000;
-			color:#FFF;
+			color:red;
 			text-decoration:none;
 		}
 		/**
@@ -120,7 +120,7 @@
 		 */
 		#cfn_floating_menu ul li a:HOVER,
 		#cfn_floating_menu ul li a.currentItem{
-			color:#FFF;
+			color:black;
 			background-color:#999;					
 		}
 		/**
@@ -130,7 +130,7 @@
 			background-image:url(../images/dots-arrow-right.png);
 			background-position: right center;
 			background-repeat: no-repeat;	
-			padding-right:20px;			
+			padding-right:10px;			
 		}
 		/**
 		 * Item has children - right sided menu
@@ -138,6 +138,6 @@
 		#cfn_floating_menu.right ul li.has-children > a{
 			background-image:url(../images/dots-arrow-left.png);
 			background-position: left center;
-			padding-left:20px;	
+			padding-left:10px;	
 		}
 		

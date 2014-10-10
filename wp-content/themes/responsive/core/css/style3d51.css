@@ -1179,7 +1179,10 @@ form div {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#585858, endColorstr=#3d3d3d);
 	margin: 0 auto;
 }
-
+#cfn_floating_menu .menu{
+	clear:both;
+	background: transparent!important;
+}
 .main-nav {
 	clear: both;
 }
@@ -1258,7 +1261,7 @@ form div {
 
 .menu ul {
 	margin-top: 1px;
-	min-width: 15em;
+	min-width: 10em;
 	width: auto;
 }
 
@@ -1309,7 +1312,7 @@ ul.menu > li:hover {
 }
 
 .menu li li {
-	background: #ffffff;
+	background: #E7DDDD;
 	background-image: none;
 	border: 1px solid #e5e5e5;
 	color: #444444;
@@ -1341,7 +1344,7 @@ ul.menu > li:hover {
 }
 
 .menu li li:hover {
-	background: #f5f5f5 !important;
+	background: #E7DDDD !important;
 	filter: none;
 }
 
