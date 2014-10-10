@@ -12,12 +12,239 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=2" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Fri, 10 Oct 2014 06:22:24 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 10 Oct 2014 13:53:13 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>主成分分析-PCA</title>
+		<link>http://wp.hhy/?p=146</link>
+		<comments>http://wp.hhy/?p=146#comments</comments>
+		<pubDate>Fri, 10 Oct 2014 13:50:10 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[数据挖掘]]></category>
+		<category><![CDATA[数据处理]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=146</guid>
+		<description><![CDATA[PCA PCA的出发点 PCA是起源于统计学的方法，主要目的是减少统计特征之间的<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=146">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA<br />
+</span></div>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA的出发点<br />
+</span></div>
+<p style="text-align: justify;"><span style="font-size: 10pt;">PCA是起源于统计学的方法，主要目的是减少统计特征之间的相关性。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">①样本数据的特征之间存在线性相关性。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">        X4=X1+3X2-4X3；X4特征便是冗余特征。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">②特征维度越高，越耗费资源和时间。处理效率不高，尤其是稀疏矩阵。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">③二八定律，20%的特征提供80%的学习效果。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">④维度越多，噪音越大，产生较大的学习干扰。<br />
+</span></p>
+<p style="text-align: justify;">
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA的问题描述<br />
+</span></div>
+<p style="text-align: justify;"><span style="font-size: 10pt;">求解一个合适的线性无关正交组合<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">                    F(F1，F2，…,Fk)<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">代表原来的线性组合<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">                    X(X1，X2，…，Xn)，<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">其中k&lt;=n。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">即：求解一个Q(n×k)将X变换为F。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">            F(F1,F2,…,Fk)=X(X1,X2,…,Xn)Q(n×k)<br />
+</span></p>
+<p style="text-align: justify;">
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA的原理<br />
+</span></div>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>最大方差理论</strong>——主成分表示的信息量应该是最大化的</p>
+<p>在信号处理中认为信号具有较大的方差，噪声有较小的方差，信噪比就是信号与噪声的方差比，越大越好。</p>
+<p>最好的k维特征是将n维样本点转换为k维后，每一维上的样本方差都很大。</p>
+<p>例子：图1，图2</p>
+<p style="text-align: center;"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA1.png" alt="" /></p>
+<p style="text-align: center;">图1</p>
+<p style="text-align: center;"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA2.jpg" alt="" /></p>
+<p style="text-align: center;">图2</p>
+<p>图1显示的是5个样本点，已经做过预处理，均值为0，特征方差归一。图2将它们分别投影到了两个维度。左图投影后样本点的方差较大，因此保留的信息较为充分。</p>
+<p>假设我们要投影的特征的方向向量为u，且是一个单位向量。并且这些实例经过中心化处理，每一维特征均值都为0。因此投影到u上的样本点（只有一个到原点的距离值）的均值仍然是0。</p>
+<p>因此投影后的方差可以表示为</p>
+<p style="text-align: center;"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA3.png" alt="" /></p>
+<p><a name="OLE_LINK5"></a>用<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110582116.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA4.png" alt="" border="0" /></a>来表示<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110592606.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA5.png" alt="" border="0" /></a>，<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110591145.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA6.png" alt="" border="0" /></a>表示<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111006095.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA7.png" alt="" border="0" /></a>，那么上式写作</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111009443.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA8.png" alt="" border="0" /></a><em><br />
+</em></p>
+<p><a name="OLE_LINK7"></a>由于u是单位向量，即<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111004393.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA9.png" alt="" border="0" /></a>，上式两边都左乘u得，<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111017392.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA10.png" alt="" border="0" /></a></p>
+<p>即<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111018754.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA11.png" alt="" border="0" /></a></p>
+<p>也就是说，<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111026180.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA12.png" alt="" border="0" /></a>就是<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/20110418211103782.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA13.png" alt="" border="0" /></a>的特征值，u是特征向量。最佳的投影直线是特征值<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111038523.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA14.png" alt="" border="0" /></a>最大时对应的特征向量。</p>
+<p><a name="OLE_LINK9"></a>因此，我们只需要对协方差矩阵进行特征值分解，得到的前k大特征值对应的特征向量就是最佳的k维新特征，而且这k维新特征是正交的。得到前k个u以后，实例<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111052502.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA15.png" alt="" border="0" /></a>通过以下变换可以得到新的样本。</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111054945.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA16.png" alt="" border="0" /></a></p>
+<p>其中的第j维就是<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111063799.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA17.png" alt="" border="0" /></a>在<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111074812.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA18.png" alt="" border="0" /></a>上的投影。</p>
+<p>通过选取最大的k个u，使得方差较小的特征（如噪声）被丢弃。</p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA算法过程<br />
+</span></div>
+</li>
+</ol>
+<p><span style="font-size: 12pt;"><span style="font-family: 宋体;"><a name="OLE_LINK12"></a>将所获得的<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA19.png" alt="" />个指标(每一指标有<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA20.png" alt="" />个样品）的一批数据写成一个(<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA21.png" alt="" />)维数据矩阵<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA22.png" alt="" />．</span><br />
+</span></p>
+<p><span style="font-size: 12pt;"><span style="font-family: 宋体;">1、对矩阵</span><em>A</em><span style="font-family: 宋体;">作标准化处理：即对每一个指标分量进行标准化处理。<br />
+</span></span></p>
+<p style="text-align: center;"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA23.png" alt="" /><span style="font-family: 宋体; font-size: 12pt;">或者<br />
+</span></p>
+<p style="text-align: center;"><span style="font-family: 宋体; font-size: 12pt;">其中样本均值： <img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA24.png" alt="" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-family: 宋体; font-size: 12pt;">样本标准差： <img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA25.png" alt="" /><br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">从而得到<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA26.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;"><a name="OLE_LINK16"></a>2、计算样本矩阵的<strong>相关系数矩阵</strong><br />
+</span></p>
+<p style="text-align: center;"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA27.png" alt="" /><span style="font-family: 宋体; font-size: 12pt;"><br />
+</span></p>
+<p><span style="font-size: 12pt;"><span style="font-family: 宋体;">3、计算</span><em>R</em><span style="font-family: 宋体;">的特征值<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA28.png" alt="" />，即对应的特征向量<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA29.png" alt="" />。<br />
+</span></span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">4、特征值按降序排序(通过选择排序)得<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA30.png" alt="" />并对特征向量进行相应调整得<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA31.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">5、通过<strong>施密特正交化方法单位正交化</strong>特征向量，得到<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA32.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">6、计算特征值的累积贡献率<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA33.png" alt="" />，根据给定的提取效率<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA34.png" alt="" />和限定的特征数量K,如果<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA35.png" alt="" />||t=K,则提取<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA36.png" alt="" />个主成分<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA37.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">7、计算已标准化的样本数据X在提取出的特征向量上的投影<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA38.png" alt="" />，其中<img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA39.png" alt="" />。<br />
+</span></p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA实例分析<br />
+</span></div>
+</li>
+</ol>
+<p>假设我们得到的2维数据如下：</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110393017.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA40.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     行代表了实例，列代表特征，这里有10个实例，每个实例两个特征。</p>
+<p style="margin-left: 21pt;">     <strong>第1步</strong>分别求x和y的平均值，然后对于所有的实例，都减去对应的均值。这里x的均值是1.81，y的均值是1.91，那么一个实例减去均值后即为（0.69,0.49），得到</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110402112.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA41.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     <strong>第2步</strong>，求特征协方差矩阵，如果数据是3维，那么协方差矩阵是</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110404031.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA42.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     这里只有x和y，求解得</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110417586.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA43.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     对角线上分别是x和y的方差，非对角线上是协方差。协方差大于0表示x和y若有一个增，另一个也增；小于0表示一个增，一个减；协方差为0时，两者独立。协方差绝对值越大，两者对彼此的影响越大，反之越小。</p>
+<p style="margin-left: 21pt;">     <strong>第3步</strong>，求协方差的特征值和特征向量，得到</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110413965.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA44.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     上面是两个特征值，下面是对应的特征向量，特征值0.0490833989对应特征向量为<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110418392.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA45.png" alt="" border="0" /></a>，这里的特征向量都归一化为单位向量。</p>
+<p style="margin-left: 21pt;">    <strong>第4步</strong>，将特征值按照从大到小的顺序排序，选择其中最大的k个，然后将其对应的k个特征向量分别作为列向量组成特征向量矩阵。</p>
+<p style="margin-left: 21pt;">     这里特征值只有两个，我们选择其中最大的那个，这里是1.28402771，对应的特征向量是<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110412504.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA46.png" alt="" border="0" /></a>。</p>
+<p style="margin-left: 21pt;">     <strong>第5步</strong>，将样本点投影到选取的特征向量上。假设实例数为m，特征数为n，减去均值后的样本矩阵为DataAdjust(m*n)，协方差矩阵是n*n，选取的k个特征向量组成的矩阵为EigenVectors(n*k)。那么投影后的数据FinalData为</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110424979.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA47.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     这里是</p>
+<p style="margin-left: 21pt;">     FinalData(10*1) = DataAdjust(10*2矩阵)×特征向量<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110425818.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA48.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     得到结果是</p>
+<p style="margin-left: 21pt;">     <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110427737.png"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1349_PCA49.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     这样，就将原始实例的n维特征变成了k维，这k维就是原始特征在k维上的投影。</p>
+<p>&nbsp;</p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">代码解读<br />
+</span></div>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>Weka包说明<br />
+</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">开源的数据挖掘工具包，有可视化操作界面，也提供JAVA的jar和C#的动态链接库。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">主要功能包括分类、聚类、关联规则、属性选择、训练集选择等核心功能。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">同时提供了多种的数据装载、筛选、清洗、转换工具；<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">提供了强大的可视化组件。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">提供了知识挖掘的工作流可视化开发环境。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>PrincipalComponentAnalysis类说明<br />
+</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">有两个版本的类型实现。继承Filters类的是最新版的。在原版基础上修改而来。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>具体方法说明——根据PCA过程，一个一个指定具体的行或者函数。<br />
+</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">输入实例instances()：<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">输出结果：<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">可以设置的参数：<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">PCA过程描述：<br />
+</span></p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">标准化：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">求协方差矩阵C：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">求特征值和特征向量：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">排序并筛选：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">正交化，转换为单位向量：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">实例转换并输出<br />
+</span></div>
+</li>
+</ol>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>使用说明<br />
+</strong></span></p>
+</li>
+</ol>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;"><a name="OLE_LINK18"></a>FileReader reader=<span style="color: #7f0055;"><strong>new</strong><span style="color: black;"> FileReader(fileString);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;">            Instances <span style="background-color: yellow;">instances</span>=<span style="color: #7f0055;"><strong>new</strong><span style="color: black;"> Instances(reader);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;"><strong>            PrincipalComponents pca=<span style="color: #7f0055;">new<span style="color: black;"> PrincipalComponents();</span><br />
+</span></strong></span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;"><strong><span style="color: black;">            pca.setInputFormat(<span style="background-color: lightgrey;">instances</span>);</span><br />
+</strong></span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;"><strong><span style="color: black;">            pca.setMaximumAttributes(5);</span><br />
+</strong></span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;"><strong><span style="color: black;">            Instances instances2=Filter.<em>useFilter</em>(<span style="background-color: lightgrey;">instances</span>, pca);</span><br />
+</strong></span></p>
+<p><span style="color: black; font-size: 10pt;"><span style="font-family: Courier New;">            System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(<span style="color: #2a00ff;">&#8220;PCA</span></span></span></span><span style="font-family: 宋体;">前数据样本：</span><span style="color: #2a00ff; font-family: Courier New;">&#8220;<span style="color: black;">);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;">            <span style="color: #7f0055;"><strong>for</strong><span style="color: black;">(<span style="color: #7f0055;"><strong>int</strong><span style="color: black;"> i=0;i&lt;5;i++) System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(<span style="background-color: lightgrey;">instances</span>.instance(i));</span><br />
+</span></span></span></span></span></span></p>
+<p><span style="color: black; font-size: 10pt;"><span style="font-family: Courier New;">            System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(<span style="color: #2a00ff;">&#8220;PCA </span></span></span></span><span style="font-family: 宋体;">后数据样本：</span><span style="color: #2a00ff; font-family: Courier New;">&#8220;<span style="color: black;">);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;">            <span style="color: #7f0055;"><strong>for</strong><span style="color: black;">(<span style="color: #7f0055;"><strong>int</strong><span style="color: black;"> i=0;i&lt;5;i++) System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(instances2.instance(i));</span><br />
+</span></span></span></span></span></span></p>
+<p>特点，基于数据的统计规律，没有太多的参数。处理过程比较固定。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=146</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>数据挖掘原语-形式化定义过程描述</title>
 		<link>http://wp.hhy/?p=77</link>
 		<comments>http://wp.hhy/?p=77#comments</comments>

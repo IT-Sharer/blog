@@ -1,0 +1,483 @@
+	<!doctype html>
+	<!--[if !IE]>
+	<html class="no-js non-ie" lang="zh-CN"> <![endif]-->
+	<!--[if IE 7 ]>
+	<html class="no-js ie7" lang="zh-CN"> <![endif]-->
+	<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="zh-CN"> <![endif]-->
+	<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="zh-CN"> <![endif]-->
+	<!--[if gt IE 9]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+	
+<!-- Mirrored from wp.hhy/?p=146 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Oct 2014 13:54:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>主成分分析-PCA &#124; IT-Sharer</title>
+		<link rel="profile" href="../gmpg.org/xfn/11.html"/>
+		<link rel="pingback" href="xmlrpc.php"/>
+
+		<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; Feed" href="indexd784.html?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 评论Feed" href="indexa6da.html?feed=comments-rss2" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 主成分分析-PCA评论Feed" href="indexaad0.html?feed=rss2&amp;p=146" />
+<link rel='stylesheet' id='responsive-style-css'  href='wp-content/themes/responsive/core/css/style3d51.css?ver=1.9.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-media-queries-css'  href='wp-content/themes/responsive/core/css/responsive3d51.css?ver=1.9.7.4' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
+<script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-modernizr.minc141.js?ver=2.6.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='正则表达式详解' href='index287b.html?p=82' />
+<meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='indexf488.html?p=146' />
+<link rel='shortlink' href='indexf488.html?p=146' />
+<link rel="stylesheet" type="text/css" href="wp-content/plugins/wp-code-highlight/css/sunburst.css" media="screen" />
+<!-- We need this for debugging -->
+<!-- Responsive 1.9.7.4 -->
+
+	</head>
+
+<body class="single single-post postid-146 single-format-standard">
+
+<div id="container" class="hfeed">
+
+	<div class="skip-container cf">
+		<a class="skip-link screen-reader-text focusable" href="#content">&darr; Skip to Main Content</a>
+	</div><!-- .skip-container -->
+	<div id="header">
+
+		
+		
+		
+		
+		
+			<div id="logo">
+				<span class="site-name"><a href="index.html" title="IT-Sharer" rel="home">IT-Sharer</a></span>
+				<span class="site-description">温 润 醇 和    臻 于 至 善</span>
+			</div><!-- end of #logo -->
+
+		
+				<div class="main-nav"><ul id="menu-%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98%e8%8f%9c%e5%8d%95" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="index.html">首页</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="index376e.html?cat=13">Hadoop</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
+<ul class="sub-menu">
+	<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="index49ce.html?cat=14">Java</a></li>
+</ul>
+</li>
+<li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-33"><a href="index9035.html?cat=22">算法</a>
+<ul class="sub-menu">
+	<li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="index54cb.html?cat=23">算法题库</a></li>
+</ul>
+</li>
+<li id="menu-item-35" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35"><a href="indexfa64.html?cat=24">linux</a></li>
+</ul></div>
+		
+		
+	</div><!-- end of #header -->
+
+	<div id="wrapper" class="clearfix">
+
+<div id="content" class="grid col-620">
+
+	
+	
+		
+						<div id="post-146" class="post-146 post type-post status-publish format-standard hentry category-2 tag-38">
+				
+				
+	<h1 class="entry-title post-title">主成分分析-PCA</h1>
+
+<div class="post-meta">
+	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="indexf488.html?p=146" title="主成分分析-PCA" rel="bookmark"><time class="timestamp updated" datetime="2014-10-10T21:50:10+00:00">2014-10-10</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
+	
+</div><!-- end of .post-meta -->
+
+				<div class="post-entry">
+					<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA<br />
+</span></div>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA的出发点<br />
+</span></div>
+<p style="text-align: justify;"><span style="font-size: 10pt;">PCA是起源于统计学的方法，主要目的是减少统计特征之间的相关性。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">①样本数据的特征之间存在线性相关性。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">        X4=X1+3X2-4X3；X4特征便是冗余特征。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">②特征维度越高，越耗费资源和时间。处理效率不高，尤其是稀疏矩阵。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">③二八定律，20%的特征提供80%的学习效果。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">④维度越多，噪音越大，产生较大的学习干扰。<br />
+</span></p>
+<p style="text-align: justify;">
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA的问题描述<br />
+</span></div>
+<p style="text-align: justify;"><span style="font-size: 10pt;">求解一个合适的线性无关正交组合<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">                    F(F1，F2，…,Fk)<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">代表原来的线性组合<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">                    X(X1，X2，…，Xn)，<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">其中k&lt;=n。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">即：求解一个Q(n×k)将X变换为F。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">            F(F1,F2,…,Fk)=X(X1,X2,…,Xn)Q(n×k)<br />
+</span></p>
+<p style="text-align: justify;">
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA的原理<br />
+</span></div>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>最大方差理论</strong>——主成分表示的信息量应该是最大化的</p>
+<p>在信号处理中认为信号具有较大的方差，噪声有较小的方差，信噪比就是信号与噪声的方差比，越大越好。</p>
+<p>最好的k维特征是将n维样本点转换为k维后，每一维上的样本方差都很大。</p>
+<p>例子：图1，图2</p>
+<p style="text-align: center;"><img src="wp-content/uploads/2014/10/101014_1349_PCA1.png" alt="" /></p>
+<p style="text-align: center;">图1</p>
+<p style="text-align: center;"><img src="wp-content/uploads/2014/10/101014_1349_PCA2.jpg" alt="" /></p>
+<p style="text-align: center;">图2</p>
+<p>图1显示的是5个样本点，已经做过预处理，均值为0，特征方差归一。图2将它们分别投影到了两个维度。左图投影后样本点的方差较大，因此保留的信息较为充分。</p>
+<p>假设我们要投影的特征的方向向量为u，且是一个单位向量。并且这些实例经过中心化处理，每一维特征均值都为0。因此投影到u上的样本点（只有一个到原点的距离值）的均值仍然是0。</p>
+<p>因此投影后的方差可以表示为</p>
+<p style="text-align: center;"><img src="wp-content/uploads/2014/10/101014_1349_PCA3.png" alt="" /></p>
+<p><a name="OLE_LINK5"></a>用<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110582116.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA4.png" alt="" border="0" /></a>来表示<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110592606.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA5.png" alt="" border="0" /></a>，<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110591145.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA6.png" alt="" border="0" /></a>表示<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111006095.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA7.png" alt="" border="0" /></a>，那么上式写作</p>
+<p><a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111009443.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA8.png" alt="" border="0" /></a><em><br />
+</em></p>
+<p><a name="OLE_LINK7"></a>由于u是单位向量，即<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111004393.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA9.png" alt="" border="0" /></a>，上式两边都左乘u得，<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111017392.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA10.png" alt="" border="0" /></a></p>
+<p>即<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111018754.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA11.png" alt="" border="0" /></a></p>
+<p>也就是说，<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111026180.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA12.png" alt="" border="0" /></a>就是<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/20110418211103782.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA13.png" alt="" border="0" /></a>的特征值，u是特征向量。最佳的投影直线是特征值<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111038523.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA14.png" alt="" border="0" /></a>最大时对应的特征向量。</p>
+<p><a name="OLE_LINK9"></a>因此，我们只需要对协方差矩阵进行特征值分解，得到的前k大特征值对应的特征向量就是最佳的k维新特征，而且这k维新特征是正交的。得到前k个u以后，实例<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111052502.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA15.png" alt="" border="0" /></a>通过以下变换可以得到新的样本。</p>
+<p><a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111054945.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA16.png" alt="" border="0" /></a></p>
+<p>其中的第j维就是<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111063799.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA17.png" alt="" border="0" /></a>在<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182111074812.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA18.png" alt="" border="0" /></a>上的投影。</p>
+<p>通过选取最大的k个u，使得方差较小的特征（如噪声）被丢弃。</p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA算法过程<br />
+</span></div>
+</li>
+</ol>
+<p><span style="font-size: 12pt;"><span style="font-family: 宋体;"><a name="OLE_LINK12"></a>将所获得的<img src="wp-content/uploads/2014/10/101014_1349_PCA19.png" alt="" />个指标(每一指标有<img src="wp-content/uploads/2014/10/101014_1349_PCA20.png" alt="" />个样品）的一批数据写成一个(<img src="wp-content/uploads/2014/10/101014_1349_PCA21.png" alt="" />)维数据矩阵<img src="wp-content/uploads/2014/10/101014_1349_PCA22.png" alt="" />．</span><br />
+</span></p>
+<p><span style="font-size: 12pt;"><span style="font-family: 宋体;">1、对矩阵</span><em>A</em><span style="font-family: 宋体;">作标准化处理：即对每一个指标分量进行标准化处理。<br />
+</span></span></p>
+<p style="text-align: center;"><img src="wp-content/uploads/2014/10/101014_1349_PCA23.png" alt="" /><span style="font-family: 宋体; font-size: 12pt;">或者<br />
+</span></p>
+<p style="text-align: center;"><span style="font-family: 宋体; font-size: 12pt;">其中样本均值： <img src="wp-content/uploads/2014/10/101014_1349_PCA24.png" alt="" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-family: 宋体; font-size: 12pt;">样本标准差： <img src="wp-content/uploads/2014/10/101014_1349_PCA25.png" alt="" /><br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">从而得到<img src="wp-content/uploads/2014/10/101014_1349_PCA26.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;"><a name="OLE_LINK16"></a>2、计算样本矩阵的<strong>相关系数矩阵</strong><br />
+</span></p>
+<p style="text-align: center;"><img src="wp-content/uploads/2014/10/101014_1349_PCA27.png" alt="" /><span style="font-family: 宋体; font-size: 12pt;"><br />
+</span></p>
+<p><span style="font-size: 12pt;"><span style="font-family: 宋体;">3、计算</span><em>R</em><span style="font-family: 宋体;">的特征值<img src="wp-content/uploads/2014/10/101014_1349_PCA28.png" alt="" />，即对应的特征向量<img src="wp-content/uploads/2014/10/101014_1349_PCA29.png" alt="" />。<br />
+</span></span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">4、特征值按降序排序(通过选择排序)得<img src="wp-content/uploads/2014/10/101014_1349_PCA30.png" alt="" />并对特征向量进行相应调整得<img src="wp-content/uploads/2014/10/101014_1349_PCA31.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">5、通过<strong>施密特正交化方法单位正交化</strong>特征向量，得到<img src="wp-content/uploads/2014/10/101014_1349_PCA32.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">6、计算特征值的累积贡献率<img src="wp-content/uploads/2014/10/101014_1349_PCA33.png" alt="" />，根据给定的提取效率<img src="wp-content/uploads/2014/10/101014_1349_PCA34.png" alt="" />和限定的特征数量K,如果<img src="wp-content/uploads/2014/10/101014_1349_PCA35.png" alt="" />||t=K,则提取<img src="wp-content/uploads/2014/10/101014_1349_PCA36.png" alt="" />个主成分<img src="wp-content/uploads/2014/10/101014_1349_PCA37.png" alt="" />。<br />
+</span></p>
+<p><span style="font-family: 宋体; font-size: 12pt;">7、计算已标准化的样本数据X在提取出的特征向量上的投影<img src="wp-content/uploads/2014/10/101014_1349_PCA38.png" alt="" />，其中<img src="wp-content/uploads/2014/10/101014_1349_PCA39.png" alt="" />。<br />
+</span></p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">PCA实例分析<br />
+</span></div>
+</li>
+</ol>
+<p>假设我们得到的2维数据如下：</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110393017.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA40.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     行代表了实例，列代表特征，这里有10个实例，每个实例两个特征。</p>
+<p style="margin-left: 21pt;">     <strong>第1步</strong>分别求x和y的平均值，然后对于所有的实例，都减去对应的均值。这里x的均值是1.81，y的均值是1.91，那么一个实例减去均值后即为（0.69,0.49），得到</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110402112.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA41.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     <strong>第2步</strong>，求特征协方差矩阵，如果数据是3维，那么协方差矩阵是</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110404031.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA42.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     这里只有x和y，求解得</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110417586.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA43.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     对角线上分别是x和y的方差，非对角线上是协方差。协方差大于0表示x和y若有一个增，另一个也增；小于0表示一个增，一个减；协方差为0时，两者独立。协方差绝对值越大，两者对彼此的影响越大，反之越小。</p>
+<p style="margin-left: 21pt;">     <strong>第3步</strong>，求协方差的特征值和特征向量，得到</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110413965.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA44.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     上面是两个特征值，下面是对应的特征向量，特征值0.0490833989对应特征向量为<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110418392.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA45.png" alt="" border="0" /></a>，这里的特征向量都归一化为单位向量。</p>
+<p style="margin-left: 21pt;">    <strong>第4步</strong>，将特征值按照从大到小的顺序排序，选择其中最大的k个，然后将其对应的k个特征向量分别作为列向量组成特征向量矩阵。</p>
+<p style="margin-left: 21pt;">     这里特征值只有两个，我们选择其中最大的那个，这里是1.28402771，对应的特征向量是<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110412504.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA46.png" alt="" border="0" /></a>。</p>
+<p style="margin-left: 21pt;">     <strong>第5步</strong>，将样本点投影到选取的特征向量上。假设实例数为m，特征数为n，减去均值后的样本矩阵为DataAdjust(m*n)，协方差矩阵是n*n，选取的k个特征向量组成的矩阵为EigenVectors(n*k)。那么投影后的数据FinalData为</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110424979.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA47.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     这里是</p>
+<p style="margin-left: 21pt;">     FinalData(10*1) = DataAdjust(10*2矩阵)×特征向量<a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110425818.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA48.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     得到结果是</p>
+<p style="margin-left: 21pt;">     <a href="../images.cnblogs.com/cnblogs_com/jerrylead/201104/201104182110427737.png"><img src="wp-content/uploads/2014/10/101014_1349_PCA49.png" alt="" border="0" /></a></p>
+<p style="margin-left: 21pt;">     这样，就将原始实例的n维特征变成了k维，这k维就是原始特征在k维上的投影。</p>
+<p>&nbsp;</p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">代码解读<br />
+</span></div>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>Weka包说明<br />
+</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">开源的数据挖掘工具包，有可视化操作界面，也提供JAVA的jar和C#的动态链接库。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">主要功能包括分类、聚类、关联规则、属性选择、训练集选择等核心功能。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">同时提供了多种的数据装载、筛选、清洗、转换工具；<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">提供了强大的可视化组件。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">提供了知识挖掘的工作流可视化开发环境。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>PrincipalComponentAnalysis类说明<br />
+</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">有两个版本的类型实现。继承Filters类的是最新版的。在原版基础上修改而来。<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>具体方法说明——根据PCA过程，一个一个指定具体的行或者函数。<br />
+</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">输入实例instances()：<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">输出结果：<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">可以设置的参数：<br />
+</span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">PCA过程描述：<br />
+</span></p>
+<ol>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">标准化：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">求协方差矩阵C：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">求特征值和特征向量：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">排序并筛选：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">正交化，转换为单位向量：<br />
+</span></div>
+</li>
+<li>
+<div style="text-align: justify;"><span style="font-size: 10pt;">实例转换并输出<br />
+</span></div>
+</li>
+</ol>
+<p style="text-align: justify;"><span style="font-size: 10pt;"><strong>使用说明<br />
+</strong></span></p>
+</li>
+</ol>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;"><a name="OLE_LINK18"></a>FileReader reader=<span style="color: #7f0055;"><strong>new</strong><span style="color: black;"> FileReader(fileString);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;">            Instances <span style="background-color: yellow;">instances</span>=<span style="color: #7f0055;"><strong>new</strong><span style="color: black;"> Instances(reader);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;"><strong>            PrincipalComponents pca=<span style="color: #7f0055;">new<span style="color: black;"> PrincipalComponents();</span><br />
+</span></strong></span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;"><strong><span style="color: black;">            pca.setInputFormat(<span style="background-color: lightgrey;">instances</span>);</span><br />
+</strong></span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;"><strong><span style="color: black;">            pca.setMaximumAttributes(5);</span><br />
+</strong></span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;"><strong><span style="color: black;">            Instances instances2=Filter.<em>useFilter</em>(<span style="background-color: lightgrey;">instances</span>, pca);</span><br />
+</strong></span></p>
+<p><span style="color: black; font-size: 10pt;"><span style="font-family: Courier New;">            System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(<span style="color: #2a00ff;">&#8220;PCA</span></span></span></span><span style="font-family: 宋体;">前数据样本：</span><span style="color: #2a00ff; font-family: Courier New;">&#8220;<span style="color: black;">);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;">            <span style="color: #7f0055;"><strong>for</strong><span style="color: black;">(<span style="color: #7f0055;"><strong>int</strong><span style="color: black;"> i=0;i&lt;5;i++) System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(<span style="background-color: lightgrey;">instances</span>.instance(i));</span><br />
+</span></span></span></span></span></span></p>
+<p><span style="color: black; font-size: 10pt;"><span style="font-family: Courier New;">            System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(<span style="color: #2a00ff;">&#8220;PCA </span></span></span></span><span style="font-family: 宋体;">后数据样本：</span><span style="color: #2a00ff; font-family: Courier New;">&#8220;<span style="color: black;">);</span><br />
+</span></span></p>
+<p><span style="color: black; font-family: Courier New; font-size: 10pt;">            <span style="color: #7f0055;"><strong>for</strong><span style="color: black;">(<span style="color: #7f0055;"><strong>int</strong><span style="color: black;"> i=0;i&lt;5;i++) System.<span style="color: #0000c0;"><em>out</em><span style="color: black;">.println(instances2.instance(i));</span><br />
+</span></span></span></span></span></span></p>
+<p>特点，基于数据的统计规律，没有太多的参数。处理过程比较固定。</p>
+<div style="clear:both; margin-top:5px; margin-bottom:5px;"></div><div style="float:left"><!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=1895509" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1895509" charset="utf-8"></script>
+<!-- JiaThis Button END --></div><div style="clear:both; margin-top:5px; margin-bottom:5px;"></div>
+					
+									</div><!-- end of .post-entry -->
+
+				<div class="navigation">
+					<div class="previous">&#8249; <a href="index287b.html?p=82" rel="prev">正则表达式详解</a></div>
+					<div class="next"></div>
+				</div><!-- end of .navigation -->
+
+				
+
+	<div class="post-data">
+		文章分类 <a href="index3f7b.html?cat=2" rel="category">数据挖掘</a>		标签： <a href="index8656.html?tag=%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86" rel="tag">数据处理</a><br />	</div><!-- end of .post-data -->
+
+
+<div class="post-edit"></div>
+							</div><!-- end of #post-146 -->
+					<!-- UY BEGIN -->
+		<div class="ujian-hook"></div>
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1895509"></script>
+<!-- UY END -->
+		
+</div><!-- end of #content -->
+
+
+	<div id="widgets" class="grid col-300 fit">
+		<div id="search-3" class="widget-wrapper widget_search">
+<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://rp.baidu.com/rp3w/3w.js?sid=4987594992521312252') + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));</script>
+</div>
+				<div id="recent-posts-2" class="widget-wrapper widget_recent_entries">		<div class="widget-title"><h3>近期文章</h3></div>		<ul>
+					<li>
+				<a href="indexf488.html?p=146">主成分分析-PCA</a>
+							<span class="post-date">2014-10-10</span>
+						</li>
+					<li>
+				<a href="index287b.html?p=82">正则表达式详解</a>
+							<span class="post-date">2014-10-10</span>
+						</li>
+					<li>
+				<a href="indexb135.html?p=77">数据挖掘原语-形式化定义过程描述</a>
+							<span class="post-date">2014-10-09</span>
+						</li>
+					<li>
+				<a href="index94b0.html?p=48">Hadoop 常用项目</a>
+							<span class="post-date">2014-10-08</span>
+						</li>
+					<li>
+				<a href="index7ea6.html?p=46">数据预处理概述</a>
+							<span class="post-date">2014-10-07</span>
+						</li>
+					<li>
+				<a href="index49b1.html?p=44">vi编辑器的使用教程</a>
+							<span class="post-date">2014-10-07</span>
+						</li>
+				</ul>
+		</div><div id="categories-2" class="widget-wrapper widget_categories"><div class="widget-title"><h3>分类目录</h3></div>		<ul>
+	<li class="cat-item cat-item-13"><a href="index376e.html?cat=13" title="Hadoop系列博客">Hadoop</a> (1)
+</li>
+	<li class="cat-item cat-item-24"><a href="indexfa64.html?cat=24" title="linux操作系统/开发环境">linux</a> (2)
+</li>
+	<li class="cat-item cat-item-2"><a href="index3f7b.html?cat=2" >数据挖掘</a> (7)
+</li>
+	<li class="cat-item cat-item-22"><a href="index9035.html?cat=22" title="算法与数据结构">算法</a> (1)
+<ul class='children'>
+	<li class="cat-item cat-item-23"><a href="index54cb.html?cat=23" title="ACM以及算法面试题">算法题库</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-11"><a href="index29c7.html?cat=11" >编程</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="indexaa1e.html?cat=4" >网站</a> (1)
+</li>
+		</ul>
+</div><div id="tag_cloud-4" class="widget-wrapper widget_tag_cloud"><div class="widget-title"><h3>标签</h3></div><div class="tagcloud"><a href='indexd468.html?tag=c4-5' class='tag-link-9' title='1个话题' style='font-size: 8pt;'>C4.5</a>
+<a href='indexa427.html?tag=cart' class='tag-link-10' title='1个话题' style='font-size: 8pt;'>CART</a>
+<a href='index4f1c.html?tag=github' class='tag-link-5' title='1个话题' style='font-size: 8pt;'>GitHub</a>
+<a href='index4920.html?tag=hbase' class='tag-link-35' title='1个话题' style='font-size: 8pt;'>HBase</a>
+<a href='index7149.html?tag=hive' class='tag-link-30' title='1个话题' style='font-size: 8pt;'>Hive</a>
+<a href='indexc633.html?tag=id3' class='tag-link-8' title='1个话题' style='font-size: 8pt;'>ID3</a>
+<a href='indexe35e.html?tag=linux%e7%b3%bb%e7%bb%9f' class='tag-link-26' title='1个话题' style='font-size: 8pt;'>linux系统</a>
+<a href='index9a21.html?tag=mahout' class='tag-link-32' title='1个话题' style='font-size: 8pt;'>Mahout</a>
+<a href='index0a75.html?tag=pig' class='tag-link-31' title='1个话题' style='font-size: 8pt;'>Pig</a>
+<a href='index0e30.html?tag=sqoop' class='tag-link-33' title='1个话题' style='font-size: 8pt;'>Sqoop</a>
+<a href='index320b.html?tag=zookeeper' class='tag-link-34' title='1个话题' style='font-size: 8pt;'>Zookeeper</a>
+<a href='indexea6e.html?tag=%e4%bb%a3%e7%a0%81' class='tag-link-12' title='1个话题' style='font-size: 8pt;'>代码</a>
+<a href='indexe69e.html?tag=%e5%86%b3%e7%ad%96%e6%a0%91' class='tag-link-7' title='1个话题' style='font-size: 8pt;'>决策树</a>
+<a href='index32e5.html?tag=%e5%8d%9a%e5%ae%a2' class='tag-link-6' title='1个话题' style='font-size: 8pt;'>博客</a>
+<a href='indexc3e4.html?tag=%e5%9f%ba%e7%a1%80' class='tag-link-28' title='1个话题' style='font-size: 8pt;'>基础</a>
+<a href='index8656.html?tag=%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86' class='tag-link-38' title='1个话题' style='font-size: 8pt;'>数据处理</a>
+<a href='indexa807.html?tag=%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98' class='tag-link-2' title='1个话题' style='font-size: 8pt;'>数据挖掘</a>
+<a href='index30ac.html?tag=%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f' class='tag-link-36' title='1个话题' style='font-size: 8pt;'>正则表达式</a>
+<a href='index1e6c.html?tag=%e7%ae%97%e6%b3%95%e9%a2%98' class='tag-link-25' title='1个话题' style='font-size: 8pt;'>算法题</a>
+<a href='index8780.html?tag=%e7%bc%96%e8%be%91%e5%99%a8' class='tag-link-29' title='1个话题' style='font-size: 8pt;'>编辑器</a></div>
+</div><div id="archives-2" class="widget-wrapper widget_archive"><div class="widget-title"><h3>文章归档</h3></div>		<ul>
+	<li><a href='index166c.html?m=201410'>2014年十月</a>&nbsp;(14)</li>
+		</ul>
+</div>
+			</div><!-- end of #widgets -->
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script>
+	<script type="text/javascript" src="wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script>
+	<!--WP Code Highlight_end-->
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+<div id="footer" class="clearfix">
+	
+	<div id="footer-wrapper">
+
+		
+		<div class="grid col-940">
+
+			<div class="grid col-540">
+							</div><!-- end of col-540 -->
+
+			<div class="grid col-380 fit">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- end of col-380 fit -->
+
+		</div><!-- end of col-940 -->
+		
+		<div class="grid col-300 copyright">
+			&copy; 2014<a href="index.html" title="IT-Sharer">
+				IT-Sharer			</a>
+		</div><!-- end of .copyright -->
+
+		<div class="grid col-300 scroll-top"><a href="#scroll-top" title="回到顶部">&uarr;</a></div>
+
+		<div class="grid col-300 fit powered">
+			<a href="http://git.huahuiyou.cn/" title="Responsive Theme">
+				Responsive Theme</a>
+			采用 <a href="http://wordpress.org/" title="WordPress">
+				WordPress</a>
+				<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F74748e1f7566489bf1d197b4eadff46d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+		</div><!-- end .powered -->
+
+	</div><!-- end #footer-wrapper -->
+
+	</div><!-- end #footer -->
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=37583051" charset="UTF-8"></script>
+<!-- UJian Button BEGIN -->
+<script type="text/javascript">var ujian_config = {target:1};</script>
+<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide&amp;btn=4&amp;fade=1&amp;uid=1895509"></script>
+<!-- UJian Button END -->
+<script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-scripts.min578f.js?ver=1.2.6'></script>
+<script type='text/javascript' src='wp-content/themes/responsive/core/js/jquery.placeholder.min5d0a.js?ver=2.0.7'></script>
+
+
+</body>
+
+<!-- Mirrored from wp.hhy/?p=146 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Oct 2014 13:55:19 GMT -->
+</html>
