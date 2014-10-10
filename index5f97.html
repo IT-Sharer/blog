@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>IT-Sharer &#187; 正则表达式</title>
+	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" rel="self" type="application/rss+xml" />
+	<link>http://wp.hhy</link>
+	<description>温 润 醇 和    臻 于 至 善</description>
+	<lastBuildDate>Fri, 10 Oct 2014 06:22:24 +0000</lastBuildDate>
+	<language>zh-CN</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=4.0</generator>
+	<item>
+		<title>正则表达式详解</title>
+		<link>http://wp.hhy/?p=82</link>
+		<comments>http://wp.hhy/?p=82#comments</comments>
+		<pubDate>Fri, 10 Oct 2014 05:58:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[编程]]></category>
+		<category><![CDATA[正则表达式]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=82</guid>
+		<description><![CDATA[一、概述 正则表达式是字符串模式匹配中常用的技术。常见的用途如下： 1. 测试一<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=82">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p><strong>一、概述</strong><strong></strong>
+<p>正则表达式是字符串模式匹配中常用的技术。常见的用途如下：
+<p>1. 测试一串文本的模式。例如测试一串字符是否满足要求，密码是否包含字母和数字，电话号码等等。
+<p>2. 基于模式匹配的字符串检索。搜索字符串中是否包含某个模式的子串，从而进一步可以提取该字符串。
+<p>3. 替换字符串的模式。搜索到满足模式的字符串然后用其他字符串替换之。
+<p><strong>二、正则表达式的语法</strong><strong></strong>
+<p>1. 数量类
+<p>*匹配零次或者多次
+<p>+匹配一次或者多次
+<p>?零次或者1次
+<p>{n} n是非负整数，正好匹配n次
+<p>{n,} n 是非负整数，匹配n次以上
+<p>{n,m} M 和 n 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。
+<p>2. 字符类
+<p>[xyz] 匹配包含xyz 中的任意字符，相当于x|y|z等。
+<p>[^xyz] 匹配不包含xyz中的任意字符
+<p>[a-z] 匹配a到z的小写字符
+<p>\b 匹配边界；
+<p>\B 匹配非边界；
+<p>\d 匹配数字
+<p>\D 匹配非数字
+<p>\s 匹配空白字符，包括空格，制表符，换页符等
+<p>\S 匹配非空字符。与[^ \f\n\r\t\v]等效
+<p>\w 匹配任意字类字符，包括下划线。与[A-Za-z0-9_]等效。
+<p>\W 匹配任何非单词字符
+<p>3. 逻辑类
+<p>| x|y 匹配x字符或者y字符，相当于左右两个模式有一个成立就匹配。
+<p>^ ^x 非x匹配。<b>要在</b><b>[]</b><b>内使用</b>
+<p><b>？ </b><b>贪婪 </b><b>模式 </b><b>。 </b><b>用在数量类的后面表示匹配最少字符，例如k+? kkk </b><b>匹配的是一个字符。</b>
+<p>4. 特殊类+转义类
+<p>\ 转义字符 \( \) \\
+<p>^ 匹配字符串开始位置，如果设置了 RegExp 对象的 Multiline 属性，^ 还会与“\n”或“\r”之后的位置匹配。
+<p>$ 匹配输入字符串结尾位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与“\n”或“\r”之前的位置匹配。
+<p>\n 匹配换行符
+<p>. 匹配除\n 外的任何单个字符。
+<p>\f 换页符匹配。等效于 \x0c 和 \cL。
+<p>\r 匹配一个回车符。等效于 \x0d 和 \cM。
+<p>\t 制表符匹配。与 \x09 和 \cI 等效。
+<p>\v 垂直制表符匹配。与 \x0b 和 \cK 等效。
+<p>\xn 匹配 n，此处的 n 是一个十六进制转义码。十六进制转义码必须正好是两位数长。例如，“\x41”匹配“A”。“\x041”与“\x04”&amp;“1”等效。允许在正则表达式中使用 ASCII 代码。
+<p>\num 匹配 num，此处的 num 是一个正整数。到捕获匹配的反向引用。例如，“(.)\1”匹配两个连续的相同字符。
+<p>\n 标识一个八进制转义码或反向引用。如果 \n 前面至少有 n 个捕获子表达式，那么 n 是反向引用。否则，如果 n 是八进制数 (0-7)，那么 n 是八进制转义码。例如\2736匹配八进制转义码
+<p>\nm 标识一个八进制转义码或反向引用。如果 \nm 前面至少有 nm 个捕获子表达式，那么 nm 是反向引用。如果 \nm 前面至少有 n 个捕获，则 n 是反向引用，后面跟有字符 m。如果两种前面的情况都不存在，则 \nm 匹配八进制值 nm，其中 n 和 m 是八进制数字 (0-7)。
+<p>\nml 当 n 是八进制数 (0-3)，m 和 l 是八进制数 (0-7) 时，匹配八进制转义码 nml。
+<p>\un匹配 n，其中 n 是以四位十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。
+<p>\cx 匹配 x 指示的控制字符。例如，\cM 匹配 Control-M 或回车符。x 的值必须在 A-Z 或 a-z 之间。如果不是这样，则假定 c 就是“c”字符本身。
+<p>5. 提取类 （）类
+<p>(pattern) 匹配 pattern 并捕获该匹配的子表达式。
+<p><b>(?:pattern) </b><b>匹配 pattern </b><b>但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。这对于用“or</b><b>”字符 (|) </b><b>组合模式部件的情况很有用。例如，&#8217;industr(?:y|ies) </b><b>是比 &#8216;industry|industries&#8217; </b><b>更经济的表达式。</b>
+<p><b>(?=pattern) </b>执行正向预测先行搜索的子表达式，该表达式匹配处于匹配 pattern 的字符串的起始点的字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，&#8217;Windows (?=95|98|NT|2000)&#8217; 匹配“Windows 2000”中的“Windows”，但不匹配“Windows 3.1”中的“Windows”。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。
+<p><b>(?!pattern)</b> 执行反向预测先行搜索的子表达式，该表达式匹配不处于匹配 pattern 的字符串的起始点的搜索字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，&#8217;Windows (?!95|98|NT|2000)&#8217; 匹配“Windows 3.1”中的 “Windows”，但不匹配“Windows 2000”中的“Windows”。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。
+<p><strong>三、</strong><strong>Java</strong><strong>中正则表达式</strong><strong></strong>
+<p>用到java.util.regex 包
+<p>主要类：Pattern 和 Matcher两个类，Pattern用于构造正则表达式，并且进行表达式的语法检验。Matcher 用于对匹配进行操作。
+<p>使用场景：
+<p>1. 某个字符串中是否存在某个模式
+<div>
+<pre class="wp-code-highlight prettyprint">String s = &quot;@Shang Hai Hong Qiao Fei Ji Chang&quot;; 
+
+String regEx = &quot;a|F&quot;; //表示a或F 
+
+Pattern pat = Pattern.compile(regEx); 
+
+Matcher mat = pat.matcher(s); 
+
+boolean rs = mat.find();//用matches()表示整个字符串是否匹配语句 
+</pre>
+</div>
+<p>如果s中有regEx，那么rs为true，否则为flase。 </p>
+<p>如果想在查找时忽略大小写，则可以写成Pattern pat = Pattern . compile (regEx,Pattern.CASE_INSENSITIVE) ; </p>
+<p>2. 在字符串中获取模式匹配的子字符串 </p>
+<div>
+<pre class="wp-code-highlight prettyprint">Pattern p=Pattern.compile(&quot;(\\d+,)(\\d+)&quot;); 
+String s=&quot;123,456-34,345&quot;; 
+Matcher m=p.matcher(s); 
+while(m.find()){ 
+System.out.println(&quot;m.group():&quot;+m.group());//打印所有，匹配的子字符串 
+System.out.println(&quot;m.group(1):&quot;+m.group(1));//打印，（）里内容，参数是括号的序号 
+System.out.println(&quot;m.group(2):&quot;+m.group(2));//打印字母的 
+} 
+System.out.println(&quot;捕获个数:groupCount()=&quot;+m.groupCount()); </pre>
+</div>
+<p>其中，m.find()操作会从0位置开始，每匹配一次都将开始匹配位置提升。 </p>
+<p>3. 字符串分割 </p>
+<div>
+<pre class="wp-code-highlight prettyprint">String regEx=&quot;:&quot;; 
+Pattern pat = Pattern.compile(regEx); 
+String[] rs = pat.split(&quot;aa:bb:cc&quot;); 
+System.out.println(rs.length); 
+</pre>
+</div>
+<p>按照模式作为分隔符，满足模式的子字符串将作为分隔符。 </p>
+<p>4. 字符串替换和删除 </p>
+<div>
+<pre class="wp-code-highlight prettyprint">String regEx=&quot;@+&quot;; //表示一个或多个@ 
+
+Pattern pat=Pattern.compile(regEx); 
+
+Matcher mat=pat.matcher(&quot;@@aa@b cc@@&quot;); 
+
+String s=mat.replaceAll(&quot;#&quot;); // 参数为&quot;&quot;时表示删除该模式 
+
+System.out.println(s); 
+
+</pre>
+</div>
+<p><strong>四、正则表达式的例子</strong><strong></strong> </p>
+<table cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td>
+<p>功能</p>
+</td>
+<td>
+<p>模式</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>查找以java开头的字符</p>
+</td>
+<td>
+<p>^java</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>验证邮箱地址</p>
+</td>
+<td>
+<p>[//w//.//-]+@([//w//-]+//.)+[//w//-]+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>取出HTML标记</p>
+</td>
+<td>
+<p>&lt;.+?&gt; matcher.replaceAll(&#8220;&#8221;);</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>查找HTML中的链接</p>
+</td>
+<td>
+<p>Pattern pattern = Pattern.compile(&#8220;href=/&#8221;(.+?)/&#8221;&#8221;);<br />Matcher matcher = pattern.matcher(&#8220;&lt;a href=/&#8221;index.html/&#8221;&gt;主页&lt;/a&gt;&#8221;);<br />if(matcher.find())<br />&nbsp; System.out.println(matcher.group(1));<br />}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>截取http://地址</p>
+</td>
+<td>
+<p>Pattern pattern = Pattern.<i>compile</i>(&#8220;(http://|https://){1}[//w//.//-/:]+&#8221;); </p>
+<p>Matcher matcher = pattern.matcher(&#8220;dsdsds&lt;http://dsds//gfgffdfd&gt;fdf&#8221;); </p>
+<p>StringBuffer buffer = <b>new</b> StringBuffer(); </p>
+<p><b>while</b>(matcher.find()){ </p>
+<p>buffer.append(matcher.group()); </p>
+<p>buffer.append(&#8220;/r/n&#8221;); </p>
+<p>System.<b><i>out</i></b>.println(buffer.toString()); </p>
+<p>}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>替换指定{}中文字</p>
+</td>
+<td>
+<p>String str = &#8220;Java目前的发展史是由{0}年-{1}年&#8221;; </p>
+<p>String[][] object={<b>new</b> String[]{&#8220;//{0//}&#8221;,&#8221;1995&#8243;},<b>new</b> String[]{&#8220;//{1//}&#8221;,&#8221;2007&#8243;}}; </p>
+<p>System.out.println(<u>replace</u>(str,object)); </p>
+<p><b>public</b> <b>static</b> String <u>replace(</u><b>final</b> String sourceString,Object[<u>]</u> object) { </p>
+<p>String temp=sourceString; </p>
+<p><b>for</b>(<b>int</b> i=0;i&lt;object.length;i++){ </p>
+<p>String[] result=(String[])object[i]; </p>
+<p>Pattern pattern = Pattern.compile(result[0]); </p>
+<p>Matcher matcher = pattern.matcher(temp); </p>
+<p>temp=matcher.replaceAll(result[1]); </p>
+<p>} </p>
+<p><b>return</b> temp; </p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>常用的正则表达式：</strong><strong></strong> </p>
+<p><b>匹配特定数字：</b> </p>
+<p>^[1-9]d*$ //匹配正整数 </p>
+<p>^-[1-9]d*$ //匹配负整数 </p>
+<p>^-?[1-9]d*$ //匹配整数 </p>
+<p>^[1-9]d*|0$ //匹配非负整数（正整数 + 0） </p>
+<p>^-[1-9]d*|0$ //匹配非正整数（负整数 + 0） </p>
+<p>^[1-9]d*.d*|0.d*[1-9]d*$ //匹配正浮点数 </p>
+<p>^-([1-9]d*.d*|0.d*[1-9]d*)$ //匹配负浮点数 </p>
+<p>^-?([1-9]d*.d*|0.d*[1-9]d*|0?.0+|0)$ //匹配浮点数 </p>
+<p>^[1-9]d*.d*|0.d*[1-9]d*|0?.0+|0$ //匹配非负浮点数（正浮点数 + 0） </p>
+<p>^(-([1-9]d*.d*|0.d*[1-9]d*))|0?.0+|0$ //匹配非正浮点数（负浮点数 + 0） </p>
+<p>评注：处理大量数据时有用，具体应用时注意修正 </p>
+<p><b>匹配特定字符串：</b> </p>
+<p>^[A-Za-z]+$ //匹配由26个英文字母组成的字符串 </p>
+<p>^[A-Z]+$ //匹配由26个英文字母的大写组成的字符串 </p>
+<p>^[a-z]+$ //匹配由26个英文字母的小写组成的字符串 </p>
+<p>^[A-Za-z0-9]+$ //匹配由数字和26个英文字母组成的字符串 </p>
+<p>^w+$ //匹配由数字、26个英文字母或者下划线组成的字符串 </p>
+<p>在使用RegularExpressionValidator验证控件时的验证功能及其验证表达式介绍如下: </p>
+<p>只能输入数字：“^[0-9]*$” </p>
+<p>只能输入n位的数字：“^d{n}$” </p>
+<p>只能输入至少n位数字：“^d{n,}$” </p>
+<p>只能输入m-n位的数字：“^d{m,n}$” </p>
+<p>只能输入零和非零开头的数字：“^(0|[1-9][0-9]*)$” </p>
+<p>只能输入有两位小数的正实数：“^[0-9]+(.[0-9]{2})?$” </p>
+<p>只能输入有1-3位小数的正实数：“^[0-9]+(.[0-9]{1,3})?$” </p>
+<p>只能输入非零的正整数：“^+?[1-9][0-9]*$” </p>
+<p>只能输入非零的负整数：“^-[1-9][0-9]*$” </p>
+<p>只能输入长度为3的字符：“^.{3}$” </p>
+<p>只能输入由26个英文字母组成的字符串：“^[A-Za-z]+$” </p>
+<p>只能输入由26个大写英文字母组成的字符串：“^[A-Z]+$” </p>
+<p>只能输入由26个小写英文字母组成的字符串：“^[a-z]+$” </p>
+<p>只能输入由数字和26个英文字母组成的字符串：“^[A-Za-z0-9]+$” </p>
+<p>只能输入由数字、26个英文字母或者下划线组成的字符串：“^w+$” </p>
+<p>验证用户密码:“^[a-zA-Z]w{5,17}$”正确格式为：以字母开头，长度在6-18之间， </p>
+<p>只能包含字符、数字和下划线。 </p>
+<p>验证是否含有^%&amp;’,;=?$”等字符：“[^%&amp;’,;=?$x22]+” </p>
+<p>只能输入汉字：“^[u4e00-u9fa5],{0,}$” </p>
+<p>验证Email地址：“^w+[-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*$” </p>
+<p>验证InternetURL：“^http://([w-]+.)+[w-]+(/[w-./?%&amp;=]*)?$” </p>
+<p>验证电话号码：“^((d{3,4})|d{3,4}-)?d{7,8}$” </p>
+<p>正确格式为：“XXXX-XXXXXXX”，“XXXX-XXXXXXXX”，“XXX-XXXXXXX”， </p>
+<p>“XXX-XXXXXXXX”，“XXXXXXX”，“XXXXXXXX”。 </p>
+<p>验证身份证号（15位或18位数字）：“^d{15}|d{}18$” </p>
+<p>验证一年的12个月：“^(0?[1-9]|1[0-2])$”正确格式为：“01”-“09”和“1”“12” </p>
+<p>验证一个月的31天：“^((0?[1-9])|((1|2)[0-9])|30|31)$” </p>
+<p>正确格式为：“01”“09”和“1”“31”。 </p>
+<p>匹配中文字符的正则表达式： [u4e00-u9fa5] </p>
+<p>匹配双字节字符(包括汉字在内)：[^x00-xff] </p>
+<p>匹配空行的正则表达式：n[s| ]*r </p>
+<p>匹配HTML标记的正则表达式：/&lt; (.*)&gt;.*|&lt; (.*) /&gt;/ </p>
+<p>匹配首尾空格的正则表达式：(^s*)|(s*$) </p>
+<p>匹配Email地址的正则表达式：w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)* </p>
+<p>匹配网址URL的正则表达式：http://([w-]+.)+[w-]+(/[w- ./?%&amp;=]*)? </p>
+<p>参考资料： </p>
+<p><a href="http://www.iteye.com/topic/301465">http://www.iteye.com/topic/301465</a> </p>
+<p><a href="http://msdn.microsoft.com/zh-cn/library/ae5bf541(VS.80).aspx">http://msdn.microsoft.com/zh-cn/library/ae5bf541(VS.80).aspx</a> </p>
+<p><a href="http://blog.csdn.net/rascalboy520/article/details/2506444">http://blog.csdn.net/rascalboy520/article/details/2506444</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=82</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
