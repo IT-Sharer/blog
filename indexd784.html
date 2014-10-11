@@ -12,12 +12,269 @@
 	<atom:link href="http://wp.hhy/?feed=rss2" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 11 Oct 2014 13:03:54 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 11 Oct 2014 16:22:23 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>近邻原则系列算法</title>
+		<link>http://wp.hhy/?p=180</link>
+		<comments>http://wp.hhy/?p=180#comments</comments>
+		<pubDate>Sat, 11 Oct 2014 16:22:23 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[数据挖掘]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=180</guid>
+		<description><![CDATA[一、概述 机器学习中一般是针对决策规则、概率理论、近邻、集成、增量、图论等原则进<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=180">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p><span style="font-size:12pt"><strong>一、概述<br />
+</strong></span></p>
+<p>机器学习中一般是针对决策规则、概率理论、近邻、集成、增量、图论等原则进行算法的设计。本文选取利用近邻原则的相关算法进行总结。
+</p>
+<p>所谓&#8221;近朱者赤，近墨者黑&#8221;，相近的两个对象一般相似度较大。机器学习十大算法中运用近邻原则的算法主要有：KNN和Kmeans两大类。
+</p>
+<p><span style="font-size:12pt"><strong>二、KNN算法<br />
+</strong></span></p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法描述<br />
+</strong></div>
+</li>
+</ul>
+<p>KNN算法的主要思想是在实例集DTrain中取与待分类样本S最近的K个样本，根据K个样本所属分类，投票决定S的分类及对应的可能性。
+</p>
+<p style="text-align: center"><img src="http://wp.hhy/wp-content/uploads/2014/10/101114_1622_1.png" alt=""/>
+	</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法伪代码，用TreeSet实现<br />
+</strong></div>
+</li>
+</ul>
+<p style="text-align: center"><img src="http://wp.hhy/wp-content/uploads/2014/10/101114_1622_2.png" alt=""/>
+	</p>
+<p>分别计算S与实例集DTrain中样本的距离，取最近的K个样本。//一般用小根堆进行。
+</p>
+<p>分别统计K个近邻中出现的类别及数量。
+</p>
+<p>取最多的一个类别，输出。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法缺点<br />
+</strong></div>
+</li>
+</ul>
+<p>实例集DTrain的选取很关键，太多冗余、样本不均匀或者噪音将导致分类失效。
+</p>
+<p>计算量太大，每次分类都需要遍历实例集。
+</p>
+<p>K值的选定需要人为干预，并且K值影响分类效率。
+</p>
+<p>实例集的样本必须存储。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>改进策略<br />
+</strong></div>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt">实例集DTrain的生成；<br />
+</span></div>
+<p style="text-align: justify"><span style="font-size:10pt">等比例抽样法，基于样本空间的抽样法，避免样本不均匀。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">根据样本的有效性，剔除作用较小的样本。<br />
+</span></p>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt">距离的计算：样本相似度的计算；<br />
+</span></div>
+<p style="text-align: justify"><span style="font-size:10pt">欧氏距离；余弦相似度。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">编辑距离（文本处理）<br />
+</span></p>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt">K值的选择<br />
+</span></div>
+<p style="text-align: justify"><span style="font-size:10pt">设定一个K值的初始值，然后以一定步长递增或者递减。选取一个较好的K值。<br />
+</span></p>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt"><strong>K近邻的搜索；<br />
+</strong></span></div>
+</li>
+</ul>
+<p>对样本进行组织整理，分层分群，尽可能将计算压缩到一个较小的样本子空间，避免盲目地与训练集中的每个样本进行比较。
+</p>
+<p style="text-align: justify; margin-left: 39pt"><span style="font-size:10pt"><strong>快速搜索近邻算法<br />
+</strong></span></p>
+<p style="margin-left: 21pt">将样本集按近邻关系分解成组，给出每组的质心以及组内样本到该质心的最大距离。这些组又可以分层次结构，组分子组等。最终逐渐深入到一个较小的子组中。减少了计算量，但没有达到减少存储量的目的。
+</p>
+<p style="text-align: justify; margin-left: 39pt"><span style="font-size:10pt"><strong>剪辑近邻法<br />
+</strong></span></p>
+<p>利用现有样本集对其自身进行剪辑，将不同类别交界处的样本以适当方式筛选，可以实现既减少样本数又提高正确识别率的双重目的。
+</p>
+<p>剪辑过程：1将样本分成两个独立的子集D1，D2；2.对D1的每个样本S1，找到其D2中的最近邻SD2，如果它们的分类不一致，则从D1中删除S1；3.最终的D1替代样本集。
+</p>
+<p style="text-align: justify; margin-left: 39pt"><span style="font-size:10pt"><strong>压缩近邻法<br />
+</strong></span></p>
+<p>压缩方法：1.初始化两个集合D1=Null，D2=D。在D1中任选一个样本加入D2中。2.依次取D2中的样本，用D1中的样本集对其进行近邻分类，若分类正确则跳过该样本，若分类错误，则将该样本加入到D1中，并且从D2删除该样本。3.重复2，直到D2为空，或者D2中已经没有样本加入到D1中。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><span style="font-size:10pt"><strong>K近邻的投票策略<br />
+</strong></span></div>
+<p style="text-align: justify"><span style="font-size:10pt">距离作为权值进行投票：距离小，权重越大。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">考虑所有样本中每个分类的比例，比例越大反而在投票中权重越小。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">考虑近邻的K近邻与该近邻相同类别的比例作为该近邻的权重。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt"><strong>TCMKNN：基于直推信度机的KNN算法；<br />
+</strong></span></p>
+</li>
+</ul>
+<p>信度定义T（y）：样本所属分类的K个近邻距离和/样本所属分类外的K个近邻距离和。信度越小，表示样本越满足近邻特性。
+</p>
+<p>样本属于某个分类的概率P：令样本属于该分类；计算信度TY，统计分类中的所有样本信度大于TY的个数countY，countY/y的样本总数即概率P，概率越大，越可能属于该分类。
+</p>
+<p>样本-分类概率最大的两个为P1，P2.样本属于P1类，且置信度为P1-P2.置信度越大，说明样本相对于其他分类越有可能属于该分类。
+</p>
+<p style="text-align: justify; margin-left: 39pt">
+ </p>
+<p style="margin-left: 21pt"><span style="font-size:12pt"><strong>三、KMeans算法<br />
+</strong></span></p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法描述<br />
+</strong></div>
+</li>
+</ul>
+<p>基本思想是将数据划分成若干个聚类，使得类内的相似度最大化，类间的相似度最小化。主要方法是初始随机给定的K个簇中心，按照近邻原则把待分类样本点分到各个簇。然后按平均法重新计算各个簇的质心，作为新的簇中心。经过若干次迭代后，簇中心会收敛。
+</p>
+<p style="text-align: center"><img src="http://wp.hhy/wp-content/uploads/2014/10/101114_1622_3.png" alt=""/>
+	</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法伪代码<br />
+</strong></div>
+</li>
+</ul>
+<p style="text-align: center"><img src="http://wp.hhy/wp-content/uploads/2014/10/101114_1622_4.png" alt=""/>
+	</p>
+<p>1.初始化K个簇中心；2.将样本分配到k个簇；3.计算质心作为新的簇中心；4.重复2直到簇中心收敛到一个点。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法缺点<br />
+</strong></div>
+</li>
+</ul>
+<p>要事先确定簇数K；
+</p>
+<p>对初始聚类中心敏感；
+</p>
+<p><strong>容易陷入局部最优；<br />
+</strong></p>
+<p>对&#8221;噪声&#8221;和孤立点敏感：噪声和孤立点，异常点容易影响质心的计算。
+</p>
+<p>不适于发现非凸面形状的簇或大小差别很大的簇。——非凸面簇往往也是线性不可分的。可以用核函数，将原空间投影到高维空间。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>改进策略<br />
+</strong></div>
+</li>
+</ul>
+<p><strong>（1）k值确定<br />
+</strong></p>
+<p><span style="text-decoration:underline">层次聚类：<br />
+</span></p>
+<p>凝聚法（将每个实例看做一个簇，将距离最近的簇合并成一个簇，并用质心代表该簇，当最最近距离达到某个阈值时停止聚类）；AGNES算法
+</p>
+<p>分裂法（将所有实例集看成一个簇，簇内实例间最大值是簇的直径，将簇分解直到最大直径小于某个阈值）；DIANA算法
+</p>
+<p><span style="text-decoration:underline">稳定性方法：<br />
+</span></p>
+<p>用两次重采样（任取一个节点加入D1，该节点最近邻加入D2，重复此过程）将数据集分成2个子集，这这两个子集做相同的聚类，产生K 聚集。K个聚集的相似度反应了聚类的稳定情况：相似度高，说明K值合理。否则需要增大K。
+</p>
+<p><span style="text-decoration:underline">系统演化方法：<br />
+</span></p>
+<p>定义稳定状态的条件，例如聚类最大直径，聚类最小数量，最大数量，聚类实例数量限制等等。
+</p>
+<p>定义不稳定状态：
+</p>
+<p>将数据集视为伪热力学问题。从K=1出发，不断的分裂合并不满足条件的聚集，最终达到稳定状态。
+</p>
+<p><span style="text-decoration:underline">Canopy算法初始划分：<br />
+</span></p>
+<p>将聚类过程分为两个阶段：
+</p>
+<p>预处理阶段：初始一个实例，把所有相似的节点（满足一定距离条件）放到一个子集Canopy中，再从没有选中过的实例集中选取一个实例构造下一个canopy，直到所有实例至少被选中一次；这样一个实例可以属于多个canopy，canopy之间可以有重叠；
+</p>
+<p>传统聚类阶段：在每个canopy中运用传统的聚类方式进行聚类。
+</p>
+<p><strong>（2）初始质心选取<br />
+</strong></p>
+<p>随机选取法：
+</p>
+<p>多次运行，每次选取不同的随机初始质心，去有最小SSE（误差的平方和）的簇集。
+</p>
+<p>采用层次聚类预处理数据集，取簇集中心为初始质心。
+</p>
+<p>随机选择一个点或选择所有数据集的质心作为初始点，然后选择距离该点最远的点作为第二个点，依次选择K个点。
+</p>
+<p>Canopy算法第一阶段得到的每个canopy的质心作为初始质心。
+</p>
+<p><strong>（3）距离度量<br />
+</strong></p>
+<p>欧几里得距离和余弦相似度。
+</p>
+<p>欧氏距离需要标准化，距离越大差异越大。
+</p>
+<p>余弦相似度不需要标准化，值在[-1,1]，值越大差异越小。
+</p>
+<p><strong>（4）质心计算<br />
+</strong></p>
+<p>聚簇中所有样本的向量均值。
+</p>
+<p><strong>（5）算法停止条件<br />
+</strong></p>
+<p>目标函数达到最优停止：欧式距离采用聚集的平方误差和（实例与质心的距离平方和）最小化；余弦相似度采用聚集余弦相似度和（到质心的余弦相似度）最大化。
+</p>
+<p><strong>（6）空聚簇的处理<br />
+</strong></p>
+<p>方法一：选择一个距离当前任何质心最远的点作为空聚簇的质心。这个点在平方误差和中贡献最大。
+</p>
+<p>方法二：从平方误差和最大的那个簇，选择距离该簇质心最远的点，作为空聚簇的质心。
+</p>
+<p><strong>（7）EM算法（搜索本站）：<br />
+</strong></p>
+<p>实例可以属于多个聚簇，突破了聚簇间的差异要求，只要求聚簇内部达到一定的相似性。
+</p>
+<p style="margin-left: 21pt"><span style="font-size:12pt"><strong>四、运用案例<br />
+</strong></span></p>
+<p style="margin-left: 21pt">将Kmeans运用在Knn的近邻搜索中，用聚簇中心索引数据集。
+</p>
+<p style="margin-left: 21pt">
+ </p>
+<p style="margin-left: 21pt"><span style="font-size:12pt"><strong>五、参考资料<br />
+</strong></span></p>
+<p style="margin-left: 21pt"><a href="http://wenku.baidu.com/link?url=9AY6aT-NhPMR_f3eKaKZLgTwBqmDv9vL8Drtnnb1j8uMIKQfUd7p794XXnixAZxU4QIYIQBX7qYNwFvCnJwmttJ8J3jfbRC_XvsKlPJ828e">http://wenku.baidu.com/link?url=9AY6aT-NhPMR_f3eKaKZLgTwBqmDv9vL8Drtnnb1j8uMIKQfUd7p794XXnixAZxU4QIYIQBX7qYNwFvCnJwmttJ8J3jfbRC_XvsKlPJ828e</a> KNN
+</p>
+<p style="margin-left: 21pt">star :<a href="http://wenku.baidu.com/link?url=Ly_YnXItPt689ZDHOkr6jnQsZwIuRrcO3BUBGdrp1996F3AP4wWdwu0CbPnYDptrrnbtChpXL7vNRY3XA5Ul2fHQ_DcEsDQPd8C04rnlYK3">http://wenku.baidu.com/link?url=Ly_YnXItPt689ZDHOkr6jnQsZwIuRrcO3BUBGdrp1996F3AP4wWdwu0CbPnYDptrrnbtChpXL7vNRY3XA5Ul2fHQ_DcEsDQPd8C04rnlYK3</a> KNN
+</p>
+<p style="margin-left: 21pt"><a href="http://blog.csdn.net/qll125596718/article/details/8243404">http://blog.csdn.net/qll125596718/article/details/8243404</a>  Kmeans
+</p>
+<p style="margin-left: 21pt"><a href="http://blog.sina.com.cn/s/blog_69c3ea2b0100nitu.html">http://blog.sina.com.cn/s/blog_69c3ea2b0100nitu.html</a>  层次聚类算法
+</p>
+<p style="margin-left: 21pt"><a href="http://my.oschina.net/liangtee/blog/125407">http://my.oschina.net/liangtee/blog/125407</a> Canopy算法</p>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=180</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>Java集合类详解（00）</title>
 		<link>http://wp.hhy/?p=153</link>
 		<comments>http://wp.hhy/?p=153#comments</comments>
@@ -910,30 +1167,6 @@ System.out.println(s);
 <p><a title="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/" href="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/">http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=39</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>A001.设计一个包含min函数的栈</title>
-		<link>http://wp.hhy/?p=37</link>
-		<comments>http://wp.hhy/?p=37#comments</comments>
-		<pubDate>Sun, 05 Oct 2014 02:47:00 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[算法题库]]></category>
-		<category><![CDATA[算法题]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=37</guid>
-		<description><![CDATA[题目要求:min函数的时间复杂度为O(1). 思路: 设置一个最小栈minSta<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=37">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p>题目要求:min函数的时间复杂度为O(1).</p>
-<h4>思路:</h4>
-<p>设置一个最小栈minStack,保存当前最小的值.</p>
-<p>如果push进来的元素T.value&lt;=minStack.top().value,则minStack.push(T);</p>
-<p>如果Pop出去的元素T.value==minStack.top().value,则minStack.pop();</p>
-<p>min() return minStack.top();</p>
-<h4>代码:</h4>
-<p>import java.util.Stack;</p>
-<p>public class MinStack&lt;T&gt; {<br />&nbsp;&nbsp;&nbsp; Stack&lt;T&gt; stack;<br />&nbsp;&nbsp;&nbsp; Stack&lt;T&gt; minStack;<br />&nbsp;&nbsp;&nbsp; public MinStack() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // TODO Auto-generated constructor stub<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack=new Stack&lt;&gt;();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack=new Stack&lt;&gt;();<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public void push(T t){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (minStack.empty()) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack.push(t);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (t&lt;=minStack.peek()) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minStack.push(t);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack.push(t);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public T pop(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(stack.empty()) return null;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T tmpT=stack.pop();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(tmpT==minStack.peek())minStack.pop();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return tmpT;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; public T min(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(minStack.empty())return null;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else return minStack.peek();<br />&nbsp;&nbsp;&nbsp; }<br />}</p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=37</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

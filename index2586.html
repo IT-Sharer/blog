@@ -1,0 +1,517 @@
+	<!doctype html>
+	<!--[if !IE]>
+	<html class="no-js non-ie" lang="zh-CN"> <![endif]-->
+	<!--[if IE 7 ]>
+	<html class="no-js ie7" lang="zh-CN"> <![endif]-->
+	<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="zh-CN"> <![endif]-->
+	<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="zh-CN"> <![endif]-->
+	<!--[if gt IE 9]><!-->
+<html class="no-js" lang="zh-CN"> <!--<![endif]-->
+	
+<!-- Mirrored from wp.hhy/?p=180 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Oct 2014 16:31:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>近邻原则系列算法 &#124; IT-Sharer</title>
+		<link rel="profile" href="../gmpg.org/xfn/11.html"/>
+		<link rel="pingback" href="xmlrpc.php"/>
+
+		<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; Feed" href="indexd784.html?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 评论Feed" href="indexa6da.html?feed=comments-rss2" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 近邻原则系列算法评论Feed" href="indexa1c4.html?feed=rss2&amp;p=180" />
+<link rel='stylesheet' id='responsive-style-css'  href='wp-content/themes/responsive/core/css/style3d51.css?ver=1.9.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-media-queries-css'  href='wp-content/themes/responsive/core/css/responsive3d51.css?ver=1.9.7.4' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
+<script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-modernizr.minc141.js?ver=2.6.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Java集合类详解（00）' href='indexd7d8.html?p=153' />
+<meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='index2586.html?p=180' />
+<link rel='shortlink' href='index2586.html?p=180' />
+<link rel="stylesheet" type="text/css" href="wp-content/plugins/wp-code-highlight/css/sunburst.css" media="screen" />
+<!-- We need this for debugging -->
+<!-- Responsive 1.9.7.4 -->
+
+	</head>
+
+<body class="single single-post postid-180 single-format-standard">
+
+<div id="container" class="hfeed">
+
+	<div class="skip-container cf">
+		<a class="skip-link screen-reader-text focusable" href="#content">&darr; Skip to Main Content</a>
+	</div><!-- .skip-container -->
+	<div id="header">
+
+		
+		
+		
+		
+		
+			<div id="logo">
+				<span class="site-name"><a href="index.html" title="IT-Sharer" rel="home">IT-Sharer</a></span>
+				<span class="site-description">温 润 醇 和    臻 于 至 善</span>
+			</div><!-- end of #logo -->
+
+		
+				<div class="main-nav"><ul id="menu-%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98%e8%8f%9c%e5%8d%95" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="index.html">首页</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="index376e.html?cat=13">Hadoop</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
+<ul class="sub-menu">
+	<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="index49ce.html?cat=14">Java</a></li>
+</ul>
+</li>
+<li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-33"><a href="index9035.html?cat=22">算法</a>
+<ul class="sub-menu">
+	<li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="index54cb.html?cat=23">算法题库</a></li>
+</ul>
+</li>
+<li id="menu-item-35" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35"><a href="indexfa64.html?cat=24">linux</a></li>
+</ul></div>
+		
+		
+	</div><!-- end of #header -->
+
+	<div id="wrapper" class="clearfix">
+
+<div id="content" class="grid col-620">
+
+	
+	
+		
+						<div id="post-180" class="post-180 post type-post status-publish format-standard hentry category-2">
+				
+				
+	<h1 class="entry-title post-title">近邻原则系列算法</h1>
+
+<div class="post-meta">
+	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="index2586.html?p=180" title="近邻原则系列算法" rel="bookmark"><time class="timestamp updated" datetime="2014-10-12T00:22:23+00:00">2014-10-12</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
+	
+</div><!-- end of .post-meta -->
+
+				<div class="post-entry">
+					<p><span style="font-size:12pt"><strong>一、概述<br />
+</strong></span></p>
+<p>机器学习中一般是针对决策规则、概率理论、近邻、集成、增量、图论等原则进行算法的设计。本文选取利用近邻原则的相关算法进行总结。
+</p>
+<p>所谓&#8221;近朱者赤，近墨者黑&#8221;，相近的两个对象一般相似度较大。机器学习十大算法中运用近邻原则的算法主要有：KNN和Kmeans两大类。
+</p>
+<p><span style="font-size:12pt"><strong>二、KNN算法<br />
+</strong></span></p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法描述<br />
+</strong></div>
+</li>
+</ul>
+<p>KNN算法的主要思想是在实例集DTrain中取与待分类样本S最近的K个样本，根据K个样本所属分类，投票决定S的分类及对应的可能性。
+</p>
+<p style="text-align: center"><img src="wp-content/uploads/2014/10/101114_1622_1.png" alt=""/>
+	</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法伪代码，用TreeSet实现<br />
+</strong></div>
+</li>
+</ul>
+<p style="text-align: center"><img src="wp-content/uploads/2014/10/101114_1622_2.png" alt=""/>
+	</p>
+<p>分别计算S与实例集DTrain中样本的距离，取最近的K个样本。//一般用小根堆进行。
+</p>
+<p>分别统计K个近邻中出现的类别及数量。
+</p>
+<p>取最多的一个类别，输出。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法缺点<br />
+</strong></div>
+</li>
+</ul>
+<p>实例集DTrain的选取很关键，太多冗余、样本不均匀或者噪音将导致分类失效。
+</p>
+<p>计算量太大，每次分类都需要遍历实例集。
+</p>
+<p>K值的选定需要人为干预，并且K值影响分类效率。
+</p>
+<p>实例集的样本必须存储。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>改进策略<br />
+</strong></div>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt">实例集DTrain的生成；<br />
+</span></div>
+<p style="text-align: justify"><span style="font-size:10pt">等比例抽样法，基于样本空间的抽样法，避免样本不均匀。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">根据样本的有效性，剔除作用较小的样本。<br />
+</span></p>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt">距离的计算：样本相似度的计算；<br />
+</span></div>
+<p style="text-align: justify"><span style="font-size:10pt">欧氏距离；余弦相似度。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">编辑距离（文本处理）<br />
+</span></p>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt">K值的选择<br />
+</span></div>
+<p style="text-align: justify"><span style="font-size:10pt">设定一个K值的初始值，然后以一定步长递增或者递减。选取一个较好的K值。<br />
+</span></p>
+</li>
+<li>
+<div style="text-align: justify"><span style="font-size:10pt"><strong>K近邻的搜索；<br />
+</strong></span></div>
+</li>
+</ul>
+<p>对样本进行组织整理，分层分群，尽可能将计算压缩到一个较小的样本子空间，避免盲目地与训练集中的每个样本进行比较。
+</p>
+<p style="text-align: justify; margin-left: 39pt"><span style="font-size:10pt"><strong>快速搜索近邻算法<br />
+</strong></span></p>
+<p style="margin-left: 21pt">将样本集按近邻关系分解成组，给出每组的质心以及组内样本到该质心的最大距离。这些组又可以分层次结构，组分子组等。最终逐渐深入到一个较小的子组中。减少了计算量，但没有达到减少存储量的目的。
+</p>
+<p style="text-align: justify; margin-left: 39pt"><span style="font-size:10pt"><strong>剪辑近邻法<br />
+</strong></span></p>
+<p>利用现有样本集对其自身进行剪辑，将不同类别交界处的样本以适当方式筛选，可以实现既减少样本数又提高正确识别率的双重目的。
+</p>
+<p>剪辑过程：1将样本分成两个独立的子集D1，D2；2.对D1的每个样本S1，找到其D2中的最近邻SD2，如果它们的分类不一致，则从D1中删除S1；3.最终的D1替代样本集。
+</p>
+<p style="text-align: justify; margin-left: 39pt"><span style="font-size:10pt"><strong>压缩近邻法<br />
+</strong></span></p>
+<p>压缩方法：1.初始化两个集合D1=Null，D2=D。在D1中任选一个样本加入D2中。2.依次取D2中的样本，用D1中的样本集对其进行近邻分类，若分类正确则跳过该样本，若分类错误，则将该样本加入到D1中，并且从D2删除该样本。3.重复2，直到D2为空，或者D2中已经没有样本加入到D1中。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><span style="font-size:10pt"><strong>K近邻的投票策略<br />
+</strong></span></div>
+<p style="text-align: justify"><span style="font-size:10pt">距离作为权值进行投票：距离小，权重越大。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">考虑所有样本中每个分类的比例，比例越大反而在投票中权重越小。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt">考虑近邻的K近邻与该近邻相同类别的比例作为该近邻的权重。<br />
+</span></p>
+<p style="text-align: justify"><span style="font-size:10pt"><strong>TCMKNN：基于直推信度机的KNN算法；<br />
+</strong></span></p>
+</li>
+</ul>
+<p>信度定义T（y）：样本所属分类的K个近邻距离和/样本所属分类外的K个近邻距离和。信度越小，表示样本越满足近邻特性。
+</p>
+<p>样本属于某个分类的概率P：令样本属于该分类；计算信度TY，统计分类中的所有样本信度大于TY的个数countY，countY/y的样本总数即概率P，概率越大，越可能属于该分类。
+</p>
+<p>样本-分类概率最大的两个为P1，P2.样本属于P1类，且置信度为P1-P2.置信度越大，说明样本相对于其他分类越有可能属于该分类。
+</p>
+<p style="text-align: justify; margin-left: 39pt">
+ </p>
+<p style="margin-left: 21pt"><span style="font-size:12pt"><strong>三、KMeans算法<br />
+</strong></span></p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法描述<br />
+</strong></div>
+</li>
+</ul>
+<p>基本思想是将数据划分成若干个聚类，使得类内的相似度最大化，类间的相似度最小化。主要方法是初始随机给定的K个簇中心，按照近邻原则把待分类样本点分到各个簇。然后按平均法重新计算各个簇的质心，作为新的簇中心。经过若干次迭代后，簇中心会收敛。
+</p>
+<p style="text-align: center"><img src="wp-content/uploads/2014/10/101114_1622_3.png" alt=""/>
+	</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法伪代码<br />
+</strong></div>
+</li>
+</ul>
+<p style="text-align: center"><img src="wp-content/uploads/2014/10/101114_1622_4.png" alt=""/>
+	</p>
+<p>1.初始化K个簇中心；2.将样本分配到k个簇；3.计算质心作为新的簇中心；4.重复2直到簇中心收敛到一个点。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>算法缺点<br />
+</strong></div>
+</li>
+</ul>
+<p>要事先确定簇数K；
+</p>
+<p>对初始聚类中心敏感；
+</p>
+<p><strong>容易陷入局部最优；<br />
+</strong></p>
+<p>对&#8221;噪声&#8221;和孤立点敏感：噪声和孤立点，异常点容易影响质心的计算。
+</p>
+<p>不适于发现非凸面形状的簇或大小差别很大的簇。——非凸面簇往往也是线性不可分的。可以用核函数，将原空间投影到高维空间。
+</p>
+<ul style="margin-left: 39pt">
+<li>
+<div style="text-align: justify"><strong>改进策略<br />
+</strong></div>
+</li>
+</ul>
+<p><strong>（1）k值确定<br />
+</strong></p>
+<p><span style="text-decoration:underline">层次聚类：<br />
+</span></p>
+<p>凝聚法（将每个实例看做一个簇，将距离最近的簇合并成一个簇，并用质心代表该簇，当最最近距离达到某个阈值时停止聚类）；AGNES算法
+</p>
+<p>分裂法（将所有实例集看成一个簇，簇内实例间最大值是簇的直径，将簇分解直到最大直径小于某个阈值）；DIANA算法
+</p>
+<p><span style="text-decoration:underline">稳定性方法：<br />
+</span></p>
+<p>用两次重采样（任取一个节点加入D1，该节点最近邻加入D2，重复此过程）将数据集分成2个子集，这这两个子集做相同的聚类，产生K 聚集。K个聚集的相似度反应了聚类的稳定情况：相似度高，说明K值合理。否则需要增大K。
+</p>
+<p><span style="text-decoration:underline">系统演化方法：<br />
+</span></p>
+<p>定义稳定状态的条件，例如聚类最大直径，聚类最小数量，最大数量，聚类实例数量限制等等。
+</p>
+<p>定义不稳定状态：
+</p>
+<p>将数据集视为伪热力学问题。从K=1出发，不断的分裂合并不满足条件的聚集，最终达到稳定状态。
+</p>
+<p><span style="text-decoration:underline">Canopy算法初始划分：<br />
+</span></p>
+<p>将聚类过程分为两个阶段：
+</p>
+<p>预处理阶段：初始一个实例，把所有相似的节点（满足一定距离条件）放到一个子集Canopy中，再从没有选中过的实例集中选取一个实例构造下一个canopy，直到所有实例至少被选中一次；这样一个实例可以属于多个canopy，canopy之间可以有重叠；
+</p>
+<p>传统聚类阶段：在每个canopy中运用传统的聚类方式进行聚类。
+</p>
+<p><strong>（2）初始质心选取<br />
+</strong></p>
+<p>随机选取法：
+</p>
+<p>多次运行，每次选取不同的随机初始质心，去有最小SSE（误差的平方和）的簇集。
+</p>
+<p>采用层次聚类预处理数据集，取簇集中心为初始质心。
+</p>
+<p>随机选择一个点或选择所有数据集的质心作为初始点，然后选择距离该点最远的点作为第二个点，依次选择K个点。
+</p>
+<p>Canopy算法第一阶段得到的每个canopy的质心作为初始质心。
+</p>
+<p><strong>（3）距离度量<br />
+</strong></p>
+<p>欧几里得距离和余弦相似度。
+</p>
+<p>欧氏距离需要标准化，距离越大差异越大。
+</p>
+<p>余弦相似度不需要标准化，值在[-1,1]，值越大差异越小。
+</p>
+<p><strong>（4）质心计算<br />
+</strong></p>
+<p>聚簇中所有样本的向量均值。
+</p>
+<p><strong>（5）算法停止条件<br />
+</strong></p>
+<p>目标函数达到最优停止：欧式距离采用聚集的平方误差和（实例与质心的距离平方和）最小化；余弦相似度采用聚集余弦相似度和（到质心的余弦相似度）最大化。
+</p>
+<p><strong>（6）空聚簇的处理<br />
+</strong></p>
+<p>方法一：选择一个距离当前任何质心最远的点作为空聚簇的质心。这个点在平方误差和中贡献最大。
+</p>
+<p>方法二：从平方误差和最大的那个簇，选择距离该簇质心最远的点，作为空聚簇的质心。
+</p>
+<p><strong>（7）EM算法（搜索本站）：<br />
+</strong></p>
+<p>实例可以属于多个聚簇，突破了聚簇间的差异要求，只要求聚簇内部达到一定的相似性。
+</p>
+<p style="margin-left: 21pt"><span style="font-size:12pt"><strong>四、运用案例<br />
+</strong></span></p>
+<p style="margin-left: 21pt">将Kmeans运用在Knn的近邻搜索中，用聚簇中心索引数据集。
+</p>
+<p style="margin-left: 21pt">
+ </p>
+<p style="margin-left: 21pt"><span style="font-size:12pt"><strong>五、参考资料<br />
+</strong></span></p>
+<p style="margin-left: 21pt"><a href="http://wenku.baidu.com/link?url=9AY6aT-NhPMR_f3eKaKZLgTwBqmDv9vL8Drtnnb1j8uMIKQfUd7p794XXnixAZxU4QIYIQBX7qYNwFvCnJwmttJ8J3jfbRC_XvsKlPJ828e">http://wenku.baidu.com/link?url=9AY6aT-NhPMR_f3eKaKZLgTwBqmDv9vL8Drtnnb1j8uMIKQfUd7p794XXnixAZxU4QIYIQBX7qYNwFvCnJwmttJ8J3jfbRC_XvsKlPJ828e</a> KNN
+</p>
+<p style="margin-left: 21pt">star :<a href="http://wenku.baidu.com/link?url=Ly_YnXItPt689ZDHOkr6jnQsZwIuRrcO3BUBGdrp1996F3AP4wWdwu0CbPnYDptrrnbtChpXL7vNRY3XA5Ul2fHQ_DcEsDQPd8C04rnlYK3">http://wenku.baidu.com/link?url=Ly_YnXItPt689ZDHOkr6jnQsZwIuRrcO3BUBGdrp1996F3AP4wWdwu0CbPnYDptrrnbtChpXL7vNRY3XA5Ul2fHQ_DcEsDQPd8C04rnlYK3</a> KNN
+</p>
+<p style="margin-left: 21pt"><a href="http://blog.csdn.net/qll125596718/article/details/8243404">http://blog.csdn.net/qll125596718/article/details/8243404</a>  Kmeans
+</p>
+<p style="margin-left: 21pt"><a href="http://blog.sina.com.cn/s/blog_69c3ea2b0100nitu.html">http://blog.sina.com.cn/s/blog_69c3ea2b0100nitu.html</a>  层次聚类算法
+</p>
+<p style="margin-left: 21pt"><a href="http://my.oschina.net/liangtee/blog/125407">http://my.oschina.net/liangtee/blog/125407</a> Canopy算法</p>
+<div style="clear:both; margin-top:5px; margin-bottom:5px;"></div><div style="float:left"><strong>转载请注明出处:<script type="text/javascript">document.write("<a href='"+window.location.href+"'>"+window.location.href+"</a>");</script>===========欢迎分享↓↓↓↓↓↓</strong>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=1895509" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1895509" charset="utf-8"></script>
+<!-- JiaThis Button END --></div><div style="clear:both; margin-top:5px; margin-bottom:5px;"></div>
+														</div><!-- end of .post-entry -->
+			
+				<div class="navigation">
+					<div class="previous"><strong>&#8249; <a href="indexd7d8.html?p=153" rel="prev">Java集合类详解（00）</a></strong></div>
+					<div class="next"><strong></strong></div>
+				</div><!-- end of .navigation -->
+
+				
+
+	<div class="post-data">
+		文章分类 <a href="index3f7b.html?cat=2" rel="category">数据挖掘</a>			</div><!-- end of .post-data -->
+
+
+<div class="post-edit"></div>
+							</div><!-- end of #post-180 -->
+			
+			<p></p>
+			<div>本站部分文章来自于互联网，如有不适请与<a href="mailto:yours@huahuiyou.cn">yours@huahuiyou.cn</a>联系，站长会尽快处理。</div>
+		<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1895509"></script>
+<!-- UY END -->
+		
+</div><!-- end of #content -->
+
+
+	<div id="widgets" class="grid col-300 fit">
+		<div id="search-3" class="widget-wrapper widget_search">
+<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://rp.baidu.com/rp3w/3w.js?sid=4987594992521312252') + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));</script>
+</div>
+				<div id="recent-posts-2" class="widget-wrapper widget_recent_entries">		<div class="widget-title"><h3>近期文章</h3></div>		<ul>
+					<li>
+				<a href="index2586.html?p=180">近邻原则系列算法</a>
+							<span class="post-date">2014-10-12</span>
+						</li>
+					<li>
+				<a href="indexd7d8.html?p=153">Java集合类详解（00）</a>
+							<span class="post-date">2014-10-10</span>
+						</li>
+					<li>
+				<a href="indexf488.html?p=146">主成分分析-PCA</a>
+							<span class="post-date">2014-10-10</span>
+						</li>
+					<li>
+				<a href="index287b.html?p=82">正则表达式详解</a>
+							<span class="post-date">2014-10-10</span>
+						</li>
+					<li>
+				<a href="indexb135.html?p=77">数据挖掘原语-形式化定义过程描述</a>
+							<span class="post-date">2014-10-09</span>
+						</li>
+					<li>
+				<a href="index94b0.html?p=48">Hadoop 常用项目</a>
+							<span class="post-date">2014-10-08</span>
+						</li>
+				</ul>
+		</div><div id="categories-2" class="widget-wrapper widget_categories"><div class="widget-title"><h3>分类目录</h3></div>		<ul>
+	<li class="cat-item cat-item-13"><a href="index376e.html?cat=13" title="Hadoop系列博客">Hadoop</a> (1)
+</li>
+	<li class="cat-item cat-item-24"><a href="indexfa64.html?cat=24" title="linux操作系统/开发环境">linux</a> (2)
+</li>
+	<li class="cat-item cat-item-2"><a href="index3f7b.html?cat=2" >数据挖掘</a> (8)
+</li>
+	<li class="cat-item cat-item-22"><a href="index9035.html?cat=22" title="算法与数据结构">算法</a> (1)
+<ul class='children'>
+	<li class="cat-item cat-item-23"><a href="index54cb.html?cat=23" title="ACM以及算法面试题">算法题库</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-11"><a href="index29c7.html?cat=11" >编程</a> (3)
+<ul class='children'>
+	<li class="cat-item cat-item-14"><a href="index49ce.html?cat=14" title="Java编程语言">Java</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-4"><a href="indexaa1e.html?cat=4" >网站</a> (1)
+</li>
+		</ul>
+</div><div id="tag_cloud-4" class="widget-wrapper widget_tag_cloud"><div class="widget-title"><h3>标签</h3></div><div class="tagcloud"><a href='indexd468.html?tag=c4-5' class='tag-link-9' title='1个话题' style='font-size: 8pt;'>C4.5</a>
+<a href='indexa427.html?tag=cart' class='tag-link-10' title='1个话题' style='font-size: 8pt;'>CART</a>
+<a href='index4f1c.html?tag=github' class='tag-link-5' title='1个话题' style='font-size: 8pt;'>GitHub</a>
+<a href='index4920.html?tag=hbase' class='tag-link-35' title='1个话题' style='font-size: 8pt;'>HBase</a>
+<a href='index7149.html?tag=hive' class='tag-link-30' title='1个话题' style='font-size: 8pt;'>Hive</a>
+<a href='indexc633.html?tag=id3' class='tag-link-8' title='1个话题' style='font-size: 8pt;'>ID3</a>
+<a href='indexe35e.html?tag=linux%e7%b3%bb%e7%bb%9f' class='tag-link-26' title='1个话题' style='font-size: 8pt;'>linux系统</a>
+<a href='index9a21.html?tag=mahout' class='tag-link-32' title='1个话题' style='font-size: 8pt;'>Mahout</a>
+<a href='index0a75.html?tag=pig' class='tag-link-31' title='1个话题' style='font-size: 8pt;'>Pig</a>
+<a href='index0e30.html?tag=sqoop' class='tag-link-33' title='1个话题' style='font-size: 8pt;'>Sqoop</a>
+<a href='index320b.html?tag=zookeeper' class='tag-link-34' title='1个话题' style='font-size: 8pt;'>Zookeeper</a>
+<a href='indexea6e.html?tag=%e4%bb%a3%e7%a0%81' class='tag-link-12' title='1个话题' style='font-size: 8pt;'>代码</a>
+<a href='indexe69e.html?tag=%e5%86%b3%e7%ad%96%e6%a0%91' class='tag-link-7' title='1个话题' style='font-size: 8pt;'>决策树</a>
+<a href='index32e5.html?tag=%e5%8d%9a%e5%ae%a2' class='tag-link-6' title='1个话题' style='font-size: 8pt;'>博客</a>
+<a href='indexc3e4.html?tag=%e5%9f%ba%e7%a1%80' class='tag-link-28' title='1个话题' style='font-size: 8pt;'>基础</a>
+<a href='index8656.html?tag=%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86' class='tag-link-38' title='1个话题' style='font-size: 8pt;'>数据处理</a>
+<a href='indexa807.html?tag=%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98' class='tag-link-2' title='1个话题' style='font-size: 8pt;'>数据挖掘</a>
+<a href='index30ac.html?tag=%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f' class='tag-link-36' title='1个话题' style='font-size: 8pt;'>正则表达式</a>
+<a href='index1e6c.html?tag=%e7%ae%97%e6%b3%95%e9%a2%98' class='tag-link-25' title='1个话题' style='font-size: 8pt;'>算法题</a>
+<a href='index8780.html?tag=%e7%bc%96%e8%be%91%e5%99%a8' class='tag-link-29' title='1个话题' style='font-size: 8pt;'>编辑器</a></div>
+</div><div id="archives-2" class="widget-wrapper widget_archive"><div class="widget-title"><h3>文章归档</h3></div>		<ul>
+	<li><a href='index166c.html?m=201410'>2014年十月</a>&nbsp;(16)</li>
+		</ul>
+</div>
+			</div><!-- end of #widgets -->
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script>
+	<script type="text/javascript" src="wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script>
+	<!--WP Code Highlight_end-->
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+<div id="footer" class="clearfix">
+	
+	<div id="footer-wrapper">
+
+		
+		<div class="grid col-940">
+
+			<div class="grid col-540">
+							</div><!-- end of col-540 -->
+
+			<div class="grid col-380 fit">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- end of col-380 fit -->
+
+		</div><!-- end of col-940 -->
+		
+		<div class="grid col-300 copyright">
+			&copy; 2014<a href="index.html" title="IT-Sharer">
+				IT-Sharer			</a>
+		</div><!-- end of .copyright -->
+
+		<div class="grid col-300 scroll-top"><a href="#scroll-top" title="回到顶部">&uarr;</a></div>
+
+		<div class="grid col-300 fit powered">
+		<a href="mailto:yours@huahuiyou.cn">yours@huahuiyou.cn</a>
+				<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F74748e1f7566489bf1d197b4eadff46d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+		</div><!-- end .powered -->
+
+	</div><!-- end #footer-wrapper -->
+
+	</div><!-- end #footer -->
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=37583051" charset="UTF-8"></script>
+<!-- UJian Button BEGIN -->
+<script type="text/javascript">var ujian_config = {target:1};</script>
+<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide&amp;btn=4&amp;fade=1&amp;uid=1895509"></script>
+<!-- UJian Button END -->
+<script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-scripts.min578f.js?ver=1.2.6'></script>
+<script type='text/javascript' src='wp-content/themes/responsive/core/js/jquery.placeholder.min5d0a.js?ver=2.0.7'></script>
+
+
+</body>
+
+<!-- Mirrored from wp.hhy/?p=180 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Oct 2014 16:31:06 GMT -->
+</html>
