@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=11" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Fri, 10 Oct 2014 15:29:52 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 11 Oct 2014 13:03:54 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -29,106 +29,86 @@
 		<description><![CDATA[集合类图 上述类图中，实线边框的是实现类，比如ArrayList，LinkedL<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=153">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<ol>
 <li>
-<div style="text-align: justify"><span style="font-size:10pt"><strong>集合类图<br />
+<div style="text-align: justify;"><span style="font-size: 10pt;"><strong>集合类图<br />
 </strong></span></div>
-<p style="text-align: justify"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1529_Java001.gif" alt=""/><span style="font-size:10pt"><br />
-				</span></p>
+<p style="text-align: justify;"><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1529_Java001.gif" alt="" /><span style="font-size: 10pt;"><br />
+</span></p>
 </li>
 </ol>
-<p>上述类图中，<strong>实线边框</strong>的是实现类，比如ArrayList，LinkedList，HashMap等，<strong>折线边框</strong>的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而<strong>点线边框</strong>的是接口，比如Collection，Iterator，List等。
-</p>
-<p><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1529_Java002.jpg" alt=""/>
-	</p>
-<p>上图更为清晰描述了抽象类，接口，实现类之间的关系。
-</p>
+<p>上述类图中，<strong>实线边框</strong>的是实现类，比如ArrayList，LinkedList，HashMap等，<strong>折线边框</strong>的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而<strong>点线边框</strong>的是接口，比如Collection，Iterator，List等。</p>
+<p><img src="http://wp.hhy/wp-content/uploads/2014/10/101014_1529_Java002.jpg" alt="" /></p>
+<p>上图更为清晰描述了抽象类，接口，实现类之间的关系。</p>
 <ol>
 <li>
-<div style="text-align: justify"><span style="font-size:10pt"><strong>主要集合类说明<br />
+<div style="text-align: justify;"><span style="font-size: 10pt;"><strong>主要集合类说明<br />
 </strong></span></div>
-<p style="text-align: justify"><span style="font-size:10pt">Conllection接口：所有集合类都实现了。Iterator 方法产生一个迭代器。<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">Conllection接口：所有集合类都实现了。Iterator 方法产生一个迭代器。<br />
 </span></p>
-<p style="text-align: justify"><span style="font-size:10pt">（1）List接口：可重复元素集合。<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">（1）List接口：可重复元素集合。<br />
 </span></p>
-<p style="text-align: justify"><span style="font-size:10pt">Vector：数组类，同步的。<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">Vector：数组类，同步的。<br />
 </span></p>
 </li>
 </ol>
-<p>Stack：继承自Vector，把Vector当成堆栈使用。基本的push和pop 方法，还有peek方法得到栈顶的元素，empty方法测试堆栈是否为空，search方法检测一个元素在堆栈中的位置。
-</p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">ArrayList：数组类，非同步的。<br />
+<p>Stack：继承自Vector，把Vector当成堆栈使用。基本的push和pop 方法，还有peek方法得到栈顶的元素，empty方法测试堆栈是否为空，search方法检测一个元素在堆栈中的位置。</p>
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">ArrayList：数组类，非同步的。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">LinkedList：链表类，非同步的。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">LinkedList：链表类，非同步的。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt">
- </p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">（2）Set接口：不可重复元素集合。任意两个元素.equals 为FALSE。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">（2）Set接口：不可重复元素集合。任意两个元素.equals 为FALSE。<br />
 </span></p>
-<p>HashSet：哈希集合，查询元素是否包含在Set中的时间复杂度为O(1)。Contains(),由于插入操作要判断是否存在，因此插入操作的时间复杂度也为O(1)。元素没有特定的顺序存放。
-</p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">LinkedHashSet：元素以链表的形式存放。<br />
+<p>HashSet：哈希集合，查询元素是否包含在Set中的时间复杂度为O(1)。Contains(),由于插入操作要判断是否存在，因此插入操作的时间复杂度也为O(1)。元素没有特定的顺序存放。</p>
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">LinkedHashSet：元素以链表的形式存放。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">TreeSet：使用树结构存储元素，对象以升序存储。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">TreeSet：使用树结构存储元素，对象以升序存储。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt">
- </p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">（3）Map接口：提供&lt;K,V&gt;操作。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">（3）Map接口：提供&lt;K,V&gt;操作。<br />
 </span></p>
-<p>HashMap：hash的键值对。通过键可以快速找到值。数组的形式存放键的索引，键的值用链表存放。找到键后再找对应的值的位置。对象以数组形式存储。对象的HashCode，Equals均相等认为相等。
-</p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">LinkedHashMap：对象以链表的对象以链表形式存储。<br />
+<p>HashMap：hash的键值对。通过键可以快速找到值。数组的形式存放键的索引，键的值用链表存放。找到键后再找对应的值的位置。对象以数组形式存储。对象的HashCode，Equals均相等认为相等。</p>
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">LinkedHashMap：对象以链表的对象以链表形式存储。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">WeakHashMap：改进的HashMap，如果key不再被使用，则会被GC回收。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">WeakHashMap：改进的HashMap，如果key不再被使用，则会被GC回收。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">HashTable：同步的。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">HashTable：同步的。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">IdentityHashMap：完全一样的对象才认为是相等的。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">IdentityHashMap：完全一样的对象才认为是相等的。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">ConCurrentHashMap：高并发的HashMap，无需锁定整个表。低粒度锁定。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">ConCurrentHashMap：高并发的HashMap，无需锁定整个表。低粒度锁定。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">TreeMap：按关键字排序的HashMap。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">TreeMap：按关键字排序的HashMap。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt">
- </p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">（4）Comparable接口：可比较的，定义对象的比较方法，compare(T a,T b);<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">（4）Comparable接口：可比较的，定义对象的比较方法，compare(T a,T b);<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">Comparator抽象类：比较器，CompareTo（T a）;<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">Comparator抽象类：比较器，CompareTo（T a）;<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt">
- </p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">Iterator接口：迭代器，可以往后遍历元素。hasNext() next()<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">Iterator接口：迭代器，可以往后遍历元素。hasNext() next()<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">LinkedIterator接口：支持双向遍历集合。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">LinkedIterator接口：支持双向遍历集合。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt">
- </p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">Collections类：集合类的公用方法集。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">Collections类：集合类的公用方法集。<br />
 </span></p>
-<p style="text-align: justify; margin-left: 21pt"><span style="font-size:10pt">Array类：数组类的公用方法集。<br />
+<p style="text-align: justify; margin-left: 21pt;"><span style="font-size: 10pt;">Array类：数组类的公用方法集。<br />
 </span></p>
 <ol>
 <li>
-<div style="text-align: justify"><span style="font-size:10pt"><strong>集合类比较<br />
+<div style="text-align: justify;"><span style="font-size: 10pt;"><strong>集合类比较<br />
 </strong></span></div>
-<p style="text-align: justify"><span style="font-size:10pt">（1）同步性<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">（1）同步性<br />
 </span></p>
-<p style="text-align: justify"><span style="font-size:10pt">同步的：Vector、Stack、HashTable、ConcurrentHashMap<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">同步的：Vector、Stack、HashTable、ConcurrentHashMap<br />
 </span></p>
-<p style="text-align: justify"><span style="font-size:10pt">非同步的：ArrayList、LinkedList、HashMap、TreeSet、HashSet、LinkedHashSet、TreeMap等<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">非同步的：ArrayList、LinkedList、HashMap、TreeSet、HashSet、LinkedHashSet、TreeMap等<br />
 </span></p>
-<p style="text-align: justify"><span style="font-size:10pt">（2）Vector和ArrayList<br />
+<p style="text-align: justify;"><span style="font-size: 10pt;">（2）Vector和ArrayList<br />
 </span></p>
-<p style="text-align: justify"><span style="font-size:10pt">增长：一倍，一半。<br />
-</span></p>
-<p style="text-align: justify">
- </p>
+<p style="text-align: justify;"><span style="font-size: 10pt;">增长：一倍，一半。</span></p>
+<p style="text-align: justify;">参考资料：</p>
 </li>
 </ol>
-<p style="text-align: justify"><span style="font-size:10pt">参考资料：<br />
+<p style="text-align: justify;"><a href="http://blog.csdn.net/softwave/article/details/4166598"><span style="font-size: 10pt;">http://blog.csdn.net/softwave/article/details/4166598</span></a><span style="font-size: 10pt;"><br />
 </span></p>
-<p style="text-align: justify"><a href="http://blog.csdn.net/softwave/article/details/4166598"><span style="font-size:10pt">http://blog.csdn.net/softwave/article/details/4166598</span></a><span style="font-size:10pt"><br />
-		</span></p>
-<p style="text-align: justify"><a href="http://www.cnblogs.com/xwdreamer/archive/2012/05/30/2526822.html"><span style="font-size:10pt">http://www.cnblogs.com/xwdreamer/archive/2012/05/30/2526822.html</span></a><span style="font-size:10pt"><br />
-		</span></p>
+<p style="text-align: justify;"><a href="http://www.cnblogs.com/xwdreamer/archive/2012/05/30/2526822.html"><span style="font-size: 10pt;">http://www.cnblogs.com/xwdreamer/archive/2012/05/30/2526822.html</span></a><span style="font-size: 10pt;"><br />
+</span></p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=153</wfw:commentRss>
 		<slash:comments>0</slash:comments>
