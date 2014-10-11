@@ -16,7 +16,12 @@ pre .dec{color:#3387CC;}
 
 pre.prettyprint{
 	background-color:#000;
-	font-size:12px;line-height:16px;margin:6px 0px;padding:2px 7px;word-wrap:normal;overflow:auto;width:98%;
+	font-size:12px;
+	line-height:16px;
+	margin:6px 0px;
+	padding:2px 7px;
+	white-space: pre;
+	word-wrap:normal;overflow:auto;width:98%;
 }
 ol.linenums li{line-height:16px;margin:0px;padding:0px;list-style:none;}
 ol.linenums li:before,ol.linenums li:after{content:none;}
