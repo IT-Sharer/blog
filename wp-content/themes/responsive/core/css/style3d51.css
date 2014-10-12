@@ -849,7 +849,7 @@ form div {
 	clear: both;
 	font-size: 12px;
 	font-weight: 700;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .post-data a {
@@ -1596,7 +1596,7 @@ ul.menu > li:hover {
 	font-size: 13px;
 	height: 28px;
 	line-height: 28px;
-	margin: 20px 0;
+	margin: 10px 0;
 	padding: 0 5px;
 }
 
@@ -2765,6 +2765,13 @@ table.cart td.actions .coupon .input-text {
 .clear {
 	clear: both;
 }
+.xuanfu {
+	position: fixed;
+	bottom:120px;
+	right: 10px;
+	padding: 5px;
+	border: 2px;
+}
 
 /* =Begin bidirectionality settings (do not change)
 -------------------------------------------------------------- */
@@ -2813,3 +2820,4 @@ BDO[DIR="rtl"] {
 }
 
 /*The last 29 days of the month are the hardest."- Nikola Tesla*/
+//add
