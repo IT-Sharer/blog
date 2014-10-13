@@ -10,20 +10,20 @@
 	<!--[if gt IE 9]><!-->
 <html class="no-js" lang="zh-CN"> <!--<![endif]-->
 	
-<!-- Mirrored from wp.hhy/?tag=pig by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Oct 2014 13:25:54 GMT -->
+<!-- Mirrored from wp.hhy/?p=183 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Oct 2014 13:25:25 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Pig &#124; IT-Sharer</title>
+		<title>二叉树的前序、中序、后序、层序遍历的递归与非递归实现 &#124; IT-Sharer</title>
 		<link rel="profile" href="../gmpg.org/xfn/11.html"/>
 		<link rel="pingback" href="xmlrpc.php"/>
 
 		<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; Feed" href="indexd784.html?feed=rss2" />
 <link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 评论Feed" href="indexa6da.html?feed=comments-rss2" />
-<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; Pig标签Feed" href="indexdc94.html?feed=rss2&amp;tag=pig" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 二叉树的前序、中序、后序、层序遍历的递归与非递归实现评论Feed" href="indexc8a4.html?feed=rss2&amp;p=183" />
 <link rel='stylesheet' id='responsive-style-css'  href='wp-content/themes/responsive/core/css/style3d51.css?ver=1.9.7.4' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-media-queries-css'  href='wp-content/themes/responsive/core/css/responsive3d51.css?ver=1.9.7.4' type='text/css' media='all' />
 <script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
@@ -31,14 +31,17 @@
 <script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-modernizr.minc141.js?ver=2.6.1'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='近邻原则系列算法' href='index2586.html?p=180' />
 <meta name="generator" content="WordPress 4.0" />
+<link rel='canonical' href='indexe8f5.html?p=183' />
+<link rel='shortlink' href='indexe8f5.html?p=183' />
 <link rel="stylesheet" type="text/css" href="wp-content/plugins/wp-code-highlight/css/sunburst.css" media="screen" />
 <!-- We need this for debugging -->
 <!-- Responsive 1.9.7.4 -->
 
 	</head>
 
-<body class="archive tag tag-pig tag-31">
+<body class="single single-post postid-183 single-format-standard">
 
 <div id="container" class="hfeed">
 
@@ -61,12 +64,12 @@
 				<div class="main-nav"><ul id="menu-%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98%e8%8f%9c%e5%8d%95" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="index.html">首页</a></li>
 <li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
 <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="index376e.html?cat=13">Hadoop</a></li>
-<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
+<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
 <ul class="sub-menu">
 	<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="index49ce.html?cat=14">Java</a></li>
 </ul>
 </li>
-<li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-33"><a href="index9035.html?cat=22">算法</a>
+<li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-33"><a href="index9035.html?cat=22">算法</a>
 <ul class="sub-menu">
 	<li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="index54cb.html?cat=23">算法题库</a></li>
 </ul>
@@ -79,40 +82,264 @@
 
 	<div id="wrapper" class="clearfix">
 
-<div id="content-archive" class="grid col-620">
+<div id="content" class="grid col-620">
 
 	
-			<h6 class="title-archive">
-		文章归档	</h6>
 	
 		
-						<div id="post-48" class="post-48 post type-post status-publish format-standard hentry category-hadoop tag-hbase tag-hive tag-mahout tag-pig tag-sqoop tag-zookeeper">
+						<div id="post-183" class="post-183 post type-post status-publish format-standard hentry category-algorithm category-11 tag-41 tag-40">
 				
 				
-	<h2 class="entry-title post-title"><a href="index94b0.html?p=48" rel="bookmark">Hadoop 常用项目</a></h2>
+	<h1 class="entry-title post-title">二叉树的前序、中序、后序、层序遍历的递归与非递归实现</h1>
 
 <div class="post-meta">
-	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="index94b0.html?p=48" title="Hadoop 常用项目" rel="bookmark"><time class="timestamp updated" datetime="2014-10-08T15:24:17+00:00">2014-10-08</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
+	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="indexe8f5.html?p=183" title="二叉树的前序、中序、后序、层序遍历的递归与非递归实现" rel="bookmark"><time class="timestamp updated" datetime="2014-10-13T21:20:00+00:00">2014-10-13</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
 	
 </div><!-- end of .post-meta -->
 
 				<div class="post-entry">
-										<p>Hadoop从2007年开始发展到现在已经衍生出了20多个产品。更新换代非常之快<span class="ellipsis">&hellip;</span>
-<div class="read-more"><a href="index94b0.html?p=48">查阅全文 &#8250;</a></div>
-<p><!-- end of .read-more --></p>
-									</div><!-- end of .post-entry -->
+					<p><b>树结构：</b>
+<pre class="wp-code-highlight prettyprint">public class NodeBTree&lt;t&gt; {
+    T value;
+    NodeBTree&lt;t&gt; lChild;
+    NodeBTree&lt;t&gt; rChild;
+    public NodeBTree(T t) {
+        value=t;
+    }
+}
+</pre>
+<p>访问节点：
+<pre class="wp-code-highlight prettyprint">public void visit(NodeBTree&lt;t&gt; node){
+    System.out.println(node.value);
+}
+
+</pre>
+<p><b>1.</b><b>前序遍历</b></p>
+<p>1a递归实现</p>
+<p>思路：1.访问根节点；2.前序访问左子树；3.前序访问右子树
+<pre class="wp-code-highlight prettyprint">//1a 前序递归
+void preOrderVisit(NodeBTree&lt;t&gt; btree){
+    if (btree==null)return;
+    visit(btree);
+    preOrderVisit(btree.lChild);
+    preOrderVisit(btree.rChild);
+}
+
+</pre>
+<p>1b非递归</p>
+<p>思路：1.访问栈顶节点；2，将其右子树进栈，左子树进栈；3重复1,2直到栈为空
+<pre class="wp-code-highlight prettyprint">//1b 前序非递归
+void preOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    stack.push(bTree);
+    while(!stack.isEmpty()){
+        NodeBTree&lt;t&gt; tmp=stack.pop();
+        visit(tmp);
+        if(tmp.rChild!=null)stack.push(tmp.rChild);
+        if(tmp.lChild!=null)stack.push(tmp.lChild);
+    }
+}
+
+</pre>
+<p><b>2.</b><b>中序遍历</b></p>
+<p>2a递归实现</p>
+<p>思路：1.中序遍历左子树；2访问父节点；3中序遍历右子树
+<pre class="wp-code-highlight prettyprint">//2a 中序递归
+void mOrderVisiit(NodeBTree bTree){
+    if(bTree==null)return;
+    mOrderVisiit(bTree.lChild);
+    visit(bTree);
+    mOrderVisiit(bTree.rChild);
+}
+
+</pre>
+<p><b>2b</b><b>非递归 </b><b>很有技巧</b></p>
+<p>思路：1一直到最左节点，null 也进栈；2null出栈，再访问顶节点；3访问顶节点右子树，直到null；4.直到栈空结束。</p>
+<p>左孩子的后继是父节点，右孩子的后继是父节点的父节点。且该后继不需要再次访问左孩子。
+<pre class="wp-code-highlight prettyprint">//2b 中序非递归
+void mOrderVisiitNR(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    stack.push(bTree);
+    while(!stack.isEmpty()){
+        NodeBTree&lt;t&gt; tmp=stack.peek();
+        while(tmp!=null){
+            stack.push(tmp.lChild);
+            tmp=tmp.lChild;
+        }
+        stack.pop();//退出null
+        if(!stack.isEmpty()){
+            tmp=stack.pop();
+            visit(tmp);
+            stack.push(tmp.rChild);//不管是否是null都push进入。如果不为空则要访问左子树
+        }
+    }
+}
+
+</pre>
+<p><b>3.</b><b>后序遍历</b></p>
+<p>3a递归实现</p>
+<p>思路：1.后序遍历左子树；2后序遍历右子树；3访问父节点。
+<pre class="wp-code-highlight prettyprint">//3a 后序递归
+void aOrderVisit(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    aOrderVisit(bTree.lChild);
+    aOrderVisit(bTree.rChild);
+    visit(bTree);
+}
+
+</pre>
+<p>3b非递归，技巧性很高。</p>
+<p>思路：左孩子的后继是右孩子，右孩子的后继是父节点。因此顺序 父节点进栈，访问右子树，访问父节点得到右孩子，访问父节点。因此父节点被使用了3次，并且每次的后继操作都是不一样的。设置一个访问位来表示父节点的访问信息。
+<pre class="wp-code-highlight prettyprint">//3b 后序非递归
+void aOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+    //后序非递归需要设置一个访问标志位。
+    if(bTree==null)return;
+    class BTreeFlag{
+        NodeBTree&lt;t&gt; nodeTree;
+        int flag;//是否被访问。
+        public BTreeFlag(NodeBTree&lt;t&gt; biT,int f) {
+            nodeTree=biT;
+            flag=f;
+        }
+    }
+    Stack&lt;btreeflag&gt; stack=new Stack&amp;lt;&amp;gt;();
+    stack.push(new BTreeFlag(bTree, 0));
+    while(!stack.isEmpty()){
+        BTreeFlag tmp=stack.peek();
+        if(tmp.flag==2){//左右子树均访问，并且退栈了
+            stack.pop();
+            visit(tmp.nodeTree);
+        }
+        else if(tmp.flag==0){//初始状态，左子树进栈
+            tmp.flag=1;
+            if(tmp.nodeTree.lChild!=null)
+                stack.push(new BTreeFlag(tmp.nodeTree.lChild, 0));
+        }
+        else if(tmp.flag==1){//左子树已经出栈，访问右子树
+            tmp.flag=2;
+            if(tmp.nodeTree.rChild!=null)
+                stack.push(new BTreeFlag(tmp.nodeTree.rChild, 0));
+        }
+    }        
+}
+
+</pre>
+<p><b>4.</b><b>层序遍历</b></p>
+<p>思路：用队列实现一层一层的访问
+<pre class="wp-code-highlight prettyprint">//4 层序遍历
+void cengxuVisit(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    Queue&lt;nodebtree&gt;&lt;t&gt;&amp;gt; queue=new LinkedList&lt;nodebtree&gt;&lt;t&gt;&amp;gt;() ;
+    queue.add(bTree);
+    while(!queue.isEmpty()){
+        NodeBTree&lt;t&gt; tmpBTree=queue.poll();
+        visit(tmpBTree);
+        if (tmpBTree.lChild!=null) queue.offer(tmpBTree.lChild);
+        if (tmpBTree.rChild!=null) queue.offer(tmpBTree.rChild);
+    }    
+
+</pre>
+<p><b>5.</b><b>测试用例</b></p>
+<p><img title="clip_image001" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image001" src="wp-content/uploads/2014/10/clip_image001.jpg" width="326" height="195"></p>
+<p>后序：9,4,10,5,2,12,13,6,7,3,1</p>
+<p>层序： 1,2,3,4,5,6,7,8,9,10,12,13
+<pre class="wp-code-highlight prettyprint">//测试用例
+NodeBTree&lt;integer&gt; demo=new NodeBTree&lt;integer&gt;(0);
+ArrayList&lt;nodebtree&gt;&lt;integer&gt;&amp;gt; nodes=new ArrayList&amp;lt;&amp;gt;();
+for(int i=0;i&amp;lt;14;i++){
+    nodes.add(new NodeBTree&lt;integer&gt;(i));
+}
+nodes.get(1).lChild=nodes.get(2);
+nodes.get(1).rChild=nodes.get(3);
+nodes.get(2).lChild=nodes.get(4);
+nodes.get(2).rChild=nodes.get(5);
+nodes.get(3).lChild=nodes.get(6);
+nodes.get(3).rChild=nodes.get(7);
+nodes.get(4).rChild=nodes.get(9);
+nodes.get(5).lChild=nodes.get(10);
+nodes.get(6).lChild=nodes.get(12);
+nodes.get(6).rChild=nodes.get(13);
+System.out.println(&quot;1a 前序递归：&quot;);
+demo.preOrderVisit(nodes.get(1));
+System.out.println();
+System.out.println(&quot;1b 前序非递归：&quot;);
+demo.preOrderVisitNR(nodes.get(1));
+System.out.println();
+System.out.println(&quot;2a 中序递归：&quot;);
+demo.mOrderVisiit(nodes.get(1));
+System.out.println();
+System.out.println(&quot;2b 中序非递归：&quot;);
+demo.mOrderVisiitNR(nodes.get(1));
+System.out.println();
+System.out.println(&quot;3a 后序递归：&quot;);
+demo.aOrderVisit(nodes.get(1));
+System.out.println();
+System.out.println(&quot;3b 后序非递归：&quot;);
+demo.aOrderVisitNR(nodes.get(1));
+System.out.println();
+System.out.println(&quot;4 层序遍历：&quot;);
+demo.cengxuVisit(nodes.get(1));
+System.out.println();
+
+</pre>
+<p>输出结果:</p>
+<pre class="wp-code-highlight prettyprint">1a 前序递归：
+1 2 4 9 5 10 3 6 12 13 7 
+1b 前序非递归：
+1 2 4 9 5 10 3 6 12 13 7 
+2a 中序递归：
+4 9 2 10 5 1 12 6 13 3 7 
+2b 中序非递归：
+4 9 2 10 5 1 12 6 13 3 7 
+3a 后序递归：
+9 4 10 5 2 12 13 6 7 3 1 
+3b 后序非递归：
+9 4 10 5 2 12 13 6 7 3 1 
+4 层序遍历：
+1 2 3 4 5 6 7 9 10 12 13 
+
+</pre>
+<div style="clear:both; margin-top:5px; margin-bottom:5px;"></div><div style="float:left"><strong>转载请注明出处:<script type="text/javascript">document.write("<a href='"+window.location.href+"'>"+window.location.href+"</a>");</script>===========欢迎分享↓↓↓↓↓↓</strong>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=1895509" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1895509" charset="utf-8"></script>
+<!-- JiaThis Button END --></div><div style="clear:both; margin-top:5px; margin-bottom:5px;"></div>
+														</div><!-- end of .post-entry -->
+			
+				<div class="navigation">
+					<div class="previous"><strong>&#8249; <a href="index2586.html?p=180" rel="prev">近邻原则系列算法</a></strong></div>
+					<div class="next"><strong></strong></div>
+				</div><!-- end of .navigation -->
 
 				
 
 	<div class="post-data">
-		文章分类 <a href="index376e.html?cat=13" rel="category">Hadoop</a>		标签： <a href="index4920.html?tag=hbase" rel="tag">HBase</a>, <a href="index7149.html?tag=hive" rel="tag">Hive</a>, <a href="index9a21.html?tag=mahout" rel="tag">Mahout</a>, <a href="index0a75.html?tag=pig" rel="tag">Pig</a>, <a href="index0e30.html?tag=sqoop" rel="tag">Sqoop</a>, <a href="index320b.html?tag=zookeeper" rel="tag">Zookeeper</a><br />	</div><!-- end of .post-data -->
+		文章分类 <a href="index9035.html?cat=22" rel="category">算法</a>, <a href="index29c7.html?cat=11" rel="category">编程</a>		标签： <a href="index853e.html?tag=%e9%80%92%e5%bd%92" rel="tag">递归</a>, <a href="index74a7.html?tag=%e9%81%8d%e5%8e%86" rel="tag">遍历</a><br />	</div><!-- end of .post-data -->
 
 
 <div class="post-edit"></div>
-							</div><!-- end of #post-48 -->
+							</div><!-- end of #post-183 -->
 			
+			<p></p>
+			<div>本站部分文章来自于互联网，如有不适请与<a href="mailto:yours@huahuiyou.cn">yours@huahuiyou.cn</a>联系，站长会尽快处理。</div>
+		<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1895509"></script>
+<!-- UY END -->
 		
-</div><!-- end of #content-archive -->
+</div><!-- end of #content -->
 
 
 	<div id="widgets" class="grid col-300 fit">
@@ -260,5 +487,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 </body>
 
-<!-- Mirrored from wp.hhy/?tag=pig by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Oct 2014 13:25:54 GMT -->
+<!-- Mirrored from wp.hhy/?p=183 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Oct 2014 13:25:26 GMT -->
 </html>

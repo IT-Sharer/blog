@@ -12,12 +12,232 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;author=1" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 11 Oct 2014 16:22:23 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 13 Oct 2014 13:20:55 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>二叉树的前序、中序、后序、层序遍历的递归与非递归实现</title>
+		<link>http://wp.hhy/?p=183</link>
+		<comments>http://wp.hhy/?p=183#comments</comments>
+		<pubDate>Mon, 13 Oct 2014 13:20:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法]]></category>
+		<category><![CDATA[编程]]></category>
+		<category><![CDATA[递归]]></category>
+		<category><![CDATA[遍历]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=183</guid>
+		<description><![CDATA[树结构： public class NodeBTree&#60;t&#62; { T<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=183">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p><b>树结构：</b>
+<pre class="wp-code-highlight prettyprint">public class NodeBTree&lt;t&gt; {
+    T value;
+    NodeBTree&lt;t&gt; lChild;
+    NodeBTree&lt;t&gt; rChild;
+    public NodeBTree(T t) {
+        value=t;
+    }
+}
+</pre>
+<p>访问节点：
+<pre class="wp-code-highlight prettyprint">public void visit(NodeBTree&lt;t&gt; node){
+    System.out.println(node.value);
+}
+
+</pre>
+<p><b>1.</b><b>前序遍历</b></p>
+<p>1a递归实现</p>
+<p>思路：1.访问根节点；2.前序访问左子树；3.前序访问右子树
+<pre class="wp-code-highlight prettyprint">//1a 前序递归
+void preOrderVisit(NodeBTree&lt;t&gt; btree){
+    if (btree==null)return;
+    visit(btree);
+    preOrderVisit(btree.lChild);
+    preOrderVisit(btree.rChild);
+}
+
+</pre>
+<p>1b非递归</p>
+<p>思路：1.访问栈顶节点；2，将其右子树进栈，左子树进栈；3重复1,2直到栈为空
+<pre class="wp-code-highlight prettyprint">//1b 前序非递归
+void preOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    stack.push(bTree);
+    while(!stack.isEmpty()){
+        NodeBTree&lt;t&gt; tmp=stack.pop();
+        visit(tmp);
+        if(tmp.rChild!=null)stack.push(tmp.rChild);
+        if(tmp.lChild!=null)stack.push(tmp.lChild);
+    }
+}
+
+</pre>
+<p><b>2.</b><b>中序遍历</b></p>
+<p>2a递归实现</p>
+<p>思路：1.中序遍历左子树；2访问父节点；3中序遍历右子树
+<pre class="wp-code-highlight prettyprint">//2a 中序递归
+void mOrderVisiit(NodeBTree bTree){
+    if(bTree==null)return;
+    mOrderVisiit(bTree.lChild);
+    visit(bTree);
+    mOrderVisiit(bTree.rChild);
+}
+
+</pre>
+<p><b>2b</b><b>非递归 </b><b>很有技巧</b></p>
+<p>思路：1一直到最左节点，null 也进栈；2null出栈，再访问顶节点；3访问顶节点右子树，直到null；4.直到栈空结束。</p>
+<p>左孩子的后继是父节点，右孩子的后继是父节点的父节点。且该后继不需要再次访问左孩子。
+<pre class="wp-code-highlight prettyprint">//2b 中序非递归
+void mOrderVisiitNR(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    stack.push(bTree);
+    while(!stack.isEmpty()){
+        NodeBTree&lt;t&gt; tmp=stack.peek();
+        while(tmp!=null){
+            stack.push(tmp.lChild);
+            tmp=tmp.lChild;
+        }
+        stack.pop();//退出null
+        if(!stack.isEmpty()){
+            tmp=stack.pop();
+            visit(tmp);
+            stack.push(tmp.rChild);//不管是否是null都push进入。如果不为空则要访问左子树
+        }
+    }
+}
+
+</pre>
+<p><b>3.</b><b>后序遍历</b></p>
+<p>3a递归实现</p>
+<p>思路：1.后序遍历左子树；2后序遍历右子树；3访问父节点。
+<pre class="wp-code-highlight prettyprint">//3a 后序递归
+void aOrderVisit(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    aOrderVisit(bTree.lChild);
+    aOrderVisit(bTree.rChild);
+    visit(bTree);
+}
+
+</pre>
+<p>3b非递归，技巧性很高。</p>
+<p>思路：左孩子的后继是右孩子，右孩子的后继是父节点。因此顺序 父节点进栈，访问右子树，访问父节点得到右孩子，访问父节点。因此父节点被使用了3次，并且每次的后继操作都是不一样的。设置一个访问位来表示父节点的访问信息。
+<pre class="wp-code-highlight prettyprint">//3b 后序非递归
+void aOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+    //后序非递归需要设置一个访问标志位。
+    if(bTree==null)return;
+    class BTreeFlag{
+        NodeBTree&lt;t&gt; nodeTree;
+        int flag;//是否被访问。
+        public BTreeFlag(NodeBTree&lt;t&gt; biT,int f) {
+            nodeTree=biT;
+            flag=f;
+        }
+    }
+    Stack&lt;btreeflag&gt; stack=new Stack&amp;lt;&amp;gt;();
+    stack.push(new BTreeFlag(bTree, 0));
+    while(!stack.isEmpty()){
+        BTreeFlag tmp=stack.peek();
+        if(tmp.flag==2){//左右子树均访问，并且退栈了
+            stack.pop();
+            visit(tmp.nodeTree);
+        }
+        else if(tmp.flag==0){//初始状态，左子树进栈
+            tmp.flag=1;
+            if(tmp.nodeTree.lChild!=null)
+                stack.push(new BTreeFlag(tmp.nodeTree.lChild, 0));
+        }
+        else if(tmp.flag==1){//左子树已经出栈，访问右子树
+            tmp.flag=2;
+            if(tmp.nodeTree.rChild!=null)
+                stack.push(new BTreeFlag(tmp.nodeTree.rChild, 0));
+        }
+    }        
+}
+
+</pre>
+<p><b>4.</b><b>层序遍历</b></p>
+<p>思路：用队列实现一层一层的访问
+<pre class="wp-code-highlight prettyprint">//4 层序遍历
+void cengxuVisit(NodeBTree&lt;t&gt; bTree){
+    if(bTree==null)return;
+    Queue&lt;nodebtree&gt;&lt;t&gt;&amp;gt; queue=new LinkedList&lt;nodebtree&gt;&lt;t&gt;&amp;gt;() ;
+    queue.add(bTree);
+    while(!queue.isEmpty()){
+        NodeBTree&lt;t&gt; tmpBTree=queue.poll();
+        visit(tmpBTree);
+        if (tmpBTree.lChild!=null) queue.offer(tmpBTree.lChild);
+        if (tmpBTree.rChild!=null) queue.offer(tmpBTree.rChild);
+    }    
+
+</pre>
+<p><b>5.</b><b>测试用例</b></p>
+<p><img title="clip_image001" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image001" src="http://wp.hhy/wp-content/uploads/2014/10/clip_image001.jpg" width="326" height="195"></p>
+<p>后序：9,4,10,5,2,12,13,6,7,3,1</p>
+<p>层序： 1,2,3,4,5,6,7,8,9,10,12,13
+<pre class="wp-code-highlight prettyprint">//测试用例
+NodeBTree&lt;integer&gt; demo=new NodeBTree&lt;integer&gt;(0);
+ArrayList&lt;nodebtree&gt;&lt;integer&gt;&amp;gt; nodes=new ArrayList&amp;lt;&amp;gt;();
+for(int i=0;i&amp;lt;14;i++){
+    nodes.add(new NodeBTree&lt;integer&gt;(i));
+}
+nodes.get(1).lChild=nodes.get(2);
+nodes.get(1).rChild=nodes.get(3);
+nodes.get(2).lChild=nodes.get(4);
+nodes.get(2).rChild=nodes.get(5);
+nodes.get(3).lChild=nodes.get(6);
+nodes.get(3).rChild=nodes.get(7);
+nodes.get(4).rChild=nodes.get(9);
+nodes.get(5).lChild=nodes.get(10);
+nodes.get(6).lChild=nodes.get(12);
+nodes.get(6).rChild=nodes.get(13);
+System.out.println(&quot;1a 前序递归：&quot;);
+demo.preOrderVisit(nodes.get(1));
+System.out.println();
+System.out.println(&quot;1b 前序非递归：&quot;);
+demo.preOrderVisitNR(nodes.get(1));
+System.out.println();
+System.out.println(&quot;2a 中序递归：&quot;);
+demo.mOrderVisiit(nodes.get(1));
+System.out.println();
+System.out.println(&quot;2b 中序非递归：&quot;);
+demo.mOrderVisiitNR(nodes.get(1));
+System.out.println();
+System.out.println(&quot;3a 后序递归：&quot;);
+demo.aOrderVisit(nodes.get(1));
+System.out.println();
+System.out.println(&quot;3b 后序非递归：&quot;);
+demo.aOrderVisitNR(nodes.get(1));
+System.out.println();
+System.out.println(&quot;4 层序遍历：&quot;);
+demo.cengxuVisit(nodes.get(1));
+System.out.println();
+
+</pre>
+<p>输出结果:</p>
+<pre class="wp-code-highlight prettyprint">1a 前序递归：
+1 2 4 9 5 10 3 6 12 13 7 
+1b 前序非递归：
+1 2 4 9 5 10 3 6 12 13 7 
+2a 中序递归：
+4 9 2 10 5 1 12 6 13 3 7 
+2b 中序非递归：
+4 9 2 10 5 1 12 6 13 3 7 
+3a 后序递归：
+9 4 10 5 2 12 13 6 7 3 1 
+3b 后序非递归：
+9 4 10 5 2 12 13 6 7 3 1 
+4 层序遍历：
+1 2 3 4 5 6 7 9 10 12 13 
+
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=183</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>近邻原则系列算法</title>
 		<link>http://wp.hhy/?p=180</link>
 		<comments>http://wp.hhy/?p=180#comments</comments>
@@ -1124,49 +1344,6 @@ System.out.println(s);
 <p>也有偏序关系分析：事务关联分析中两个事务具有时间顺序的关系。</p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=42</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>Linux系统远程连接</title>
-		<link>http://wp.hhy/?p=39</link>
-		<comments>http://wp.hhy/?p=39#comments</comments>
-		<pubDate>Sun, 05 Oct 2014 06:55:07 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[linux]]></category>
-		<category><![CDATA[linux系统]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=39</guid>
-		<description><![CDATA[一般Linux系统支持三种远程登陆方式:Telnet/SSH和VNC or XD<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=39">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p>一般Linux系统支持三种远程登陆方式:Telnet/SSH和VNC or XDM.</p>
-<p>Telnet是TCP/IP协议簇中最为广泛的协议之一,提供远程机器的通信功能.一般操作系统都会内置有客户端软件.可能需要安装或者手动开启Telnet命令功能.所有数据都是明文传输,所以存在安全隐患.</p>
-<p>SSH:类似Telnet,但是传输数据经过了加密处理,相对安全.一般Linux系统需要安装ssh server服务.</p>
-<p>XDM/VNC是一种图形界面的访问方式,图形界面较为直观便捷,但是会占用较大的带宽.一般需要安装Server和Client端.</p>
-<p>工具选择:</p>
-<p>WinSCP:可以图形化地查看远程的文件,支持同步等操作,类似于FTP客户端软件.另外也支持调用Putty客户端进入命令行界面.</p>
-<p>putty客户端:命令行的方式对远程界面进行操作,类似于运行了一个终端界面.</p>
-<p>VNCViewer:支持图形化的远程操作,支持鼠标等.需要在Linux机器上安全VNCSERVER服务.</p>
-<h4>重点:</h4>
-<p>SSH中的文件传输:</p>
-<p>1.将文件传输到SSH服务器</p>
-<p>scp localfile&nbsp; username@[主机名或者IP]:/newfilename</p>
-<p>2.从SSH服务器获取文件</p>
-<p>scp username@[主机名或者IP]:/filename&nbsp; localfilename</p>
-<p>3. 批量传输文件</p>
-<p>scp username@[主机名或者IP]:/filename/*[正则表达式]&nbsp; localfilename[本地文件的路径]</p>
-<h4>Putty中的文件传输:</h4>
-<p>pscp –P[模式] 22[端口] -C c:\a.txt[本地路径] username@server:/path/&nbsp; [远程路径]</p>
-<p>命令参考:</p>
-<p>-q安静模式</p>
-<p>-p 指定SSH端口 默认22</p>
-<p>-I 指定用户</p>
-<p>-pw 指定密码</p>
-<p>-C 允许压缩传输</p>
-<p>参考资料:</p>
-<p><a title="http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K" href="http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K">http://wenku.baidu.com/link?url=iyhbEriG0JALpK5jmfrbYAqjAPH3VI2npmj0fSwhJ-pVqv2Ff5c7bTN8KmQX420kUocTTMzp5v5soT41WpzLflg7gxPX0ufurHWPtq1uY_K</a></p>
-<p><a title="http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html" href="http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html">http://jingyan.baidu.com/article/f79b7cb35116449144023e2f.html</a></p>
-<p><a title="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/" href="http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/">http://lanxuezaipiao.blog.163.com/blog/static/9377996520132186930353/</a></p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=39</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>
