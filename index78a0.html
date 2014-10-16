@@ -12,12 +12,50 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;author=1" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Mon, 13 Oct 2014 13:20:55 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 16 Oct 2014 12:29:43 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>A0002.数组归并取前N个数问题</title>
+		<link>http://wp.hhy/?p=185</link>
+		<comments>http://wp.hhy/?p=185#comments</comments>
+		<pubDate>Thu, 16 Oct 2014 12:29:43 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法题库]]></category>
+		<category><![CDATA[算法题]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=185</guid>
+		<description><![CDATA[有20个数组，每个数组500个元素，降序排列，找出前500个数。 a[20][5<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=185">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>有20个数组，每个数组500个元素，降序排列，找出前500个数。</p>
+<pre class="wp-code-highlight prettyprint">a[20][500]
+b[20] 保存每个数字的位置 默认b[i]=24;
+Tag=true;
+While(tag)
+{
+	Tag=false;
+	//取最后20个元素最小位置I,和最大的位置j, 20个元素都要有值。对b[x]&amp;lt;0的不进行计算
+	Int i=0,j=0,min=Integer.Max,max=0;
+	For(int m=0;m&amp;lt;20;m++)
+	{
+		If(b[m]&amp;gt;=0){
+			If(a[m][b[m]]&lt;min  )… if(a[m][b[m]] Else&gt;max)…
+		}
+	}
+	While(a[i][b[i]]&amp;lt;a[j][b[j]+1]){
+		b[i]-=1;
+		b[j]+=1;
+		Tag=true;
+	}
+}
+//对于每个数组返回对应的数字。
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=185</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>二叉树的前序、中序、后序、层序遍历的递归与非递归实现</title>
 		<link>http://wp.hhy/?p=183</link>
 		<comments>http://wp.hhy/?p=183#comments</comments>
@@ -1311,39 +1349,6 @@ System.out.println(s);
 <p>注：在这之中，g表示全局查找；我们注意到，就是没有替换的地方，也会把SEARCH高亮显示；</p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=44</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>数据挖掘的任务和功能</title>
-		<link>http://wp.hhy/?p=42</link>
-		<comments>http://wp.hhy/?p=42#comments</comments>
-		<pubDate>Tue, 07 Oct 2014 03:35:00 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[数据挖掘]]></category>
-		<category><![CDATA[基础]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=42</guid>
-		<description><![CDATA[数据挖掘的任务一般可以分为两类:描述和预测。描述性任务一般刻画数据中的一般特性，<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=42">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p>数据挖掘的任务一般可以分为两类:描述和预测。描述性任务一般刻画数据中的一般特性，例如统计等；预测性挖掘任务在当前数据上进行推断和预测。</p>
-<p>数据挖掘的功能常见如下：</p>
-<p>1.概念/类描述:特征和区分</p>
-<p>描述数据的特征,汇总统计,多维度展现，概念比较等手段。</p>
-<p>2.关联分析</p>
-<p>发现数据事务中的频繁模式。有较高的支持度和置信度。</p>
-<p>3.分类和预测</p>
-<p>对&lt;x,y&gt;的数据建立分类函数F，使得对于xi可以求得y=f(xi)，</p>
-<p>其中x是实例的特征表示，y是实例的类标号。</p>
-<p>4.聚类分析</p>
-<p>实例根据最大化类内相似性、最小化类间相似性的原则进行聚类或分组。</p>
-<p>常常也利用聚类的这一原则进行决策支持。</p>
-<p>5.异常点检测</p>
-<p>发现实例群形成一般化特征以外的异常实例。常常使用偏差法。引入一定偏差变量，例如SVM中的松弛变量。</p>
-<p>6.演变分析</p>
-<p>描述数据随时间变化的规律或者趋势。</p>
-<p>常常是时间序列分析。</p>
-<p>也有偏序关系分析：事务关联分析中两个事务具有时间顺序的关系。</p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=42</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

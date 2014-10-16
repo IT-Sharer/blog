@@ -12,12 +12,50 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=%e7%ae%97%e6%b3%95%e9%a2%98" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sun, 05 Oct 2014 07:06:55 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 16 Oct 2014 12:29:43 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>A0002.数组归并取前N个数问题</title>
+		<link>http://wp.hhy/?p=185</link>
+		<comments>http://wp.hhy/?p=185#comments</comments>
+		<pubDate>Thu, 16 Oct 2014 12:29:43 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法题库]]></category>
+		<category><![CDATA[算法题]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=185</guid>
+		<description><![CDATA[有20个数组，每个数组500个元素，降序排列，找出前500个数。 a[20][5<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=185">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>有20个数组，每个数组500个元素，降序排列，找出前500个数。</p>
+<pre class="wp-code-highlight prettyprint">a[20][500]
+b[20] 保存每个数字的位置 默认b[i]=24;
+Tag=true;
+While(tag)
+{
+	Tag=false;
+	//取最后20个元素最小位置I,和最大的位置j, 20个元素都要有值。对b[x]&amp;lt;0的不进行计算
+	Int i=0,j=0,min=Integer.Max,max=0;
+	For(int m=0;m&amp;lt;20;m++)
+	{
+		If(b[m]&amp;gt;=0){
+			If(a[m][b[m]]&lt;min  )… if(a[m][b[m]] Else&gt;max)…
+		}
+	}
+	While(a[i][b[i]]&amp;lt;a[j][b[j]+1]){
+		b[i]-=1;
+		b[j]+=1;
+		Tag=true;
+	}
+}
+//对于每个数组返回对应的数字。
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=185</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>A001.设计一个包含min函数的栈</title>
 		<link>http://wp.hhy/?p=37</link>
 		<comments>http://wp.hhy/?p=37#comments</comments>
