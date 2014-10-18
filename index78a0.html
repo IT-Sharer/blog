@@ -12,12 +12,77 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;author=1" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Thu, 16 Oct 2014 12:29:43 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 17 Oct 2014 11:51:33 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>折半查找容易犯的错误</title>
+		<link>http://wp.hhy/?p=187</link>
+		<comments>http://wp.hhy/?p=187#comments</comments>
+		<pubDate>Fri, 17 Oct 2014 11:51:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[编程]]></category>
+		<category><![CDATA[错误]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=187</guid>
+		<description><![CDATA[今天面深信服，这是我一直以来都想进入的一家公司。一面的面试官很和善，经验丰富，有<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=187">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>今天面深信服，这是我一直以来都想进入的一家公司。一面的面试官很和善，经验丰富，有什么问题都会马上看出，提醒修改。
+<p>最大的收获就是纠正了，我一直以来折半查找的错误。
+<p>下面是我写的折半查找程序。
+<pre class="wp-code-highlight prettyprint">
+	int BSearch(int []a,int k){
+		if(a==null)return -1;//一定要判断输入条件
+		int low=0;
+		int high=a.length;
+		int mid=(low+high)/2;
+		while(low&lt;high){
+			if(a[mid]==k)return mid;
+			else if(a[mid]&gt;k){
+				high=mid;
+				mid=(high+low)/2;
+			}
+			else {
+				low=mid;
+				mid=(high+low)/2;
+			}
+		}
+		if(a[mid]!=k)return-1;
+		else return mid;
+	}
+
+</pre>
+<p>存在问题如下：当只有一个元素的时候，会出问题，当只剩下两个元素的时候，会出现总是在low处死循环的错误。</p>
+<p>另外，high+low有可能导致越界的问题。改成 low+(high-low)/2会比较好。</p>
+<p>因此正确的折半查找如下：</p>
+<pre class="wp-code-highlight prettyprint">
+	int BSearch(int []a,int k){
+		if(a==null)return -1;//一定要判断输入条件
+		int low=0;
+		int high=a.length;
+		int mid=low+(high-low)/2;
+		while(low&lt;=high){
+			if(a[mid]==k)return mid;
+			else if(a[mid]&gt;k){
+				high=mid-1;//比较过的就不用比较了，如果像上个代码一样，容易导致死循环。
+				mid=low+(high-low)/2;
+			}
+			else {
+				low=mid+1;
+				mid=low+(high-low)/2;
+			}
+		}
+		if(a[mid]!=k)return-1;
+		else return mid;
+	}
+
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=187</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>A0002.数组归并取前N个数问题</title>
 		<link>http://wp.hhy/?p=185</link>
 		<comments>http://wp.hhy/?p=185#comments</comments>
@@ -1291,64 +1356,6 @@ System.out.println(s);
 </blockquote>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=46</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>vi编辑器的使用教程</title>
-		<link>http://wp.hhy/?p=44</link>
-		<comments>http://wp.hhy/?p=44#comments</comments>
-		<pubDate>Tue, 07 Oct 2014 07:34:41 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[linux]]></category>
-		<category><![CDATA[编辑器]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=44</guid>
-		<description><![CDATA[&#160; 概述： vi编辑器是文本模式的下的一款常用编辑器，其他的还有Vim<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=44">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p><strong></strong>&nbsp;</p>
-<p><strong>概述：</strong></p>
-<p>vi编辑器是文本模式的下的一款常用编辑器，其他的还有Vim（vi的增强版），Nano</p>
-<p><strong>1.进入VI</strong></p>
-<p>vi filename </p>
-<p>sudo vi filename&nbsp; &#8212; 系统文件</p>
-<p><strong>2.vi编辑器的三种模式</strong></p>
-<p>command模式：用于输入命令，不对文本进行编辑；初始进入的模式；在其他模式下按ESC进入；</p>
-<p>Insert模式：插入模式，对文件进行编辑，在命令模式下，按A或者I进入</p>
-<p>Visual可视模式，用于可视化的高亮并选中正文内容。</p>
-<p><strong>3.文件的保存和退出</strong></p>
-<ol>
-<li>首先进入命令模式。</li>
-<li>输入：号；</li>
-<li>输入下面命令：</li>
-</ol>
-<p>:w 保存；<br />:w filename 另存为filename；<br /><strong>:wq! 保存退出；</strong><br />:wq! filename 注：以filename为文件名保存后退出；<br /><strong>:q! 不保存退出；</strong><br /><img src="http://wp.hhy/wp-includes/images/smilies/icon_mad.gif" alt=":x" class="wp-smiley" /> 应该是保存并退出 ，功能和:wq!相同
-<p><strong>4.命令模式下的操作</strong>
-<p>j 向下移动一行；<br />k 向上移动一行；<br />h 向左移动一个字符；<br />l 向右移动一个字符；<br />ctrl+b 向上移动一屏；<br />ctrl+f 向下移动一屏；<br />向上箭头 向上移动；<br />向下箭头 向下移动；<br />向左箭头 向左移动；<br />向右箭头 向右移动；
-<p>我们编辑一个文件时，对于 j、k、l和h键，还能在这些动作命令的前面加上数字，比如 3j，表示向下移动3行。
-<p><strong>5.进入文本模式</strong>
-<p>i 在光标之前插入；<br />a 在光标之后插入；<br />I 在光标所在行的行首插入；<br />A 在光标所在行的行末插入；<br />o 在光标所在的行的上面插入一行；<br />O 在光标所在的行的下面插入一行；<br />s 删除光标后的一个字符，然后进入插入模式；<br />S 删除光标所在的行，然后进入插入模式；
-<p><strong>6.文本内容的删除操作</strong>
-<p>进入命令模式下进行
-<p>x 一个字符；<br />#x 删除几个字符，#表示数字，比如3x；<br />dw 删除一个单词；<br />#dw 删除几个单词，#用数字表示，比如3dw表示删除三个单词；<br />dd 删除一行；<br />#dd 删除多个行，#代表数字，比如3dd 表示删除光标行及光标的下两行；<br />d$ 删除光标到行尾的内容；<br />J 清除光标所处的行与上一行之间的空格，把光标行和上一行接在一起；
-<p><strong>7.恢复修改，撤销操作</strong>
-<p>在命令模式下 按u
-<p><strong>8.可视模式</strong>
-<p>在命令模式下 按v进入
-<p>可以用鼠标，也可以用键盘 高亮选中相应的文本。
-<p>y 表示复制。
-<p>d 删除
-<p>p 在光标之后粘贴
-<p>shift+p 在光标之前粘贴
-<p><strong>9.查找</strong>
-<p>在命令模式
-<p>/ searchitem 正向查找
-<p>?searchitem 反向查找
-<p>按Enter键进入查找，然后可以按n键查找下一个，shift+n键查找上一个。
-<p><strong>10.替换</strong>
-<p>同样在命令模式
-<p><code>:s /SEARCH/REPLACE/g 注：把当前光标所处的行中的SEARCH单词，替换成REPLACE，并把所有SEARCH高亮显示；<br />:%s /SEARCH/REPLACE 注：把文档中所有SEARCH替换成REPLACE；<br />:#,# s /SEARCH/REPLACE/g 注：＃号表示数字，表示从多少行到多少行，把SEARCH替换成REPLACE；</code>
-<p>注：在这之中，g表示全局查找；我们注意到，就是没有替换的地方，也会把SEARCH高亮显示；</p>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=44</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

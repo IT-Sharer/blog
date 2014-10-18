@@ -10,19 +10,20 @@
 	<!--[if gt IE 9]><!-->
 <html class="no-js" lang="zh-CN"> <!--<![endif]-->
 	
-<!-- Mirrored from wp.hhy/?p=15 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Oct 2014 19:28:25 GMT -->
+<!-- Mirrored from wp.hhy/?p=187 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Oct 2014 19:27:44 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>决策树系列算法 &#124; IT-Sharer</title>
+		<title>折半查找容易犯的错误 &#124; IT-Sharer</title>
 		<link rel="profile" href="../gmpg.org/xfn/11.html"/>
 		<link rel="pingback" href="xmlrpc.php"/>
 
 		<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; Feed" href="indexd784.html?feed=rss2" />
 <link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 评论Feed" href="indexa6da.html?feed=comments-rss2" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 折半查找容易犯的错误评论Feed" href="indexc989.html?feed=rss2&amp;p=187" />
 <link rel='stylesheet' id='responsive-style-css'  href='wp-content/themes/responsive/core/css/style3d51.css?ver=1.9.7.4' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-media-queries-css'  href='wp-content/themes/responsive/core/css/responsive3d51.css?ver=1.9.7.4' type='text/css' media='all' />
 <script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
@@ -30,18 +31,17 @@
 <script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-modernizr.minc141.js?ver=2.6.1'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='ZBlog和GitHub结合管理静态博客系统' href='index64b4.html?p=10' />
-<link rel='next' title='数据挖掘十大算法' href='indexd8eb.html?p=17' />
+<link rel='prev' title='A0002.数组归并取前N个数问题' href='indexb998.html?p=185' />
 <meta name="generator" content="WordPress 4.0" />
-<link rel='canonical' href='indexa1ca.html?p=15' />
-<link rel='shortlink' href='indexa1ca.html?p=15' />
+<link rel='canonical' href='indexc885.html?p=187' />
+<link rel='shortlink' href='indexc885.html?p=187' />
 <link rel="stylesheet" type="text/css" href="wp-content/plugins/wp-code-highlight/css/sunburst.css" media="screen" />
 <!-- We need this for debugging -->
 <!-- Responsive 1.9.7.4 -->
 
 	</head>
 
-<body class="single single-post postid-15 single-format-standard">
+<body class="single single-post postid-187 single-format-standard">
 
 <div id="container" class="hfeed">
 
@@ -62,9 +62,9 @@
 
 		
 				<div class="main-nav"><ul id="menu-%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98%e8%8f%9c%e5%8d%95" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="index.html">首页</a></li>
-<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
 <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="index376e.html?cat=13">Hadoop</a></li>
-<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
+<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
 <ul class="sub-menu">
 	<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="index49ce.html?cat=14">Java</a></li>
 </ul>
@@ -87,113 +87,67 @@
 	
 	
 		
-						<div id="post-15" class="post-15 post type-post status-publish format-standard hentry category-2 tag-c4-5 tag-cart tag-id3 tag-7">
+						<div id="post-187" class="post-187 post type-post status-publish format-standard hentry category-11 tag-42">
 				
 				
-	<h1 class="entry-title post-title">决策树系列算法</h1>
+	<h1 class="entry-title post-title">折半查找容易犯的错误</h1>
 
 <div class="post-meta">
-	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="indexa1ca.html?p=15" title="决策树系列算法" rel="bookmark"><time class="timestamp updated" datetime="2014-10-04T12:49:55+00:00">2014-10-04</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
+	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="indexc885.html?p=187" title="折半查找容易犯的错误" rel="bookmark"><time class="timestamp updated" datetime="2014-10-17T19:51:00+00:00">2014-10-17</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
 	
 </div><!-- end of .post-meta -->
 
 				<div class="post-entry">
-					<p>ID3算法
-<p>ID3算法的核心：用信息增益作为属性选择的标准。
-<p>检测所有属性，用信息增益最大的属性产生决策树的节点，该节点的不同取值建立分支。再对各分支的数据子集调用决策树算法。
-<p>直到所有子集仅包含同一类别的数据为止。
-<p>缺点：只对小数据集有效，噪声敏感。
-<p>信息增益选择属性偏向取值多的属性；
-<p>决策树节点的构造：
-<p>节点：决策属性名称，决策条件，决策规则，一般采用连续属性离散化去属性值
-<p>决策规则判断函数：属于该节点时，往下探查。
-<p>ID3算法的思路：算法描述
-<p>输入：属性集合，带类别的数据集合
-<p>输出决策树：决策树的头结点，见决策树构造
-<p>1.从数据集提取类别集合：类别名称，类别数量（每个类别的概率），每个属性的值列表，取值对应每个类别的数量（概率），
-<p>2.计算数据集的系统熵：ES，如果ES=0，则该节点为叶子节点，类别为数据集类别
-<p><img title="clip_image001" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image001" src="wp-content/uploads/2014/10/clip_image001.png" width="244" height="18">
-<p>：用概率乘以概率的对数，再每个类别相减。
-<p>3.对于每一个属性A，计算信息熵EA
-<p>3.1对于每一个取值AV，计算该取值的信息熵EAV：对应每个类别均有概率，用2方法计算信息熵，Pn代表该取值对应的属于类别n的概率。
-<p>3.2加权平均属性A的所有取值的信息熵，EA=∑权重（A属性取该值的概率）*该值的EAV
-<p>4.求信息增益：EAZ=ES-EA；在所有属性中取信息增益最大的作为决策节点，该节点的不同取值作为分支。
-<p>5.递归建立分支节点：对于A=V，选择对应的数据子集，剔除A属性，对该数据集采用ID3算法，
-<p>6.返回4中建立的头结点。
-<p>ID3分类思路：算法描述
-<p>输入： ID3决策树，分类样本。
-<p>输出：分类标签
-<p>1.如果ID头结点是叶子节点，返回分类标签的值。
-<p>2.读取头结点属性标签，以及分类样本对应属性值
-<p>3.根据对应属性值，查找对应的分支。
-<p>4.递归调用ID3分类函数，输入分支树、待分类样本。
-<p>5.return 递归返回值。
-<p>参考资料：
-<p><a href="http://blog.csdn.net/guoqiangma/article/details/7188678">http://blog.csdn.net/guoqiangma/article/details/7188678</a>
-<p><a href="http://www.cnblogs.com/zhangchaoyang/articles/2196631.html">http://www.cnblogs.com/zhangchaoyang/articles/2196631.html</a>
-<p><a href="http://czhsuccess.iteye.com/blog/1864652">http://czhsuccess.iteye.com/blog/1864652</a>
-<p>机器学习十大算法（1）C4.5
-<p>一、原理
-<p>对ID3算法的改进：
-<p>1.用信息增益率来选择属性；熵的变化值：把每个属性看成是类别，用信息熵公式计算信息熵HV（同ID3中的第二步），然后用ID3中的信息增益除以HV，得到信息增益率。和ID3中第3步方法不同，不考虑属性值对应类别的熵，只是属性一个维度的熵。
-<p>2.决策树构造过程中，进行剪枝，考虑样本少的节点，会产生过拟合问题。
-<p>3.可以处理离散型数据。
-<p>4.对不完整数据进行处理。
-<p>连续属性的处理：
-<p>在选择某节点的分支属性时，对于离散型属性，按ID3的算法算增益，然后再算增益率。
-<p>对于连续型的属性，则需要对其进行离散化处理：
-<p>1.将连续属性值从小到大排序：AV1，AV2,…AVN
-<p>2.对1序列可以分成N-1个分割点，也就是有N-1种划分成2份的方法。
-<p>3.在N-1种分割方法中寻找一种最佳分割：按C4.5信息增益率计算出N-1中分割的信息增益率，取最大的那个作为该属性的分割，和信息增益率。
-<p>后剪枝处理：
-<p>避免树的高度无节制增长，避免过度拟合数据。
-<p>估计剪枝前后的误差，决定是否剪枝。
-<p>Pr[ (−)/( (1−)/) &gt;]= c
-<p>其中N是实例的数量，f=E/N为观察到的误差率（其中E为N个实例中分类错误的个数），q为真实的误差率，c为置信度（C4.5算法的一个熟人参数，默认值为0.25），z为对应于置信度c的标准差，其值可根据c的设定值通过查正态分布表得到。
-<p>通过上公式可以计算出真实误差率q的一个置信区间上限，用此上限为该节点误差率e做一个悲观的估计：
-<p><img title="clip_image002" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image002" src="wp-content/uploads/2014/10/clip_image002.png" width="223" height="106">
-<p>根据剪枝前后e的值，从而决定是否需要剪枝。
-<p>缺失值的处理：
-<p>针对数据缺少某些属性值的情况。
-<p>策略一：对于赋予该值为该属性常见的值。
-<p>根据一个概率分配所有缺少该属性值的样本一个属性值，使得该属性值分布和之前一致。
-<p>C4.5生成算法：
-<p>输入：数据集DataSet
-<p>输出：决策树根节点
-<p>1.创建根节点N
-<p>2.计算类别的信息熵，同ID3算法：统计类别标签序列以及属性值序列，&lt;属性值，类别&gt;序列的数量，对于属性值缺失的地方，采用策略一或者策略二进行补充。
-<p>3.如果信息熵为0，则设置节点为叶子节点，类别为数据集类别。
-<p>4.对于每个属性，计算增益率
-<p>4.1如果属性是离散属性，则按ID3算法计算增益，按类别信息熵计算方法计算属性信息熵。最终得到增益率
-<p>4.2如果属性是连续属性，则将属性值从小到大排序，N个不同的属性值。
-<p>4.2.1在N-1个位置分别将属性分成两部分，离散的属性值。
-<p>4.2.2按4.1的方法计算信息增益率。
-<p>4.2.3取最大的信息增益率和划分位置，作为该属性的信息增益率。
-<p>附：
-<p>5.在所有属性增益率中选择最大增益率的属性，作为根节点的属性标签。属性值作为分支条件。
-<p>6.递归下一个节点：根据每个属性值构建分支节点，属性值满足对应分支条件的数据当中输入踢去根节点属性的数据集。
-<p>7.计算每个节点的分类错误，进行剪枝。？？？剪枝后如何处理
-<p>8.return 根节点
-<p>C4.5分类算法：同ID3
-<p>参考资料：
-<p><a href="http://blog.csdn.net/xuxurui007/article/details/18045943">http://blog.csdn.net/xuxurui007/article/details/18045943</a>
-<p><a href="http://www.cnblogs.com/zhangchaoyang/articles/2842490.html">http://www.cnblogs.com/zhangchaoyang/articles/2842490.html</a>
-<p><a href="http://wenku.baidu.com/link?url=G7mc7ywnFgAc62PAIVkSqVHbS3TRYrN0rI-q8tspmgnDFGRngeoKCM_FPL31s9K7G4RoA45fZzeFNyube_LzhZfrkjY8XO41MkiINtyZqfa">http://wenku.baidu.com/link?url=G7mc7ywnFgAc62PAIVkSqVHbS3TRYrN0rI-q8tspmgnDFGRngeoKCM_FPL31s9K7G4RoA45fZzeFNyube_LzhZfrkjY8XO41MkiINtyZqfa</a>
-<p>weka.classifiers.trees.j48
-<p>机器学习十大算法（10）CART
-<p>Classification and regression trees
-<p>特点:采用二分递归分割技术，将当前样本分成两个子集，使得生成的每个非叶子节点都有两个分支。二叉树。
-<p>针对离散属性进行分类，针对连续属性则进行回归。
-<p>数据划分策略：Gini指标
-<p><img title="clip_image003" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image003" src="wp-content/uploads/2014/10/clip_image003.gif" width="177" height="49">
-<p>计算方式：
-<p>对于每一个属性，划分成两部分，每部分数据中，计算Gini指标，然后用加权平均两部分的GinI指标作为该属性的Gini指标。权值为该部分数据所占的比例。
-<p>在所有属性中选择属性Gini指标最小的一个作为决策节点，由此数据集被分成较纯的两部分。
-<p>关键：根据属性值，划分成两部分，这个真子集比较难选，2^N种可能。
-<p>有个问题：如果一个属性中的两个值的区别是区分某两个或两类样本的关键，在该属性的二元划分中没有将其划分开来，那怎么办？
-<p>参考资料：
-<p><a href="http://blog.csdn.net/hewei0241/article/details/8280490">http://blog.csdn.net/hewei0241/article/details/8280490</a>
-<p><a href="http://blog.sina.com.cn/s/blog_7399ad1f01014oic.html">http://blog.sina.com.cn/s/blog_7399ad1f01014oic.html</a></p>
+					<p>今天面深信服，这是我一直以来都想进入的一家公司。一面的面试官很和善，经验丰富，有什么问题都会马上看出，提醒修改。
+<p>最大的收获就是纠正了，我一直以来折半查找的错误。
+<p>下面是我写的折半查找程序。
+<pre class="wp-code-highlight prettyprint">
+	int BSearch(int []a,int k){
+		if(a==null)return -1;//一定要判断输入条件
+		int low=0;
+		int high=a.length;
+		int mid=(low+high)/2;
+		while(low&lt;high){
+			if(a[mid]==k)return mid;
+			else if(a[mid]&gt;k){
+				high=mid;
+				mid=(high+low)/2;
+			}
+			else {
+				low=mid;
+				mid=(high+low)/2;
+			}
+		}
+		if(a[mid]!=k)return-1;
+		else return mid;
+	}
+
+</pre>
+<p>存在问题如下：当只有一个元素的时候，会出问题，当只剩下两个元素的时候，会出现总是在low处死循环的错误。</p>
+<p>另外，high+low有可能导致越界的问题。改成 low+(high-low)/2会比较好。</p>
+<p>因此正确的折半查找如下：</p>
+<pre class="wp-code-highlight prettyprint">
+	int BSearch(int []a,int k){
+		if(a==null)return -1;//一定要判断输入条件
+		int low=0;
+		int high=a.length;
+		int mid=low+(high-low)/2;
+		while(low&lt;=high){
+			if(a[mid]==k)return mid;
+			else if(a[mid]&gt;k){
+				high=mid-1;//比较过的就不用比较了，如果像上个代码一样，容易导致死循环。
+				mid=low+(high-low)/2;
+			}
+			else {
+				low=mid+1;
+				mid=low+(high-low)/2;
+			}
+		}
+		if(a[mid]!=k)return-1;
+		else return mid;
+	}
+
+</pre>
 <div style="clear:both; margin-top:5px; margin-bottom:5px;"></div><div style="float:left"><strong>转载请注明出处:<script type="text/javascript">document.write("<a href='"+window.location.href+"'>"+window.location.href+"</a>");</script>===========欢迎分享↓↓↓↓↓↓</strong>
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_24x24">
@@ -212,18 +166,18 @@ var jiathis_config = {data_track_clickback:'true'};
 														</div><!-- end of .post-entry -->
 			
 				<div class="navigation">
-					<div class="previous"><strong>&#8249; <a href="index64b4.html?p=10" rel="prev">ZBlog和GitHub结合管理静态博客系统</a></strong></div>
-					<div class="next"><strong><a href="indexd8eb.html?p=17" rel="next">数据挖掘十大算法</a> &#8250;</strong></div>
+					<div class="previous"><strong>&#8249; <a href="indexb998.html?p=185" rel="prev">A0002.数组归并取前N个数问题</a></strong></div>
+					<div class="next"><strong></strong></div>
 				</div><!-- end of .navigation -->
 
 				
 
 	<div class="post-data">
-		文章分类 <a href="index3f7b.html?cat=2" rel="category">数据挖掘</a>		标签： <a href="indexd468.html?tag=c4-5" rel="tag">C4.5</a>, <a href="indexa427.html?tag=cart" rel="tag">CART</a>, <a href="indexc633.html?tag=id3" rel="tag">ID3</a>, <a href="indexe69e.html?tag=%e5%86%b3%e7%ad%96%e6%a0%91" rel="tag">决策树</a><br />	</div><!-- end of .post-data -->
+		文章分类 <a href="index29c7.html?cat=11" rel="category">编程</a>		标签： <a href="index64d3.html?tag=%e9%94%99%e8%af%af" rel="tag">错误</a><br />	</div><!-- end of .post-data -->
 
 
 <div class="post-edit"></div>
-							</div><!-- end of #post-15 -->
+							</div><!-- end of #post-187 -->
 			
 			<p></p>
 			<div>本站部分文章来自于互联网，如有不适请与<a href="mailto:yours@huahuiyou.cn">yours@huahuiyou.cn</a>联系，站长会尽快处理。</div>
@@ -381,5 +335,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 </body>
 
-<!-- Mirrored from wp.hhy/?p=15 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Oct 2014 19:28:25 GMT -->
+<!-- Mirrored from wp.hhy/?p=187 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Oct 2014 19:27:44 GMT -->
 </html>
