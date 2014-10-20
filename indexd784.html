@@ -12,12 +12,59 @@
 	<atom:link href="http://wp.hhy/?feed=rss2" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Fri, 17 Oct 2014 11:51:33 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 20 Oct 2014 11:24:50 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>A003.A字符串中查找B字符串的任意排列的子串</title>
+		<link>http://wp.hhy/?p=190</link>
+		<comments>http://wp.hhy/?p=190#comments</comments>
+		<pubDate>Mon, 20 Oct 2014 11:22:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法题库]]></category>
+		<category><![CDATA[算法题]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=190</guid>
+		<description><![CDATA[例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=190">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab,eba 均返回该子串。（简答起见，只返回第一个匹配的子字符串）</p>
+<pre class="wp-code-highlight prettyprint">	static String getSubString(String A,String B){
+		if (A==&quot;&quot;||B==&quot;&quot;) return &quot;&quot;;//输入信息要判断
+		HashMap&amp;lt;Character, Integer&amp;gt;bHashMap=new HashMap&amp;lt;Character, Integer&amp;gt;();
+		for (int i = 0; i &amp;lt; B.length(); i++) {
+			if (bHashMap.containsKey(B.charAt(i))) {
+				bHashMap.put(B.charAt(i), bHashMap.get(B.charAt(i))+1);
+			}
+			else {
+				bHashMap.put(B.charAt(i), 1);
+			}
+		}
+		for(int i=0;i&amp;lt;A.length();i++){
+			HashMap&amp;lt;Character, Integer&amp;gt;tmpHashMap=(HashMap&amp;lt;Character, Integer&amp;gt;) bHashMap.clone();
+			for(int j=0;j&amp;lt;B.length();j++){
+				if (i+j&amp;lt;A.length()) {
+					if (tmpHashMap.containsKey(A.charAt(i+j))) {
+						int t=tmpHashMap.get(A.charAt(i+j));//一定要判断i+j是否超出了A的界限
+						if (t==1&amp;amp;&amp;amp;j==B.length()-1) {
+							return A.substring(i,i+B.length());
+						}
+						else if(t==0)break;//不能再减了。
+						else tmpHashMap.put(A.charAt(i+j), t-1);						
+					}
+					else break;
+				}
+				else break;
+			}	
+		}
+		return&quot;&quot;;
+	}
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=190</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>折半查找容易犯的错误</title>
 		<link>http://wp.hhy/?p=187</link>
 		<comments>http://wp.hhy/?p=187#comments</comments>
@@ -1290,72 +1337,6 @@ System.out.println(s);
 <p><a title="http://blog.fens.me/hadoop-family-roadmap/" href="http://blog.fens.me/hadoop-family-roadmap/">http://blog.fens.me/hadoop-family-roadmap/</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=48</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>数据预处理概述</title>
-		<link>http://wp.hhy/?p=46</link>
-		<comments>http://wp.hhy/?p=46#comments</comments>
-		<pubDate>Tue, 07 Oct 2014 09:07:07 +0000</pubDate>
-		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
-				<category><![CDATA[数据挖掘]]></category>
-
-		<guid isPermaLink="false">http://wp.hhy/?p=46</guid>
-		<description><![CDATA[在数据挖掘整个项目中，数据准备（采集，预处理）可能包含了整个项目进度的20%左右<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=46">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
-				<content:encoded><![CDATA[<p>在数据挖掘整个项目中，数据准备（采集，预处理）可能包含了整个项目进度的20%左右，主要问题是清洗、转换、集成、和归约。</p>
-<p><strong>1.数据预处理的目的，对应方法</strong></p>
-<p>对不完整的，含噪音的和不一致的数据进行处理；====》数据清理</p>
-<p>对数据进行转换，以满足数据挖掘算法的需求；=====》数据转换</p>
-<p>数据集成：将多源异构的数据集成到一起，增加样本多样性；===》数据集成</p>
-<p>聚集、删除冗余特征，压缩数据。====》数据归约</p>
-<p><strong>2.数据清理</strong></p>
-<p><strong>2.1</strong>缺失值处理</p>
-<ul>
-<ul>
-<li>忽略该样本：多个主要属性缺失，该实例为无效实例；</li>
-<li>人工填写遗漏值：少量缺失，可以人工填充；</li>
-<li>使用默认值填充：设置对应属性的默认值；</li>
-<li>使用属性的平均值；</li>
-<li>使用给定样本所属类别中的该属性的平均值；</li>
-<li>时间序列样本，采用平滑拟合后该时间点出的值；</li>
-</ul>
-</ul>
-<p>2.2噪音数据处理</p>
-<blockquote><p>分箱：考察邻居的值，平滑数据。</p>
-<p>将数据划分成若干小的箱子，在箱子内部可以采用按平均值、中值、边界平滑等策略</p>
-<p>聚类：将样本数据按照聚类规则聚类，满足一定相似度条件的数据平滑</p>
-<p>人工处理</p>
-<p>回归：使用回归函数，平滑数据。</p>
-</blockquote>
-<p>2.3不一致数据</p>
-<p>根据一致性规则，找出不符合规则的样本，进行更正。</p>
-<p><strong>3.数据集成和变换</strong></p>
-<p>3.1集成：主要考虑异源异构的数据集之间的集成，结构统一问题</p>
-<p>3.2变换</p>
-<blockquote><p>数据平滑：分箱平滑、聚类和回归；</p>
-<p>规范化：最小-最大规范化；Z-Score规范化；</p>
-</blockquote>
-<p><strong>4.数据归约</strong></p>
-<p>4.1属性选择</p>
-<blockquote><p>逐步向前选择：从属性集中选择最好的属性，加入待选属性，直到属性不满足条件停止。决策树系列。</p>
-<p>逐步向后剔除：从属性集中剔除最坏的属性，可以用信息熵或者信息增益衡量好坏。</p>
-<p>向前选择和向后剔除结合：结合前两种方式。</p>
-</blockquote>
-<p>4.2数据压缩</p>
-<blockquote><p>小波变换：使得数据波在一段长度内变得平滑。从而只保留少部分参数就可以保存整段数据。</p>
-</blockquote>
-<p>4.3主成分分析PCA</p>
-<p>求得一个最小的线性无关组合。</p>
-<p>4.4数值归约</p>
-<p>用一个规则保存一整段的数据，而不是一个一个数据保存。</p>
-<p>分箱平滑，聚集，回归等。</p>
-<p>4.5数据抽样</p>
-<p>不放回抽样，放回抽样，聚类抽样，分层抽样，等比例分类抽样。</p>
-<p>4.6离散化与概念分层</p>
-<blockquote><p>连续属性的离散化：分箱（等距离散化）、聚类分析、基于信息增益的离散化（C4.5算法中采用）、自然划分（3-4-5规则）</p>
-</blockquote>
-]]></content:encoded>
-			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=46</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

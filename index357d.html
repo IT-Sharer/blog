@@ -12,12 +12,59 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=23" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Thu, 16 Oct 2014 12:29:43 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 20 Oct 2014 11:24:50 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>http://wordpress.org/?v=4.0</generator>
 	<item>
+		<title>A003.A字符串中查找B字符串的任意排列的子串</title>
+		<link>http://wp.hhy/?p=190</link>
+		<comments>http://wp.hhy/?p=190#comments</comments>
+		<pubDate>Mon, 20 Oct 2014 11:22:00 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[算法题库]]></category>
+		<category><![CDATA[算法题]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=190</guid>
+		<description><![CDATA[例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=190">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab,eba 均返回该子串。（简答起见，只返回第一个匹配的子字符串）</p>
+<pre class="wp-code-highlight prettyprint">	static String getSubString(String A,String B){
+		if (A==&quot;&quot;||B==&quot;&quot;) return &quot;&quot;;//输入信息要判断
+		HashMap&amp;lt;Character, Integer&amp;gt;bHashMap=new HashMap&amp;lt;Character, Integer&amp;gt;();
+		for (int i = 0; i &amp;lt; B.length(); i++) {
+			if (bHashMap.containsKey(B.charAt(i))) {
+				bHashMap.put(B.charAt(i), bHashMap.get(B.charAt(i))+1);
+			}
+			else {
+				bHashMap.put(B.charAt(i), 1);
+			}
+		}
+		for(int i=0;i&amp;lt;A.length();i++){
+			HashMap&amp;lt;Character, Integer&amp;gt;tmpHashMap=(HashMap&amp;lt;Character, Integer&amp;gt;) bHashMap.clone();
+			for(int j=0;j&amp;lt;B.length();j++){
+				if (i+j&amp;lt;A.length()) {
+					if (tmpHashMap.containsKey(A.charAt(i+j))) {
+						int t=tmpHashMap.get(A.charAt(i+j));//一定要判断i+j是否超出了A的界限
+						if (t==1&amp;amp;&amp;amp;j==B.length()-1) {
+							return A.substring(i,i+B.length());
+						}
+						else if(t==0)break;//不能再减了。
+						else tmpHashMap.put(A.charAt(i+j), t-1);						
+					}
+					else break;
+				}
+				else break;
+			}	
+		}
+		return&quot;&quot;;
+	}
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=190</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
 		<title>A0002.数组归并取前N个数问题</title>
 		<link>http://wp.hhy/?p=185</link>
 		<comments>http://wp.hhy/?p=185#comments</comments>
