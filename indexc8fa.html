@@ -10,20 +10,20 @@
 	<!--[if gt IE 9]><!-->
 <html class="no-js" lang="zh-CN"> <!--<![endif]-->
 	
-<!-- Mirrored from wp.hhy/?p=46 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Oct 2014 16:21:39 GMT -->
+<!-- Mirrored from wp.hhy/?p=194 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Oct 2014 16:20:52 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>数据预处理概述 &#124; IT-Sharer</title>
+		<title>C++中变量的存储位置解析 &#124; IT-Sharer</title>
 		<link rel="profile" href="../gmpg.org/xfn/11.html"/>
 		<link rel="pingback" href="xmlrpc.php"/>
 
 		<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; Feed" href="indexd784.html?feed=rss2" />
 <link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 评论Feed" href="indexa6da.html?feed=comments-rss2" />
-<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; 数据预处理概述评论Feed" href="indexa93b.html?feed=rss2&amp;p=46" />
+<link rel="alternate" type="application/rss+xml" title="IT-Sharer &raquo; C++中变量的存储位置解析评论Feed" href="indexba47.html?feed=rss2&amp;p=194" />
 <link rel='stylesheet' id='responsive-style-css'  href='wp-content/themes/responsive/core/css/style3d51.css?ver=1.9.7.4' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-media-queries-css'  href='wp-content/themes/responsive/core/css/responsive3d51.css?ver=1.9.7.4' type='text/css' media='all' />
 <script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
@@ -31,18 +31,17 @@
 <script type='text/javascript' src='wp-content/themes/responsive/core/js/responsive-modernizr.minc141.js?ver=2.6.1'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='vi编辑器的使用教程' href='index49b1.html?p=44' />
-<link rel='next' title='Hadoop 常用项目' href='index94b0.html?p=48' />
+<link rel='prev' title='A003.A字符串中查找B字符串的任意排列的子串' href='index261b.html?p=190' />
 <meta name="generator" content="WordPress 4.0" />
-<link rel='canonical' href='index7ea6.html?p=46' />
-<link rel='shortlink' href='index7ea6.html?p=46' />
+<link rel='canonical' href='indexc8fa.html?p=194' />
+<link rel='shortlink' href='indexc8fa.html?p=194' />
 <link rel="stylesheet" type="text/css" href="wp-content/plugins/wp-code-highlight/css/sunburst.css" media="screen" />
 <!-- We need this for debugging -->
 <!-- Responsive 1.9.7.4 -->
 
 	</head>
 
-<body class="single single-post postid-46 single-format-standard">
+<body class="single single-post postid-194 single-format-standard">
 
 <div id="container" class="hfeed">
 
@@ -63,9 +62,9 @@
 
 		
 				<div class="main-nav"><ul id="menu-%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98%e8%8f%9c%e5%8d%95" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="index.html">首页</a></li>
-<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a href="index3f7b.html?cat=2">数据挖掘</a></li>
 <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="index376e.html?cat=13">Hadoop</a></li>
-<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
+<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-27"><a href="index29c7.html?cat=11">编程</a>
 <ul class="sub-menu">
 	<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="index49ce.html?cat=14">Java</a></li>
 </ul>
@@ -88,69 +87,54 @@
 	
 	
 		
-						<div id="post-46" class="post-46 post type-post status-publish format-standard hentry category-2">
+						<div id="post-194" class="post-194 post type-post status-publish format-standard hentry category-11 tag-c">
 				
 				
-	<h1 class="entry-title post-title">数据预处理概述</h1>
+	<h1 class="entry-title post-title">C++中变量的存储位置解析</h1>
 
 <div class="post-meta">
-	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="index7ea6.html?p=46" title="数据预处理概述" rel="bookmark"><time class="timestamp updated" datetime="2014-10-07T17:07:07+00:00">2014-10-07</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
+	<span class="meta-prep meta-prep-author posted">发表于 </span><a href="indexc8fa.html?p=194" title="C++中变量的存储位置解析" rel="bookmark"><time class="timestamp updated" datetime="2014-10-26T00:17:01+00:00">2014-10-26</time></a><span class="byline"> 作者 </span><span class="author vcard"><a class="url fn n" href="indexcd64.html?author=1" title="查看 huahuiyou 的所有文章">huahuiyou</a></span>
 	
 </div><!-- end of .post-meta -->
 
 				<div class="post-entry">
-					<p>在数据挖掘整个项目中，数据准备（采集，预处理）可能包含了整个项目进度的20%左右，主要问题是清洗、转换、集成、和归约。</p>
-<p><strong>1.数据预处理的目的，对应方法</strong></p>
-<p>对不完整的，含噪音的和不一致的数据进行处理；====》数据清理</p>
-<p>对数据进行转换，以满足数据挖掘算法的需求；=====》数据转换</p>
-<p>数据集成：将多源异构的数据集成到一起，增加样本多样性；===》数据集成</p>
-<p>聚集、删除冗余特征，压缩数据。====》数据归约</p>
-<p><strong>2.数据清理</strong></p>
-<p><strong>2.1</strong>缺失值处理</p>
-<ul>
-<ul>
-<li>忽略该样本：多个主要属性缺失，该实例为无效实例；</li>
-<li>人工填写遗漏值：少量缺失，可以人工填充；</li>
-<li>使用默认值填充：设置对应属性的默认值；</li>
-<li>使用属性的平均值；</li>
-<li>使用给定样本所属类别中的该属性的平均值；</li>
-<li>时间序列样本，采用平滑拟合后该时间点出的值；</li>
-</ul>
-</ul>
-<p>2.2噪音数据处理</p>
-<blockquote><p>分箱：考察邻居的值，平滑数据。</p>
-<p>将数据划分成若干小的箱子，在箱子内部可以采用按平均值、中值、边界平滑等策略</p>
-<p>聚类：将样本数据按照聚类规则聚类，满足一定相似度条件的数据平滑</p>
-<p>人工处理</p>
-<p>回归：使用回归函数，平滑数据。</p>
-</blockquote>
-<p>2.3不一致数据</p>
-<p>根据一致性规则，找出不符合规则的样本，进行更正。</p>
-<p><strong>3.数据集成和变换</strong></p>
-<p>3.1集成：主要考虑异源异构的数据集之间的集成，结构统一问题</p>
-<p>3.2变换</p>
-<blockquote><p>数据平滑：分箱平滑、聚类和回归；</p>
-<p>规范化：最小-最大规范化；Z-Score规范化；</p>
-</blockquote>
-<p><strong>4.数据归约</strong></p>
-<p>4.1属性选择</p>
-<blockquote><p>逐步向前选择：从属性集中选择最好的属性，加入待选属性，直到属性不满足条件停止。决策树系列。</p>
-<p>逐步向后剔除：从属性集中剔除最坏的属性，可以用信息熵或者信息增益衡量好坏。</p>
-<p>向前选择和向后剔除结合：结合前两种方式。</p>
-</blockquote>
-<p>4.2数据压缩</p>
-<blockquote><p>小波变换：使得数据波在一段长度内变得平滑。从而只保留少部分参数就可以保存整段数据。</p>
-</blockquote>
-<p>4.3主成分分析PCA</p>
-<p>求得一个最小的线性无关组合。</p>
-<p>4.4数值归约</p>
-<p>用一个规则保存一整段的数据，而不是一个一个数据保存。</p>
-<p>分箱平滑，聚集，回归等。</p>
-<p>4.5数据抽样</p>
-<p>不放回抽样，放回抽样，聚类抽样，分层抽样，等比例分类抽样。</p>
-<p>4.6离散化与概念分层</p>
-<blockquote><p>连续属性的离散化：分箱（等距离散化）、聚类分析、基于信息增益的离散化（C4.5算法中采用）、自然划分（3-4-5规则）</p>
-</blockquote>
+					<p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; line-height: 18.9pt;"><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">1.</span><span style="font-size: 10.5pt;">一个由</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">C/C++</span><span style="font-size: 10.5pt;">编译过的程序占用的内存分为以下5</span><span style="font-size: 10.5pt;">个部分：</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">1</span><span style="font-size: 10.5pt;">）栈区</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> stack </span><span style="font-size: 10.5pt;">：由编译器自动分配释放，存放<strong>函数的参数值，局部变量的值</strong>等。这个栈的操作方式类似于数据结构中的栈。　</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">）堆区</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> heap </span><span style="font-size: 10.5pt;">：一般由程序员分配释放，若程序员不释放，程序结束时可能由</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">OS</span><span style="font-size: 10.5pt;">回收，注意它与数据结构中的堆是两回事，分配方式类似于链表。</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">3</span><span style="font-size: 10.5pt;">）全局区（静态）</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">static </span><span style="font-size: 10.5pt;">：</span><strong>全局变量和静态变量</strong><span style="font-size: 10.5pt;">的存储是放在一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和静态变量又放在相邻的另一块区域中。程序结束后由系统释放。</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">4</span><span style="font-size: 10.5pt;">）文字常量区</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">  </span><span style="font-size: 10.5pt;">：</span><span style="font-size: 10.5pt;">常量字符串放在这里。程序结束后由系统释放。</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">5</span><span style="font-size: 10.5pt;">）程序代码区</span><span style="font-size: 10.5pt;">：</span><span style="font-size: 10.5pt;">存放函数体的</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">进制代码。</span></p>
+<p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; line-height: 18.9pt;"><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">、例子程序</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
+<p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; text-indent: 21.0pt; line-height: 18.9pt;"><span style="font-size: 10.5pt;">这是一个前辈写的，非常详细</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
+<pre class="wp-code-highlight prettyprint">int a = 0;// 全局初始化区
+
+char *p1; //全局未初始化区
+
+int _tmain(int argc, _TCHAR* argv[]){
+
+         int b;// 栈
+
+         char s[] = &quot;abc&quot;; //栈
+
+         char *p2; //栈
+
+         char *p3 = &quot;123456&quot;; //123456\0&quot;在常量区，p3在栈上。
+
+         static int c =0; //全局（静态）初始化区
+
+         p1 = (char *)malloc(10);
+
+         p2 = (char *)malloc(20);
+
+         //分配得来得10和20字节的区域就在堆区。
+
+         strcpy(p1, &quot;123456&quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。
+
+         return 0;
+
+}
+
+void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
 <div style="clear:both; margin-top:5px; margin-bottom:5px;"></div><div style="float:left"><strong>转载请注明出处:<script type="text/javascript">document.write("<a href='"+window.location.href+"'>"+window.location.href+"</a>");</script>===========欢迎分享↓↓↓↓↓↓</strong>
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_24x24">
@@ -169,18 +153,18 @@ var jiathis_config = {data_track_clickback:'true'};
 														</div><!-- end of .post-entry -->
 			
 				<div class="navigation">
-					<div class="previous"><strong>&#8249; <a href="index49b1.html?p=44" rel="prev">vi编辑器的使用教程</a></strong></div>
-					<div class="next"><strong><a href="index94b0.html?p=48" rel="next">Hadoop 常用项目</a> &#8250;</strong></div>
+					<div class="previous"><strong>&#8249; <a href="index261b.html?p=190" rel="prev">A003.A字符串中查找B字符串的任意排列的子串</a></strong></div>
+					<div class="next"><strong></strong></div>
 				</div><!-- end of .navigation -->
 
 				
 
 	<div class="post-data">
-		文章分类 <a href="index3f7b.html?cat=2" rel="category">数据挖掘</a>			</div><!-- end of .post-data -->
+		文章分类 <a href="index29c7.html?cat=11" rel="category">编程</a>		标签： <a href="index0610.html?tag=c" rel="tag">C++</a><br />	</div><!-- end of .post-data -->
 
 
 <div class="post-edit"></div>
-							</div><!-- end of #post-46 -->
+							</div><!-- end of #post-194 -->
 			
 			<p></p>
 			<div>本站部分文章来自于互联网，如有不适请与<a href="mailto:yours@huahuiyou.cn">yours@huahuiyou.cn</a>联系，站长会尽快处理。</div>
@@ -339,5 +323,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 </body>
 
-<!-- Mirrored from wp.hhy/?p=46 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Oct 2014 16:21:39 GMT -->
+<!-- Mirrored from wp.hhy/?p=194 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Oct 2014 16:20:52 GMT -->
 </html>

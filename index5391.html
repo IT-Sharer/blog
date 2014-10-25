@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>IT-Sharer &#187; C++</title>
+	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=c" rel="self" type="application/rss+xml" />
+	<link>http://wp.hhy</link>
+	<description>温 润 醇 和    臻 于 至 善</description>
+	<lastBuildDate>Sat, 25 Oct 2014 16:18:30 +0000</lastBuildDate>
+	<language>zh-CN</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=4.0</generator>
+	<item>
+		<title>C++中变量的存储位置解析</title>
+		<link>http://wp.hhy/?p=194</link>
+		<comments>http://wp.hhy/?p=194#comments</comments>
+		<pubDate>Sat, 25 Oct 2014 16:17:01 +0000</pubDate>
+		<dc:creator><![CDATA[huahuiyou]]></dc:creator>
+				<category><![CDATA[编程]]></category>
+		<category><![CDATA[C++]]></category>
+
+		<guid isPermaLink="false">http://wp.hhy/?p=194</guid>
+		<description><![CDATA[1.一个由C/C++编译过的程序占用的内存分为以下5个部分： （1）栈区 sta<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=194">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; line-height: 18.9pt;"><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">1.</span><span style="font-size: 10.5pt;">一个由</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">C/C++</span><span style="font-size: 10.5pt;">编译过的程序占用的内存分为以下5</span><span style="font-size: 10.5pt;">个部分：</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">1</span><span style="font-size: 10.5pt;">）栈区</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> stack </span><span style="font-size: 10.5pt;">：由编译器自动分配释放，存放<strong>函数的参数值，局部变量的值</strong>等。这个栈的操作方式类似于数据结构中的栈。　</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">）堆区</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> heap </span><span style="font-size: 10.5pt;">：一般由程序员分配释放，若程序员不释放，程序结束时可能由</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">OS</span><span style="font-size: 10.5pt;">回收，注意它与数据结构中的堆是两回事，分配方式类似于链表。</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">3</span><span style="font-size: 10.5pt;">）全局区（静态）</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">static </span><span style="font-size: 10.5pt;">：</span><strong>全局变量和静态变量</strong><span style="font-size: 10.5pt;">的存储是放在一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和静态变量又放在相邻的另一块区域中。程序结束后由系统释放。</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">4</span><span style="font-size: 10.5pt;">）文字常量区</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">  </span><span style="font-size: 10.5pt;">：</span><span style="font-size: 10.5pt;">常量字符串放在这里。程序结束后由系统释放。</span></p>
+<p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">5</span><span style="font-size: 10.5pt;">）程序代码区</span><span style="font-size: 10.5pt;">：</span><span style="font-size: 10.5pt;">存放函数体的</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">进制代码。</span></p>
+<p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; line-height: 18.9pt;"><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">、例子程序</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
+<p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; text-indent: 21.0pt; line-height: 18.9pt;"><span style="font-size: 10.5pt;">这是一个前辈写的，非常详细</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
+<pre class="wp-code-highlight prettyprint">int a = 0;// 全局初始化区
+
+char *p1; //全局未初始化区
+
+int _tmain(int argc, _TCHAR* argv[]){
+
+         int b;// 栈
+
+         char s[] = &quot;abc&quot;; //栈
+
+         char *p2; //栈
+
+         char *p3 = &quot;123456&quot;; //123456\0&quot;在常量区，p3在栈上。
+
+         static int c =0; //全局（静态）初始化区
+
+         p1 = (char *)malloc(10);
+
+         p2 = (char *)malloc(20);
+
+         //分配得来得10和20字节的区域就在堆区。
+
+         strcpy(p1, &quot;123456&quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。
+
+         return 0;
+
+}
+
+void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=194</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
