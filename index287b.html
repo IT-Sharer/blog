@@ -10,7 +10,7 @@
 	<!--[if gt IE 9]><!-->
 <html class="no-js" lang="zh-CN"> <!--<![endif]-->
 	
-<!-- Mirrored from wp.hhy/?p=82 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Oct 2014 16:21:42 GMT -->
+<!-- Mirrored from wp.hhy/?p=82 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Nov 2014 03:22:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 
@@ -36,7 +36,6 @@
 <meta name="generator" content="WordPress 4.0" />
 <link rel='canonical' href='index287b.html?p=82' />
 <link rel='shortlink' href='index287b.html?p=82' />
-<link rel="stylesheet" type="text/css" href="wp-content/plugins/wp-code-highlight/css/sunburst.css" media="screen" />
 <!-- We need this for debugging -->
 <!-- Responsive 1.9.7.4 -->
 
@@ -156,9 +155,9 @@
 <p>使用场景：
 <p>1. 某个字符串中是否存在某个模式
 <div>
-<pre class="wp-code-highlight prettyprint">String s = &quot;@Shang Hai Hong Qiao Fei Ji Chang&quot;; 
+<pre lang="java" escaped="true">String s = "@Shang Hai Hong Qiao Fei Ji Chang"; 
 
-String regEx = &quot;a|F&quot;; //表示a或F 
+String regEx = "a|F"; //表示a或F 
 
 Pattern pat = Pattern.compile(regEx); 
 
@@ -171,35 +170,35 @@ boolean rs = mat.find();//用matches()表示整个字符串是否匹配语句
 <p>如果想在查找时忽略大小写，则可以写成Pattern pat = Pattern . compile (regEx,Pattern.CASE_INSENSITIVE) ; </p>
 <p>2. 在字符串中获取模式匹配的子字符串 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">Pattern p=Pattern.compile(&quot;(\\d+,)(\\d+)&quot;); 
-String s=&quot;123,456-34,345&quot;; 
+<pre lang="java" escaped="true">Pattern p=Pattern.compile("(\\d+,)(\\d+)"); 
+String s="123,456-34,345"; 
 Matcher m=p.matcher(s); 
 while(m.find()){ 
-System.out.println(&quot;m.group():&quot;+m.group());//打印所有，匹配的子字符串 
-System.out.println(&quot;m.group(1):&quot;+m.group(1));//打印，（）里内容，参数是括号的序号 
-System.out.println(&quot;m.group(2):&quot;+m.group(2));//打印字母的 
+System.out.println("m.group():"+m.group());//打印所有，匹配的子字符串 
+System.out.println("m.group(1):"+m.group(1));//打印，（）里内容，参数是括号的序号 
+System.out.println("m.group(2):"+m.group(2));//打印字母的 
 } 
-System.out.println(&quot;捕获个数:groupCount()=&quot;+m.groupCount()); </pre>
+System.out.println("捕获个数:groupCount()="+m.groupCount()); </pre>
 </div>
 <p>其中，m.find()操作会从0位置开始，每匹配一次都将开始匹配位置提升。 </p>
 <p>3. 字符串分割 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">String regEx=&quot;:&quot;; 
+<pre lang="java" escaped="true">String regEx=":"; 
 Pattern pat = Pattern.compile(regEx); 
-String[] rs = pat.split(&quot;aa:bb:cc&quot;); 
+String[] rs = pat.split("aa:bb:cc"); 
 System.out.println(rs.length); 
 </pre>
 </div>
 <p>按照模式作为分隔符，满足模式的子字符串将作为分隔符。 </p>
 <p>4. 字符串替换和删除 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">String regEx=&quot;@+&quot;; //表示一个或多个@ 
+<pre lang="csharp" escaped="true">String regEx="@+"; //表示一个或多个@ 
 
 Pattern pat=Pattern.compile(regEx); 
 
-Matcher mat=pat.matcher(&quot;@@aa@b cc@@&quot;); 
+Matcher mat=pat.matcher("@@aa@b cc@@"); 
 
-String s=mat.replaceAll(&quot;#&quot;); // 参数为&quot;&quot;时表示删除该模式 
+String s=mat.replaceAll("#"); // 参数为""时表示删除该模式 
 
 System.out.println(s); 
 
@@ -391,6 +390,10 @@ var jiathis_config = {data_track_clickback:'true'};
 </div>
 				<div id="recent-posts-2" class="widget-wrapper widget_recent_entries">		<div class="widget-title"><h3>近期文章</h3></div>		<ul>
 					<li>
+				<a href="index5051.html?p=199">Linux文件和系统目录结构</a>
+							<span class="post-date">2014-11-04</span>
+						</li>
+					<li>
 				<a href="indexc8fa.html?p=194">C++中变量的存储位置解析</a>
 							<span class="post-date">2014-10-26</span>
 						</li>
@@ -410,15 +413,11 @@ var jiathis_config = {data_track_clickback:'true'};
 				<a href="indexe8f5.html?p=183">二叉树的前序、中序、后序、层序遍历的递归与非递归实现</a>
 							<span class="post-date">2014-10-13</span>
 						</li>
-					<li>
-				<a href="index2586.html?p=180">近邻原则系列算法</a>
-							<span class="post-date">2014-10-12</span>
-						</li>
 				</ul>
 		</div><div id="categories-2" class="widget-wrapper widget_categories"><div class="widget-title"><h3>分类目录</h3></div>		<ul>
 	<li class="cat-item cat-item-13"><a href="index376e.html?cat=13" title="Hadoop系列博客">Hadoop</a> (1)
 </li>
-	<li class="cat-item cat-item-24"><a href="indexfa64.html?cat=24" title="linux操作系统/开发环境">linux</a> (2)
+	<li class="cat-item cat-item-24"><a href="indexfa64.html?cat=24" title="linux操作系统/开发环境">linux</a> (3)
 </li>
 	<li class="cat-item cat-item-2"><a href="index3f7b.html?cat=2" >数据挖掘</a> (8)
 </li>
@@ -462,16 +461,11 @@ var jiathis_config = {data_track_clickback:'true'};
 <a href='index74a7.html?tag=%e9%81%8d%e5%8e%86' class='tag-link-40' title='1个话题' style='font-size: 8pt;'>遍历</a>
 <a href='index64d3.html?tag=%e9%94%99%e8%af%af' class='tag-link-42' title='1个话题' style='font-size: 8pt;'>错误</a></div>
 </div><div id="archives-2" class="widget-wrapper widget_archive"><div class="widget-title"><h3>文章归档</h3></div>		<ul>
+	<li><a href='indexec75.html?m=201411'>2014年十一月</a>&nbsp;(1)</li>
 	<li><a href='index166c.html?m=201410'>2014年十月</a>&nbsp;(21)</li>
 		</ul>
 </div>
 			</div><!-- end of #widgets -->
-	<!--WP Code Highlight_start-->
-	<script type="text/javascript">
-		window.onload = function(){prettyPrint();};
-	</script>
-	<script type="text/javascript" src="wp-content/plugins/wp-code-highlight/js/wp-code-highlight.js"></script>
-	<!--WP Code Highlight_end-->
 </div><!-- end of #wrapper -->
 </div><!-- end of #container -->
 
@@ -532,5 +526,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 </body>
 
-<!-- Mirrored from wp.hhy/?p=82 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Oct 2014 16:21:42 GMT -->
+<!-- Mirrored from wp.hhy/?p=82 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Nov 2014 03:22:16 GMT -->
 </html>

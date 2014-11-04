@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=23" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Mon, 20 Oct 2014 11:24:50 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 04 Nov 2014 03:13:37 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -29,10 +29,10 @@
 		<guid isPermaLink="false">http://wp.hhy/?p=190</guid>
 		<description><![CDATA[例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=190">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<p>例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab,eba 均返回该子串。（简答起见，只返回第一个匹配的子字符串）</p>
-<pre class="wp-code-highlight prettyprint">	static String getSubString(String A,String B){
-		if (A==&quot;&quot;||B==&quot;&quot;) return &quot;&quot;;//输入信息要判断
-		HashMap&amp;lt;Character, Integer&amp;gt;bHashMap=new HashMap&amp;lt;Character, Integer&amp;gt;();
-		for (int i = 0; i &amp;lt; B.length(); i++) {
+<pre>	static String getSubString(String A,String B){
+		if (A==""||B=="") return "";//输入信息要判断
+		HashMap&lt;Character, Integer&gt;bHashMap=new HashMap&lt;Character, Integer&gt;();
+		for (int i = 0; i &lt; B.length(); i++) {
 			if (bHashMap.containsKey(B.charAt(i))) {
 				bHashMap.put(B.charAt(i), bHashMap.get(B.charAt(i))+1);
 			}
@@ -40,13 +40,13 @@
 				bHashMap.put(B.charAt(i), 1);
 			}
 		}
-		for(int i=0;i&amp;lt;A.length();i++){
-			HashMap&amp;lt;Character, Integer&amp;gt;tmpHashMap=(HashMap&amp;lt;Character, Integer&amp;gt;) bHashMap.clone();
-			for(int j=0;j&amp;lt;B.length();j++){
-				if (i+j&amp;lt;A.length()) {
+		for(int i=0;i&lt;A.length();i++){
+			HashMap&lt;Character, Integer&gt;tmpHashMap=(HashMap&lt;Character, Integer&gt;) bHashMap.clone();
+			for(int j=0;j&lt;B.length();j++){
+				if (i+j&lt;A.length()) {
 					if (tmpHashMap.containsKey(A.charAt(i+j))) {
 						int t=tmpHashMap.get(A.charAt(i+j));//一定要判断i+j是否超出了A的界限
-						if (t==1&amp;amp;&amp;amp;j==B.length()-1) {
+						if (t==1&amp;&amp;j==B.length()-1) {
 							return A.substring(i,i+B.length());
 						}
 						else if(t==0)break;//不能再减了。
@@ -57,7 +57,7 @@
 				else break;
 			}	
 		}
-		return&quot;&quot;;
+		return"";
 	}
 </pre>
 ]]></content:encoded>
@@ -76,21 +76,21 @@
 		<guid isPermaLink="false">http://wp.hhy/?p=185</guid>
 		<description><![CDATA[有20个数组，每个数组500个元素，降序排列，找出前500个数。 a[20][5<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=185">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<p>有20个数组，每个数组500个元素，降序排列，找出前500个数。</p>
-<pre class="wp-code-highlight prettyprint">a[20][500]
+<pre>a[20][500]
 b[20] 保存每个数字的位置 默认b[i]=24;
 Tag=true;
 While(tag)
 {
 	Tag=false;
-	//取最后20个元素最小位置I,和最大的位置j, 20个元素都要有值。对b[x]&amp;lt;0的不进行计算
+	//取最后20个元素最小位置I,和最大的位置j, 20个元素都要有值。对b[x]&lt;0的不进行计算
 	Int i=0,j=0,min=Integer.Max,max=0;
-	For(int m=0;m&amp;lt;20;m++)
+	For(int m=0;m&lt;20;m++)
 	{
-		If(b[m]&amp;gt;=0){
-			If(a[m][b[m]]&lt;min  )… if(a[m][b[m]] Else&gt;max)…
+		If(b[m]&gt;=0){
+			If(a[m][b[m]]<min  )… if(a[m][b[m]] Else>max)…
 		}
 	}
-	While(a[i][b[i]]&amp;lt;a[j][b[j]+1]){
+	While(a[i][b[i]]&lt;a[j][b[j]+1]){
 		b[i]-=1;
 		b[j]+=1;
 		Tag=true;

@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=c" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 25 Oct 2014 16:18:30 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 04 Nov 2014 03:13:37 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -36,7 +36,7 @@
 <p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">5</span><span style="font-size: 10.5pt;">）程序代码区</span><span style="font-size: 10.5pt;">：</span><span style="font-size: 10.5pt;">存放函数体的</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">进制代码。</span></p>
 <p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; line-height: 18.9pt;"><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">、例子程序</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
 <p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; text-indent: 21.0pt; line-height: 18.9pt;"><span style="font-size: 10.5pt;">这是一个前辈写的，非常详细</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
-<pre class="wp-code-highlight prettyprint">int a = 0;// 全局初始化区
+<pre>int a = 0;// 全局初始化区
 
 char *p1; //全局未初始化区
 
@@ -44,11 +44,11 @@ int _tmain(int argc, _TCHAR* argv[]){
 
          int b;// 栈
 
-         char s[] = &quot;abc&quot;; //栈
+         char s[] = "abc"; //栈
 
          char *p2; //栈
 
-         char *p3 = &quot;123456&quot;; //123456\0&quot;在常量区，p3在栈上。
+         char *p3 = "123456"; //123456\0"在常量区，p3在栈上。
 
          static int c =0; //全局（静态）初始化区
 
@@ -58,13 +58,13 @@ int _tmain(int argc, _TCHAR* argv[]){
 
          //分配得来得10和20字节的区域就在堆区。
 
-         strcpy(p1, &quot;123456&quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。
+         strcpy(p1, "123456"); //123456\0放在常量区，编译器可能会将它与p3所指向的"123456"优化成一个地方。
 
          return 0;
 
 }
 
-void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
+void * (p)(int);//p在全局区，&amp;p未知，p在代码区</pre>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=194</wfw:commentRss>
 		<slash:comments>0</slash:comments>

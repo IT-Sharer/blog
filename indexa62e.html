@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=%e9%94%99%e8%af%af" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Fri, 17 Oct 2014 11:51:33 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 04 Nov 2014 03:13:37 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -31,15 +31,15 @@
 				<content:encoded><![CDATA[<p>今天面深信服，这是我一直以来都想进入的一家公司。一面的面试官很和善，经验丰富，有什么问题都会马上看出，提醒修改。
 <p>最大的收获就是纠正了，我一直以来折半查找的错误。
 <p>下面是我写的折半查找程序。
-<pre class="wp-code-highlight prettyprint">
+<pre>
 	int BSearch(int []a,int k){
 		if(a==null)return -1;//一定要判断输入条件
 		int low=0;
 		int high=a.length;
 		int mid=(low+high)/2;
-		while(low&lt;high){
+		while(low<high){
 			if(a[mid]==k)return mid;
-			else if(a[mid]&gt;k){
+			else if(a[mid]>k){
 				high=mid;
 				mid=(high+low)/2;
 			}
@@ -56,15 +56,15 @@
 <p>存在问题如下：当只有一个元素的时候，会出问题，当只剩下两个元素的时候，会出现总是在low处死循环的错误。</p>
 <p>另外，high+low有可能导致越界的问题。改成 low+(high-low)/2会比较好。</p>
 <p>因此正确的折半查找如下：</p>
-<pre class="wp-code-highlight prettyprint">
+<pre>
 	int BSearch(int []a,int k){
 		if(a==null)return -1;//一定要判断输入条件
 		int low=0;
 		int high=a.length;
 		int mid=low+(high-low)/2;
-		while(low&lt;=high){
+		while(low<=high){
 			if(a[mid]==k)return mid;
-			else if(a[mid]&gt;k){
+			else if(a[mid]>k){
 				high=mid-1;//比较过的就不用比较了，如果像上个代码一样，容易导致死循环。
 				mid=low+(high-low)/2;
 			}

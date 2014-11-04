@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=11" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 25 Oct 2014 16:18:30 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 04 Nov 2014 03:13:37 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -36,7 +36,7 @@
 <p style="margin: 0cm; margin-bottom: .0001pt; text-indent: 21.0pt;"><span style="font-size: 10.5pt;">（</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">5</span><span style="font-size: 10.5pt;">）程序代码区</span><span style="font-size: 10.5pt;">：</span><span style="font-size: 10.5pt;">存放函数体的</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">进制代码。</span></p>
 <p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; line-height: 18.9pt;"><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;">2</span><span style="font-size: 10.5pt;">、例子程序</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
 <p style="margin-top: 7.5pt; margin-right: 0cm; margin-bottom: 7.5pt; margin-left: 0cm; text-indent: 21.0pt; line-height: 18.9pt;"><span style="font-size: 10.5pt;">这是一个前辈写的，非常详细</span><span lang="EN-US" style="font-size: 10.5pt; font-family: Verdana, sans-serif;"> </span></p>
-<pre class="wp-code-highlight prettyprint">int a = 0;// 全局初始化区
+<pre>int a = 0;// 全局初始化区
 
 char *p1; //全局未初始化区
 
@@ -44,11 +44,11 @@ int _tmain(int argc, _TCHAR* argv[]){
 
          int b;// 栈
 
-         char s[] = &quot;abc&quot;; //栈
+         char s[] = "abc"; //栈
 
          char *p2; //栈
 
-         char *p3 = &quot;123456&quot;; //123456\0&quot;在常量区，p3在栈上。
+         char *p3 = "123456"; //123456\0"在常量区，p3在栈上。
 
          static int c =0; //全局（静态）初始化区
 
@@ -58,13 +58,13 @@ int _tmain(int argc, _TCHAR* argv[]){
 
          //分配得来得10和20字节的区域就在堆区。
 
-         strcpy(p1, &quot;123456&quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。
+         strcpy(p1, "123456"); //123456\0放在常量区，编译器可能会将它与p3所指向的"123456"优化成一个地方。
 
          return 0;
 
 }
 
-void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
+void * (p)(int);//p在全局区，&amp;p未知，p在代码区</pre>
 ]]></content:encoded>
 			<wfw:commentRss>http://wp.hhy/?feed=rss2&#038;p=194</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -83,15 +83,15 @@ void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
 				<content:encoded><![CDATA[<p>今天面深信服，这是我一直以来都想进入的一家公司。一面的面试官很和善，经验丰富，有什么问题都会马上看出，提醒修改。
 <p>最大的收获就是纠正了，我一直以来折半查找的错误。
 <p>下面是我写的折半查找程序。
-<pre class="wp-code-highlight prettyprint">
+<pre>
 	int BSearch(int []a,int k){
 		if(a==null)return -1;//一定要判断输入条件
 		int low=0;
 		int high=a.length;
 		int mid=(low+high)/2;
-		while(low&lt;high){
+		while(low<high){
 			if(a[mid]==k)return mid;
-			else if(a[mid]&gt;k){
+			else if(a[mid]>k){
 				high=mid;
 				mid=(high+low)/2;
 			}
@@ -108,15 +108,15 @@ void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
 <p>存在问题如下：当只有一个元素的时候，会出问题，当只剩下两个元素的时候，会出现总是在low处死循环的错误。</p>
 <p>另外，high+low有可能导致越界的问题。改成 low+(high-low)/2会比较好。</p>
 <p>因此正确的折半查找如下：</p>
-<pre class="wp-code-highlight prettyprint">
+<pre>
 	int BSearch(int []a,int k){
 		if(a==null)return -1;//一定要判断输入条件
 		int low=0;
 		int high=a.length;
 		int mid=low+(high-low)/2;
-		while(low&lt;=high){
+		while(low<=high){
 			if(a[mid]==k)return mid;
-			else if(a[mid]&gt;k){
+			else if(a[mid]>k){
 				high=mid-1;//比较过的就不用比较了，如果像上个代码一样，容易导致死循环。
 				mid=low+(high-low)/2;
 			}
@@ -146,19 +146,19 @@ void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
 		<category><![CDATA[遍历]]></category>
 
 		<guid isPermaLink="false">http://wp.hhy/?p=183</guid>
-		<description><![CDATA[树结构： public class NodeBTree&#60;t&#62; { T<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=183">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+		<description><![CDATA[树结构： public class NodeBTree { T value; N<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=183">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<p><b>树结构：</b>
-<pre class="wp-code-highlight prettyprint">public class NodeBTree&lt;t&gt; {
+<pre class="brush: java; toolbar: false; collapse: true;">public class NodeBTree<t> {
     T value;
-    NodeBTree&lt;t&gt; lChild;
-    NodeBTree&lt;t&gt; rChild;
+    NodeBTree<t> lChild;
+    NodeBTree<t> rChild;
     public NodeBTree(T t) {
         value=t;
     }
 }
 </pre>
 <p>访问节点：
-<pre class="wp-code-highlight prettyprint">public void visit(NodeBTree&lt;t&gt; node){
+<pre class="brush: java; toolbar: false; collapse: true;">public void visit(NodeBTree<t> node){
     System.out.println(node.value);
 }
 
@@ -166,8 +166,8 @@ void * (p)(int);//p在全局区，&amp;amp;p未知，p在代码区</pre>
 <p><b>1.</b><b>前序遍历</b></p>
 <p>1a递归实现</p>
 <p>思路：1.访问根节点；2.前序访问左子树；3.前序访问右子树
-<pre class="wp-code-highlight prettyprint">//1a 前序递归
-void preOrderVisit(NodeBTree&lt;t&gt; btree){
+<pre class="brush: java; toolbar: false; collapse: true;">//1a 前序递归
+void preOrderVisit(NodeBTree<t> btree){
     if (btree==null)return;
     visit(btree);
     preOrderVisit(btree.lChild);
@@ -177,13 +177,13 @@ void preOrderVisit(NodeBTree&lt;t&gt; btree){
 </pre>
 <p>1b非递归</p>
 <p>思路：1.访问栈顶节点；2，将其右子树进栈，左子树进栈；3重复1,2直到栈为空
-<pre class="wp-code-highlight prettyprint">//1b 前序非递归
-void preOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//1b 前序非递归
+void preOrderVisitNR(NodeBTree<t> bTree){
     if(bTree==null)return;
-    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    Stack<nodebtree><t>&gt; stack=new Stack&lt;&gt;();
     stack.push(bTree);
     while(!stack.isEmpty()){
-        NodeBTree&lt;t&gt; tmp=stack.pop();
+        NodeBTree<t> tmp=stack.pop();
         visit(tmp);
         if(tmp.rChild!=null)stack.push(tmp.rChild);
         if(tmp.lChild!=null)stack.push(tmp.lChild);
@@ -194,7 +194,7 @@ void preOrderVisitNR(NodeBTree&lt;t&gt; bTree){
 <p><b>2.</b><b>中序遍历</b></p>
 <p>2a递归实现</p>
 <p>思路：1.中序遍历左子树；2访问父节点；3中序遍历右子树
-<pre class="wp-code-highlight prettyprint">//2a 中序递归
+<pre class="brush: java; toolbar: false; collapse: true;">//2a 中序递归
 void mOrderVisiit(NodeBTree bTree){
     if(bTree==null)return;
     mOrderVisiit(bTree.lChild);
@@ -206,13 +206,13 @@ void mOrderVisiit(NodeBTree bTree){
 <p><b>2b</b><b>非递归 </b><b>很有技巧</b></p>
 <p>思路：1一直到最左节点，null 也进栈；2null出栈，再访问顶节点；3访问顶节点右子树，直到null；4.直到栈空结束。</p>
 <p>左孩子的后继是父节点，右孩子的后继是父节点的父节点。且该后继不需要再次访问左孩子。
-<pre class="wp-code-highlight prettyprint">//2b 中序非递归
-void mOrderVisiitNR(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//2b 中序非递归
+void mOrderVisiitNR(NodeBTree<t> bTree){
     if(bTree==null)return;
-    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    Stack<nodebtree><t>&gt; stack=new Stack&lt;&gt;();
     stack.push(bTree);
     while(!stack.isEmpty()){
-        NodeBTree&lt;t&gt; tmp=stack.peek();
+        NodeBTree<t> tmp=stack.peek();
         while(tmp!=null){
             stack.push(tmp.lChild);
             tmp=tmp.lChild;
@@ -230,8 +230,8 @@ void mOrderVisiitNR(NodeBTree&lt;t&gt; bTree){
 <p><b>3.</b><b>后序遍历</b></p>
 <p>3a递归实现</p>
 <p>思路：1.后序遍历左子树；2后序遍历右子树；3访问父节点。
-<pre class="wp-code-highlight prettyprint">//3a 后序递归
-void aOrderVisit(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//3a 后序递归
+void aOrderVisit(NodeBTree<t> bTree){
     if(bTree==null)return;
     aOrderVisit(bTree.lChild);
     aOrderVisit(bTree.rChild);
@@ -241,19 +241,19 @@ void aOrderVisit(NodeBTree&lt;t&gt; bTree){
 </pre>
 <p>3b非递归，技巧性很高。</p>
 <p>思路：左孩子的后继是右孩子，右孩子的后继是父节点。因此顺序 父节点进栈，访问右子树，访问父节点得到右孩子，访问父节点。因此父节点被使用了3次，并且每次的后继操作都是不一样的。设置一个访问位来表示父节点的访问信息。
-<pre class="wp-code-highlight prettyprint">//3b 后序非递归
-void aOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//3b 后序非递归
+void aOrderVisitNR(NodeBTree<t> bTree){
     //后序非递归需要设置一个访问标志位。
     if(bTree==null)return;
     class BTreeFlag{
-        NodeBTree&lt;t&gt; nodeTree;
+        NodeBTree<t> nodeTree;
         int flag;//是否被访问。
-        public BTreeFlag(NodeBTree&lt;t&gt; biT,int f) {
+        public BTreeFlag(NodeBTree<t> biT,int f) {
             nodeTree=biT;
             flag=f;
         }
     }
-    Stack&lt;btreeflag&gt; stack=new Stack&amp;lt;&amp;gt;();
+    Stack<btreeflag> stack=new Stack&lt;&gt;();
     stack.push(new BTreeFlag(bTree, 0));
     while(!stack.isEmpty()){
         BTreeFlag tmp=stack.peek();
@@ -277,13 +277,13 @@ void aOrderVisitNR(NodeBTree&lt;t&gt; bTree){
 </pre>
 <p><b>4.</b><b>层序遍历</b></p>
 <p>思路：用队列实现一层一层的访问
-<pre class="wp-code-highlight prettyprint">//4 层序遍历
-void cengxuVisit(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//4 层序遍历
+void cengxuVisit(NodeBTree<t> bTree){
     if(bTree==null)return;
-    Queue&lt;nodebtree&gt;&lt;t&gt;&amp;gt; queue=new LinkedList&lt;nodebtree&gt;&lt;t&gt;&amp;gt;() ;
+    Queue<nodebtree><t>&gt; queue=new LinkedList<nodebtree><t>&gt;() ;
     queue.add(bTree);
     while(!queue.isEmpty()){
-        NodeBTree&lt;t&gt; tmpBTree=queue.poll();
+        NodeBTree<t> tmpBTree=queue.poll();
         visit(tmpBTree);
         if (tmpBTree.lChild!=null) queue.offer(tmpBTree.lChild);
         if (tmpBTree.rChild!=null) queue.offer(tmpBTree.rChild);
@@ -294,11 +294,11 @@ void cengxuVisit(NodeBTree&lt;t&gt; bTree){
 <p><img title="clip_image001" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image001" src="http://wp.hhy/wp-content/uploads/2014/10/clip_image001.jpg" width="326" height="195"></p>
 <p>后序：9,4,10,5,2,12,13,6,7,3,1</p>
 <p>层序： 1,2,3,4,5,6,7,8,9,10,12,13
-<pre class="wp-code-highlight prettyprint">//测试用例
-NodeBTree&lt;integer&gt; demo=new NodeBTree&lt;integer&gt;(0);
-ArrayList&lt;nodebtree&gt;&lt;integer&gt;&amp;gt; nodes=new ArrayList&amp;lt;&amp;gt;();
-for(int i=0;i&amp;lt;14;i++){
-    nodes.add(new NodeBTree&lt;integer&gt;(i));
+<pre class="brush: java; toolbar: false; collapse: true;">//测试用例
+NodeBTree<integer> demo=new NodeBTree<integer>(0);
+ArrayList<nodebtree><integer>&gt; nodes=new ArrayList&lt;&gt;();
+for(int i=0;i&lt;14;i++){
+    nodes.add(new NodeBTree<integer>(i));
 }
 nodes.get(1).lChild=nodes.get(2);
 nodes.get(1).rChild=nodes.get(3);
@@ -310,31 +310,31 @@ nodes.get(4).rChild=nodes.get(9);
 nodes.get(5).lChild=nodes.get(10);
 nodes.get(6).lChild=nodes.get(12);
 nodes.get(6).rChild=nodes.get(13);
-System.out.println(&quot;1a 前序递归：&quot;);
+System.out.println("1a 前序递归：");
 demo.preOrderVisit(nodes.get(1));
 System.out.println();
-System.out.println(&quot;1b 前序非递归：&quot;);
+System.out.println("1b 前序非递归：");
 demo.preOrderVisitNR(nodes.get(1));
 System.out.println();
-System.out.println(&quot;2a 中序递归：&quot;);
+System.out.println("2a 中序递归：");
 demo.mOrderVisiit(nodes.get(1));
 System.out.println();
-System.out.println(&quot;2b 中序非递归：&quot;);
+System.out.println("2b 中序非递归：");
 demo.mOrderVisiitNR(nodes.get(1));
 System.out.println();
-System.out.println(&quot;3a 后序递归：&quot;);
+System.out.println("3a 后序递归：");
 demo.aOrderVisit(nodes.get(1));
 System.out.println();
-System.out.println(&quot;3b 后序非递归：&quot;);
+System.out.println("3b 后序非递归：");
 demo.aOrderVisitNR(nodes.get(1));
 System.out.println();
-System.out.println(&quot;4 层序遍历：&quot;);
+System.out.println("4 层序遍历：");
 demo.cengxuVisit(nodes.get(1));
 System.out.println();
 
 </pre>
 <p>输出结果:</p>
-<pre class="wp-code-highlight prettyprint">1a 前序递归：
+<pre class="brush: java; toolbar: false; collapse: true;">1a 前序递归：
 1 2 4 9 5 10 3 6 12 13 7 
 1b 前序非递归：
 1 2 4 9 5 10 3 6 12 13 7 
@@ -518,9 +518,9 @@ System.out.println();
 <p>使用场景：
 <p>1. 某个字符串中是否存在某个模式
 <div>
-<pre class="wp-code-highlight prettyprint">String s = &quot;@Shang Hai Hong Qiao Fei Ji Chang&quot;; 
+<pre lang="java" escaped="true">String s = "@Shang Hai Hong Qiao Fei Ji Chang"; 
 
-String regEx = &quot;a|F&quot;; //表示a或F 
+String regEx = "a|F"; //表示a或F 
 
 Pattern pat = Pattern.compile(regEx); 
 
@@ -533,35 +533,35 @@ boolean rs = mat.find();//用matches()表示整个字符串是否匹配语句
 <p>如果想在查找时忽略大小写，则可以写成Pattern pat = Pattern . compile (regEx,Pattern.CASE_INSENSITIVE) ; </p>
 <p>2. 在字符串中获取模式匹配的子字符串 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">Pattern p=Pattern.compile(&quot;(\\d+,)(\\d+)&quot;); 
-String s=&quot;123,456-34,345&quot;; 
+<pre lang="java" escaped="true">Pattern p=Pattern.compile("(\\d+,)(\\d+)"); 
+String s="123,456-34,345"; 
 Matcher m=p.matcher(s); 
 while(m.find()){ 
-System.out.println(&quot;m.group():&quot;+m.group());//打印所有，匹配的子字符串 
-System.out.println(&quot;m.group(1):&quot;+m.group(1));//打印，（）里内容，参数是括号的序号 
-System.out.println(&quot;m.group(2):&quot;+m.group(2));//打印字母的 
+System.out.println("m.group():"+m.group());//打印所有，匹配的子字符串 
+System.out.println("m.group(1):"+m.group(1));//打印，（）里内容，参数是括号的序号 
+System.out.println("m.group(2):"+m.group(2));//打印字母的 
 } 
-System.out.println(&quot;捕获个数:groupCount()=&quot;+m.groupCount()); </pre>
+System.out.println("捕获个数:groupCount()="+m.groupCount()); </pre>
 </div>
 <p>其中，m.find()操作会从0位置开始，每匹配一次都将开始匹配位置提升。 </p>
 <p>3. 字符串分割 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">String regEx=&quot;:&quot;; 
+<pre lang="java" escaped="true">String regEx=":"; 
 Pattern pat = Pattern.compile(regEx); 
-String[] rs = pat.split(&quot;aa:bb:cc&quot;); 
+String[] rs = pat.split("aa:bb:cc"); 
 System.out.println(rs.length); 
 </pre>
 </div>
 <p>按照模式作为分隔符，满足模式的子字符串将作为分隔符。 </p>
 <p>4. 字符串替换和删除 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">String regEx=&quot;@+&quot;; //表示一个或多个@ 
+<pre lang="csharp" escaped="true">String regEx="@+"; //表示一个或多个@ 
 
 Pattern pat=Pattern.compile(regEx); 
 
-Matcher mat=pat.matcher(&quot;@@aa@b cc@@&quot;); 
+Matcher mat=pat.matcher("@@aa@b cc@@"); 
 
-String s=mat.replaceAll(&quot;#&quot;); // 参数为&quot;&quot;时表示删除该模式 
+String s=mat.replaceAll("#"); // 参数为""时表示删除该模式 
 
 System.out.println(s); 
 

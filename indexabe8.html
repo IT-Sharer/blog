@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;cat=22" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 25 Oct 2014 16:18:30 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 04 Nov 2014 03:13:37 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -29,10 +29,10 @@
 		<guid isPermaLink="false">http://wp.hhy/?p=190</guid>
 		<description><![CDATA[例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=190">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<p>例如：A=’abedf’, B=’bae’ 则找到abe，bae,aeb,eab,eba 均返回该子串。（简答起见，只返回第一个匹配的子字符串）</p>
-<pre class="wp-code-highlight prettyprint">	static String getSubString(String A,String B){
-		if (A==&quot;&quot;||B==&quot;&quot;) return &quot;&quot;;//输入信息要判断
-		HashMap&amp;lt;Character, Integer&amp;gt;bHashMap=new HashMap&amp;lt;Character, Integer&amp;gt;();
-		for (int i = 0; i &amp;lt; B.length(); i++) {
+<pre>	static String getSubString(String A,String B){
+		if (A==""||B=="") return "";//输入信息要判断
+		HashMap&lt;Character, Integer&gt;bHashMap=new HashMap&lt;Character, Integer&gt;();
+		for (int i = 0; i &lt; B.length(); i++) {
 			if (bHashMap.containsKey(B.charAt(i))) {
 				bHashMap.put(B.charAt(i), bHashMap.get(B.charAt(i))+1);
 			}
@@ -40,13 +40,13 @@
 				bHashMap.put(B.charAt(i), 1);
 			}
 		}
-		for(int i=0;i&amp;lt;A.length();i++){
-			HashMap&amp;lt;Character, Integer&amp;gt;tmpHashMap=(HashMap&amp;lt;Character, Integer&amp;gt;) bHashMap.clone();
-			for(int j=0;j&amp;lt;B.length();j++){
-				if (i+j&amp;lt;A.length()) {
+		for(int i=0;i&lt;A.length();i++){
+			HashMap&lt;Character, Integer&gt;tmpHashMap=(HashMap&lt;Character, Integer&gt;) bHashMap.clone();
+			for(int j=0;j&lt;B.length();j++){
+				if (i+j&lt;A.length()) {
 					if (tmpHashMap.containsKey(A.charAt(i+j))) {
 						int t=tmpHashMap.get(A.charAt(i+j));//一定要判断i+j是否超出了A的界限
-						if (t==1&amp;amp;&amp;amp;j==B.length()-1) {
+						if (t==1&amp;&amp;j==B.length()-1) {
 							return A.substring(i,i+B.length());
 						}
 						else if(t==0)break;//不能再减了。
@@ -57,7 +57,7 @@
 				else break;
 			}	
 		}
-		return&quot;&quot;;
+		return"";
 	}
 </pre>
 ]]></content:encoded>
@@ -76,21 +76,21 @@
 		<guid isPermaLink="false">http://wp.hhy/?p=185</guid>
 		<description><![CDATA[有20个数组，每个数组500个元素，降序排列，找出前500个数。 a[20][5<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=185">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<p>有20个数组，每个数组500个元素，降序排列，找出前500个数。</p>
-<pre class="wp-code-highlight prettyprint">a[20][500]
+<pre>a[20][500]
 b[20] 保存每个数字的位置 默认b[i]=24;
 Tag=true;
 While(tag)
 {
 	Tag=false;
-	//取最后20个元素最小位置I,和最大的位置j, 20个元素都要有值。对b[x]&amp;lt;0的不进行计算
+	//取最后20个元素最小位置I,和最大的位置j, 20个元素都要有值。对b[x]&lt;0的不进行计算
 	Int i=0,j=0,min=Integer.Max,max=0;
-	For(int m=0;m&amp;lt;20;m++)
+	For(int m=0;m&lt;20;m++)
 	{
-		If(b[m]&amp;gt;=0){
-			If(a[m][b[m]]&lt;min  )… if(a[m][b[m]] Else&gt;max)…
+		If(b[m]&gt;=0){
+			If(a[m][b[m]]<min  )… if(a[m][b[m]] Else>max)…
 		}
 	}
-	While(a[i][b[i]]&amp;lt;a[j][b[j]+1]){
+	While(a[i][b[i]]&lt;a[j][b[j]+1]){
 		b[i]-=1;
 		b[j]+=1;
 		Tag=true;
@@ -114,19 +114,19 @@ While(tag)
 		<category><![CDATA[遍历]]></category>
 
 		<guid isPermaLink="false">http://wp.hhy/?p=183</guid>
-		<description><![CDATA[树结构： public class NodeBTree&#60;t&#62; { T<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=183">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
+		<description><![CDATA[树结构： public class NodeBTree { T value; N<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://wp.hhy/?p=183">查阅全文 &#8250;</a></div><!-- end of .read-more -->]]></description>
 				<content:encoded><![CDATA[<p><b>树结构：</b>
-<pre class="wp-code-highlight prettyprint">public class NodeBTree&lt;t&gt; {
+<pre class="brush: java; toolbar: false; collapse: true;">public class NodeBTree<t> {
     T value;
-    NodeBTree&lt;t&gt; lChild;
-    NodeBTree&lt;t&gt; rChild;
+    NodeBTree<t> lChild;
+    NodeBTree<t> rChild;
     public NodeBTree(T t) {
         value=t;
     }
 }
 </pre>
 <p>访问节点：
-<pre class="wp-code-highlight prettyprint">public void visit(NodeBTree&lt;t&gt; node){
+<pre class="brush: java; toolbar: false; collapse: true;">public void visit(NodeBTree<t> node){
     System.out.println(node.value);
 }
 
@@ -134,8 +134,8 @@ While(tag)
 <p><b>1.</b><b>前序遍历</b></p>
 <p>1a递归实现</p>
 <p>思路：1.访问根节点；2.前序访问左子树；3.前序访问右子树
-<pre class="wp-code-highlight prettyprint">//1a 前序递归
-void preOrderVisit(NodeBTree&lt;t&gt; btree){
+<pre class="brush: java; toolbar: false; collapse: true;">//1a 前序递归
+void preOrderVisit(NodeBTree<t> btree){
     if (btree==null)return;
     visit(btree);
     preOrderVisit(btree.lChild);
@@ -145,13 +145,13 @@ void preOrderVisit(NodeBTree&lt;t&gt; btree){
 </pre>
 <p>1b非递归</p>
 <p>思路：1.访问栈顶节点；2，将其右子树进栈，左子树进栈；3重复1,2直到栈为空
-<pre class="wp-code-highlight prettyprint">//1b 前序非递归
-void preOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//1b 前序非递归
+void preOrderVisitNR(NodeBTree<t> bTree){
     if(bTree==null)return;
-    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    Stack<nodebtree><t>&gt; stack=new Stack&lt;&gt;();
     stack.push(bTree);
     while(!stack.isEmpty()){
-        NodeBTree&lt;t&gt; tmp=stack.pop();
+        NodeBTree<t> tmp=stack.pop();
         visit(tmp);
         if(tmp.rChild!=null)stack.push(tmp.rChild);
         if(tmp.lChild!=null)stack.push(tmp.lChild);
@@ -162,7 +162,7 @@ void preOrderVisitNR(NodeBTree&lt;t&gt; bTree){
 <p><b>2.</b><b>中序遍历</b></p>
 <p>2a递归实现</p>
 <p>思路：1.中序遍历左子树；2访问父节点；3中序遍历右子树
-<pre class="wp-code-highlight prettyprint">//2a 中序递归
+<pre class="brush: java; toolbar: false; collapse: true;">//2a 中序递归
 void mOrderVisiit(NodeBTree bTree){
     if(bTree==null)return;
     mOrderVisiit(bTree.lChild);
@@ -174,13 +174,13 @@ void mOrderVisiit(NodeBTree bTree){
 <p><b>2b</b><b>非递归 </b><b>很有技巧</b></p>
 <p>思路：1一直到最左节点，null 也进栈；2null出栈，再访问顶节点；3访问顶节点右子树，直到null；4.直到栈空结束。</p>
 <p>左孩子的后继是父节点，右孩子的后继是父节点的父节点。且该后继不需要再次访问左孩子。
-<pre class="wp-code-highlight prettyprint">//2b 中序非递归
-void mOrderVisiitNR(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//2b 中序非递归
+void mOrderVisiitNR(NodeBTree<t> bTree){
     if(bTree==null)return;
-    Stack&lt;nodebtree&gt;&lt;t&gt;&amp;gt; stack=new Stack&amp;lt;&amp;gt;();
+    Stack<nodebtree><t>&gt; stack=new Stack&lt;&gt;();
     stack.push(bTree);
     while(!stack.isEmpty()){
-        NodeBTree&lt;t&gt; tmp=stack.peek();
+        NodeBTree<t> tmp=stack.peek();
         while(tmp!=null){
             stack.push(tmp.lChild);
             tmp=tmp.lChild;
@@ -198,8 +198,8 @@ void mOrderVisiitNR(NodeBTree&lt;t&gt; bTree){
 <p><b>3.</b><b>后序遍历</b></p>
 <p>3a递归实现</p>
 <p>思路：1.后序遍历左子树；2后序遍历右子树；3访问父节点。
-<pre class="wp-code-highlight prettyprint">//3a 后序递归
-void aOrderVisit(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//3a 后序递归
+void aOrderVisit(NodeBTree<t> bTree){
     if(bTree==null)return;
     aOrderVisit(bTree.lChild);
     aOrderVisit(bTree.rChild);
@@ -209,19 +209,19 @@ void aOrderVisit(NodeBTree&lt;t&gt; bTree){
 </pre>
 <p>3b非递归，技巧性很高。</p>
 <p>思路：左孩子的后继是右孩子，右孩子的后继是父节点。因此顺序 父节点进栈，访问右子树，访问父节点得到右孩子，访问父节点。因此父节点被使用了3次，并且每次的后继操作都是不一样的。设置一个访问位来表示父节点的访问信息。
-<pre class="wp-code-highlight prettyprint">//3b 后序非递归
-void aOrderVisitNR(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//3b 后序非递归
+void aOrderVisitNR(NodeBTree<t> bTree){
     //后序非递归需要设置一个访问标志位。
     if(bTree==null)return;
     class BTreeFlag{
-        NodeBTree&lt;t&gt; nodeTree;
+        NodeBTree<t> nodeTree;
         int flag;//是否被访问。
-        public BTreeFlag(NodeBTree&lt;t&gt; biT,int f) {
+        public BTreeFlag(NodeBTree<t> biT,int f) {
             nodeTree=biT;
             flag=f;
         }
     }
-    Stack&lt;btreeflag&gt; stack=new Stack&amp;lt;&amp;gt;();
+    Stack<btreeflag> stack=new Stack&lt;&gt;();
     stack.push(new BTreeFlag(bTree, 0));
     while(!stack.isEmpty()){
         BTreeFlag tmp=stack.peek();
@@ -245,13 +245,13 @@ void aOrderVisitNR(NodeBTree&lt;t&gt; bTree){
 </pre>
 <p><b>4.</b><b>层序遍历</b></p>
 <p>思路：用队列实现一层一层的访问
-<pre class="wp-code-highlight prettyprint">//4 层序遍历
-void cengxuVisit(NodeBTree&lt;t&gt; bTree){
+<pre class="brush: java; toolbar: false; collapse: true;">//4 层序遍历
+void cengxuVisit(NodeBTree<t> bTree){
     if(bTree==null)return;
-    Queue&lt;nodebtree&gt;&lt;t&gt;&amp;gt; queue=new LinkedList&lt;nodebtree&gt;&lt;t&gt;&amp;gt;() ;
+    Queue<nodebtree><t>&gt; queue=new LinkedList<nodebtree><t>&gt;() ;
     queue.add(bTree);
     while(!queue.isEmpty()){
-        NodeBTree&lt;t&gt; tmpBTree=queue.poll();
+        NodeBTree<t> tmpBTree=queue.poll();
         visit(tmpBTree);
         if (tmpBTree.lChild!=null) queue.offer(tmpBTree.lChild);
         if (tmpBTree.rChild!=null) queue.offer(tmpBTree.rChild);
@@ -262,11 +262,11 @@ void cengxuVisit(NodeBTree&lt;t&gt; bTree){
 <p><img title="clip_image001" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="clip_image001" src="http://wp.hhy/wp-content/uploads/2014/10/clip_image001.jpg" width="326" height="195"></p>
 <p>后序：9,4,10,5,2,12,13,6,7,3,1</p>
 <p>层序： 1,2,3,4,5,6,7,8,9,10,12,13
-<pre class="wp-code-highlight prettyprint">//测试用例
-NodeBTree&lt;integer&gt; demo=new NodeBTree&lt;integer&gt;(0);
-ArrayList&lt;nodebtree&gt;&lt;integer&gt;&amp;gt; nodes=new ArrayList&amp;lt;&amp;gt;();
-for(int i=0;i&amp;lt;14;i++){
-    nodes.add(new NodeBTree&lt;integer&gt;(i));
+<pre class="brush: java; toolbar: false; collapse: true;">//测试用例
+NodeBTree<integer> demo=new NodeBTree<integer>(0);
+ArrayList<nodebtree><integer>&gt; nodes=new ArrayList&lt;&gt;();
+for(int i=0;i&lt;14;i++){
+    nodes.add(new NodeBTree<integer>(i));
 }
 nodes.get(1).lChild=nodes.get(2);
 nodes.get(1).rChild=nodes.get(3);
@@ -278,31 +278,31 @@ nodes.get(4).rChild=nodes.get(9);
 nodes.get(5).lChild=nodes.get(10);
 nodes.get(6).lChild=nodes.get(12);
 nodes.get(6).rChild=nodes.get(13);
-System.out.println(&quot;1a 前序递归：&quot;);
+System.out.println("1a 前序递归：");
 demo.preOrderVisit(nodes.get(1));
 System.out.println();
-System.out.println(&quot;1b 前序非递归：&quot;);
+System.out.println("1b 前序非递归：");
 demo.preOrderVisitNR(nodes.get(1));
 System.out.println();
-System.out.println(&quot;2a 中序递归：&quot;);
+System.out.println("2a 中序递归：");
 demo.mOrderVisiit(nodes.get(1));
 System.out.println();
-System.out.println(&quot;2b 中序非递归：&quot;);
+System.out.println("2b 中序非递归：");
 demo.mOrderVisiitNR(nodes.get(1));
 System.out.println();
-System.out.println(&quot;3a 后序递归：&quot;);
+System.out.println("3a 后序递归：");
 demo.aOrderVisit(nodes.get(1));
 System.out.println();
-System.out.println(&quot;3b 后序非递归：&quot;);
+System.out.println("3b 后序非递归：");
 demo.aOrderVisitNR(nodes.get(1));
 System.out.println();
-System.out.println(&quot;4 层序遍历：&quot;);
+System.out.println("4 层序遍历：");
 demo.cengxuVisit(nodes.get(1));
 System.out.println();
 
 </pre>
 <p>输出结果:</p>
-<pre class="wp-code-highlight prettyprint">1a 前序递归：
+<pre class="brush: java; toolbar: false; collapse: true;">1a 前序递归：
 1 2 4 9 5 10 3 6 12 13 7 
 1b 前序非递归：
 1 2 4 9 5 10 3 6 12 13 7 

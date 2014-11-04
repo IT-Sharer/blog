@@ -12,7 +12,7 @@
 	<atom:link href="http://wp.hhy/?feed=rss2&#038;tag=%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" rel="self" type="application/rss+xml" />
 	<link>http://wp.hhy</link>
 	<description>温 润 醇 和    臻 于 至 善</description>
-	<lastBuildDate>Sat, 25 Oct 2014 16:18:30 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 04 Nov 2014 03:13:37 +0000</lastBuildDate>
 	<language>zh-CN</language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
@@ -85,9 +85,9 @@
 <p>使用场景：
 <p>1. 某个字符串中是否存在某个模式
 <div>
-<pre class="wp-code-highlight prettyprint">String s = &quot;@Shang Hai Hong Qiao Fei Ji Chang&quot;; 
+<pre lang="java" escaped="true">String s = "@Shang Hai Hong Qiao Fei Ji Chang"; 
 
-String regEx = &quot;a|F&quot;; //表示a或F 
+String regEx = "a|F"; //表示a或F 
 
 Pattern pat = Pattern.compile(regEx); 
 
@@ -100,35 +100,35 @@ boolean rs = mat.find();//用matches()表示整个字符串是否匹配语句
 <p>如果想在查找时忽略大小写，则可以写成Pattern pat = Pattern . compile (regEx,Pattern.CASE_INSENSITIVE) ; </p>
 <p>2. 在字符串中获取模式匹配的子字符串 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">Pattern p=Pattern.compile(&quot;(\\d+,)(\\d+)&quot;); 
-String s=&quot;123,456-34,345&quot;; 
+<pre lang="java" escaped="true">Pattern p=Pattern.compile("(\\d+,)(\\d+)"); 
+String s="123,456-34,345"; 
 Matcher m=p.matcher(s); 
 while(m.find()){ 
-System.out.println(&quot;m.group():&quot;+m.group());//打印所有，匹配的子字符串 
-System.out.println(&quot;m.group(1):&quot;+m.group(1));//打印，（）里内容，参数是括号的序号 
-System.out.println(&quot;m.group(2):&quot;+m.group(2));//打印字母的 
+System.out.println("m.group():"+m.group());//打印所有，匹配的子字符串 
+System.out.println("m.group(1):"+m.group(1));//打印，（）里内容，参数是括号的序号 
+System.out.println("m.group(2):"+m.group(2));//打印字母的 
 } 
-System.out.println(&quot;捕获个数:groupCount()=&quot;+m.groupCount()); </pre>
+System.out.println("捕获个数:groupCount()="+m.groupCount()); </pre>
 </div>
 <p>其中，m.find()操作会从0位置开始，每匹配一次都将开始匹配位置提升。 </p>
 <p>3. 字符串分割 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">String regEx=&quot;:&quot;; 
+<pre lang="java" escaped="true">String regEx=":"; 
 Pattern pat = Pattern.compile(regEx); 
-String[] rs = pat.split(&quot;aa:bb:cc&quot;); 
+String[] rs = pat.split("aa:bb:cc"); 
 System.out.println(rs.length); 
 </pre>
 </div>
 <p>按照模式作为分隔符，满足模式的子字符串将作为分隔符。 </p>
 <p>4. 字符串替换和删除 </p>
 <div>
-<pre class="wp-code-highlight prettyprint">String regEx=&quot;@+&quot;; //表示一个或多个@ 
+<pre lang="csharp" escaped="true">String regEx="@+"; //表示一个或多个@ 
 
 Pattern pat=Pattern.compile(regEx); 
 
-Matcher mat=pat.matcher(&quot;@@aa@b cc@@&quot;); 
+Matcher mat=pat.matcher("@@aa@b cc@@"); 
 
-String s=mat.replaceAll(&quot;#&quot;); // 参数为&quot;&quot;时表示删除该模式 
+String s=mat.replaceAll("#"); // 参数为""时表示删除该模式 
 
 System.out.println(s); 
 
